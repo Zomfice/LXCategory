@@ -1,5 +1,5 @@
 //
-//  UIScreen+LX.h
+//  AppDelegate.h
 //  LXCategory
 //
 //  Created by 麻小亮 on 2018/11/20.
@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@interface UIScreen (LX)
-+ (CGFloat)screenWidth;
-+ (CGFloat)screenHeight;
+@property (strong, nonatomic) UIWindow *window;
+
+
 @end
 
-NS_ASSUME_NONNULL_END

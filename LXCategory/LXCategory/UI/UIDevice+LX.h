@@ -7,11 +7,12 @@
 //
 
 
-
+#import "LXDefine.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIDevice (LX)
-
+//运营商
++ (NSArray *)carriers;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,7 +7,16 @@
 //
 
 #import "UIDevice+LX.h"
-
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <CoreTelephony/CTCarrier.h>
 @implementation UIDevice (LX)
-
++ (NSArray *)carriers{
+    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
+    NSDictionary * carrieres = info.serviceSubscriberCellularProviders;
+    if (LXIsNotBlank(carrieres)) {
+        return carrieres.allValues;
+    }else{
+        return nil;
+    }
+}
 @end

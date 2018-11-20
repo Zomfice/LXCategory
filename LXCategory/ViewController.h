@@ -1,5 +1,5 @@
 //
-//  UIScreen+LX.h
+//  ViewController.h
 //  LXCategory
 //
 //  Created by 麻小亮 on 2018/11/20.
@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@interface ViewController : UIViewController
 
-@interface UIScreen (LX)
-+ (CGFloat)screenWidth;
-+ (CGFloat)screenHeight;
+
 @end
 
-NS_ASSUME_NONNULL_END
