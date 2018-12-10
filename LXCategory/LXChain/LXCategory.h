@@ -8,6 +8,5 @@
 
 #ifndef LXCategory_h
 #define LXCategory_h
-#import "UIDevice+LX.h"
-#import "UIScreen+LX.h"
+
 #endif /* LXCategory_h */

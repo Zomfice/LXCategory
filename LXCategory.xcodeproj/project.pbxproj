@@ -14,9 +14,7 @@
 		73330CC621A3F61900233E6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73330CC421A3F61900233E6D /* LaunchScreen.storyboard */; };
 		73330CC921A3F61900233E6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CC821A3F61900233E6D /* main.m */; };
 		734555EE21A41E88006866A5 /* NSObject+LX.m in Sources */ = {isa = PBXBuildFile; fileRef = 734555ED21A41E88006866A5 /* NSObject+LX.m */; };
-		734555F421A42564006866A5 /* UIDevice+LX.m in Sources */ = {isa = PBXBuildFile; fileRef = 734555F321A42564006866A5 /* UIDevice+LX.m */; };
 		734555F721A4266C006866A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734555F621A4266C006866A5 /* UIKit.framework */; };
-		734555FB21A42691006866A5 /* UIScreen+LX.m in Sources */ = {isa = PBXBuildFile; fileRef = 734555FA21A42691006866A5 /* UIScreen+LX.m */; };
 		734555FD21A4271D006866A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734555FC21A4271D006866A5 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,11 +33,7 @@
 		73330CD721A3F91400233E6D /* LXDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDefine.h; sourceTree = "<group>"; };
 		734555EC21A41E88006866A5 /* NSObject+LX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+LX.h"; sourceTree = "<group>"; };
 		734555ED21A41E88006866A5 /* NSObject+LX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LX.m"; sourceTree = "<group>"; };
-		734555F221A42564006866A5 /* UIDevice+LX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+LX.h"; sourceTree = "<group>"; };
-		734555F321A42564006866A5 /* UIDevice+LX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+LX.m"; sourceTree = "<group>"; };
 		734555F621A4266C006866A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		734555F921A42691006866A5 /* UIScreen+LX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScreen+LX.h"; sourceTree = "<group>"; };
-		734555FA21A42691006866A5 /* UIScreen+LX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+LX.m"; sourceTree = "<group>"; };
 		734555FC21A4271D006866A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -56,6 +50,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7311F1C921A7D0710053E2C7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7311F1CA21A7D0710053E2C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		73330CAD21A3F61700233E6D = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +84,7 @@
 		73330CB821A3F61800233E6D /* LXCategory */ = {
 			isa = PBXGroup;
 			children = (
-				73330CCF21A3F6D600233E6D /* LXCategory */,
+				73330CCF21A3F6D600233E6D /* LXChain */,
 				73330CB921A3F61800233E6D /* AppDelegate.h */,
 				73330CBA21A3F61800233E6D /* AppDelegate.m */,
 				73330CBC21A3F61800233E6D /* ViewController.h */,
@@ -90,7 +98,7 @@
 			path = LXCategory;
 			sourceTree = "<group>";
 		};
-		73330CCF21A3F6D600233E6D /* LXCategory */ = {
+		73330CCF21A3F6D600233E6D /* LXChain */ = {
 			isa = PBXGroup;
 			children = (
 				73330CD021A3F6FB00233E6D /* LXCategory.h */,
@@ -98,7 +106,7 @@
 				73330CD221A3F72300233E6D /* UI */,
 				73330CD621A3F7A900233E6D /* Other */,
 			);
-			path = LXCategory;
+			path = LXChain;
 			sourceTree = "<group>";
 		};
 		73330CD121A3F72200233E6D /* Foundattion */ = {
@@ -113,10 +121,8 @@
 		73330CD221A3F72300233E6D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				734555F221A42564006866A5 /* UIDevice+LX.h */,
-				734555F321A42564006866A5 /* UIDevice+LX.m */,
-				734555F921A42691006866A5 /* UIScreen+LX.h */,
-				734555FA21A42691006866A5 /* UIScreen+LX.m */,
+				7311F1C921A7D0710053E2C7 /* Category */,
+				7311F1CA21A7D0710053E2C7 /* Model */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -208,8 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734555F421A42564006866A5 /* UIDevice+LX.m in Sources */,
-				734555FB21A42691006866A5 /* UIScreen+LX.m in Sources */,
 				73330CBE21A3F61800233E6D /* ViewController.m in Sources */,
 				73330CC921A3F61900233E6D /* main.m in Sources */,
 				73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */,
