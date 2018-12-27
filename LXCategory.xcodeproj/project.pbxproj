@@ -24,6 +24,7 @@
 		731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DF21D4EBBC00480F08 /* WTCommonViewController.m */; };
 		731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E321D4EC6700480F08 /* UIColor+LXCategory.m */; };
 		731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E621D4EED400480F08 /* UITableView+LXCategory.m */; };
+		731487EA21D4F35B00480F08 /* LXTextViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E921D4F35B00480F08 /* LXTextViewChainModel.m */; };
 		73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBA21A3F61800233E6D /* AppDelegate.m */; };
 		73330CBE21A3F61800233E6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBD21A3F61800233E6D /* ViewController.m */; };
 		73330CC121A3F61800233E6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73330CBF21A3F61800233E6D /* Main.storyboard */; };
@@ -72,6 +73,8 @@
 		731487E321D4EC6700480F08 /* UIColor+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LXCategory.m"; sourceTree = "<group>"; };
 		731487E521D4EED400480F08 /* UITableView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LXCategory.h"; sourceTree = "<group>"; };
 		731487E621D4EED400480F08 /* UITableView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LXCategory.m"; sourceTree = "<group>"; };
+		731487E821D4F35B00480F08 /* LXTextViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTextViewChainModel.h; sourceTree = "<group>"; };
+		731487E921D4F35B00480F08 /* LXTextViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTextViewChainModel.m; sourceTree = "<group>"; };
 		73330CB621A3F61800233E6D /* LXCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73330CB921A3F61800233E6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73330CBA21A3F61800233E6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 				731487D021D4C21300480F08 /* LXSwitchChainModel.m */,
 				731487D221D4C30D00480F08 /* LXScrollViewChainModel.h */,
 				731487D321D4C30D00480F08 /* LXScrollViewChainModel.m */,
+				731487E821D4F35B00480F08 /* LXTextViewChainModel.h */,
+				731487E921D4F35B00480F08 /* LXTextViewChainModel.m */,
 				731487D521D4CE6D00480F08 /* LXTableViewChainModel.h */,
 				731487D621D4CE6D00480F08 /* LXTableViewChainModel.m */,
 				731487D821D4E55100480F08 /* LXCollectionViewChainModel.h */,
@@ -401,6 +406,7 @@
 				731487DA21D4E55100480F08 /* LXCollectionViewChainModel.m in Sources */,
 				731487CE21D4AB1C00480F08 /* LXButtonChainModel.m in Sources */,
 				73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */,
+				731487EA21D4F35B00480F08 /* LXTextViewChainModel.m in Sources */,
 				731487BC21D45CD600480F08 /* UIView+LXChain.m in Sources */,
 				734555EE21A41E88006866A5 /* NSObject+LX.m in Sources */,
 				731487C521D4713900480F08 /* LXControlChainModel.m in Sources */,
@@ -549,7 +555,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KQQLB9477;
 				INFOPLIST_FILE = LXCategory/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xllpp.www.LXCategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -564,7 +573,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KQQLB9477;
 				INFOPLIST_FILE = LXCategory/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xllpp.www.LXCategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

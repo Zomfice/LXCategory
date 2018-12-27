@@ -60,11 +60,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     [self.navigationBar setTag:scrollView.contentOffset.y > 50];
 }
-//- (NSInteger)aaaaa{
-//    return 1;
-//}
-//
-//
-//@dynamic w_center_s;
+
 
 @end

@@ -10,6 +10,7 @@
 #define LXCATEGORY_CHAIN_TABLEVIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXTableViewChainModel *,UITableView)
 @implementation LXTableViewChainModel
 LXSCROLLVIEWSUPERCHAINMODEL_IMPLEMENTATION(LXTableViewChainModel)
+
 LXCATEGORY_CHAIN_TABLEVIEW_IMPLEMENTATION(delegate, id<UITableViewDelegate>)
 LXCATEGORY_CHAIN_TABLEVIEW_IMPLEMENTATION(dataSource, id<UITableViewDataSource>)
 - (LXTableViewChainModel * _Nonnull (^)(void))adJustedContentIOS11{
