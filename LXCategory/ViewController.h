@@ -6,10 +6,10 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WTCommonViewController.h"
 
 
-@interface ViewController : UIViewController
+@interface ViewController : WTCommonViewController
 
 
 @end

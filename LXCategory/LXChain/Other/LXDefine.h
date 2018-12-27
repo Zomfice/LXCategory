@@ -20,6 +20,24 @@
 #define LXStrong  __strong __typeof(weakSelf) self = weakSelf;
 #endif
 
+#define UTILS_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define UTILS_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define UTILS_SCALE (NSInteger) ([UIScreen mainScreen].bounds.size.width / 375 * 100) /100.0
+
+#define Is_IPHONE_XR ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define Is_IPHONE_XS ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define Is_IPHONE_XSMax ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IsIPhoneX (Is_IPHONE_XR || Is_IPHONE_XS || Is_IPHONE_XSMax)
+
+#define StatusBarHeight (IsIPhoneX ? (20.f + 24.f) : 20.f)
+
+#define NavigationBarHeight 44.f
+
 typedef NS_ENUM (NSInteger, LXBlankStatus){
     LXBlankStatusFalse,
     LXBlankStatusZero,

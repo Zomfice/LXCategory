@@ -11,4 +11,7 @@
 #import "UIControl+LXCategory.h"
 #import "UIView+LXCategory.h"
 #import "UIControl+LXCategory.h"
+#import "UIColor+LXCategory.h"
+#import "UITableView+LXCategory.h"
+#import "LXDefine.h"
 #endif /* LXCategory_h */

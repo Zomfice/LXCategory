@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71FD1F3F1FA70268B805C363 /* libPods-LXCategory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1532E8ED1E93FFE6A822366F /* libPods-LXCategory.a */; };
 		731487B921D4578A00480F08 /* LXViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487B821D4578A00480F08 /* LXViewChainModel.m */; };
 		731487BC21D45CD600480F08 /* UIView+LXChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487BB21D45CD600480F08 /* UIView+LXChain.m */; };
 		731487BF21D45F3400480F08 /* LXLabelChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487BE21D45F3400480F08 /* LXLabelChainModel.m */; };
@@ -19,6 +20,10 @@
 		731487D421D4C30D00480F08 /* LXScrollViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487D321D4C30D00480F08 /* LXScrollViewChainModel.m */; };
 		731487D721D4CE6D00480F08 /* LXTableViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487D621D4CE6D00480F08 /* LXTableViewChainModel.m */; };
 		731487DA21D4E55100480F08 /* LXCollectionViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487D921D4E55100480F08 /* LXCollectionViewChainModel.m */; };
+		731487E021D4EBBC00480F08 /* WTCommonNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DC21D4EBBB00480F08 /* WTCommonNavigationBar.m */; };
+		731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DF21D4EBBC00480F08 /* WTCommonViewController.m */; };
+		731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E321D4EC6700480F08 /* UIColor+LXCategory.m */; };
+		731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E621D4EED400480F08 /* UITableView+LXCategory.m */; };
 		73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBA21A3F61800233E6D /* AppDelegate.m */; };
 		73330CBE21A3F61800233E6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBD21A3F61800233E6D /* ViewController.m */; };
 		73330CC121A3F61800233E6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73330CBF21A3F61800233E6D /* Main.storyboard */; };
@@ -33,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1532E8ED1E93FFE6A822366F /* libPods-LXCategory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LXCategory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FD3EB69EB37647FA5973E38 /* Pods-LXCategory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXCategory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LXCategory/Pods-LXCategory.debug.xcconfig"; sourceTree = "<group>"; };
 		731487B721D4578A00480F08 /* LXViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXViewChainModel.h; sourceTree = "<group>"; };
 		731487B821D4578A00480F08 /* LXViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXViewChainModel.m; sourceTree = "<group>"; };
 		731487BA21D45CD600480F08 /* UIView+LXChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LXChain.h"; sourceTree = "<group>"; };
@@ -57,6 +64,14 @@
 		731487D621D4CE6D00480F08 /* LXTableViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTableViewChainModel.m; sourceTree = "<group>"; };
 		731487D821D4E55100480F08 /* LXCollectionViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollectionViewChainModel.h; sourceTree = "<group>"; };
 		731487D921D4E55100480F08 /* LXCollectionViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCollectionViewChainModel.m; sourceTree = "<group>"; };
+		731487DC21D4EBBB00480F08 /* WTCommonNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCommonNavigationBar.m; sourceTree = "<group>"; };
+		731487DD21D4EBBB00480F08 /* WTCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCommonViewController.h; sourceTree = "<group>"; };
+		731487DE21D4EBBC00480F08 /* WTCommonNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCommonNavigationBar.h; sourceTree = "<group>"; };
+		731487DF21D4EBBC00480F08 /* WTCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCommonViewController.m; sourceTree = "<group>"; };
+		731487E221D4EC6700480F08 /* UIColor+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+LXCategory.h"; sourceTree = "<group>"; };
+		731487E321D4EC6700480F08 /* UIColor+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LXCategory.m"; sourceTree = "<group>"; };
+		731487E521D4EED400480F08 /* UITableView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LXCategory.h"; sourceTree = "<group>"; };
+		731487E621D4EED400480F08 /* UITableView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LXCategory.m"; sourceTree = "<group>"; };
 		73330CB621A3F61800233E6D /* LXCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73330CB921A3F61800233E6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73330CBA21A3F61800233E6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +92,7 @@
 		73BAD06821D3982400B1A274 /* LXBaseViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXBaseViewChainModel.m; sourceTree = "<group>"; };
 		73BAD06A21D3A50000B1A274 /* UIView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LXCategory.h"; sourceTree = "<group>"; };
 		73BAD06B21D3A50000B1A274 /* UIView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LXCategory.m"; sourceTree = "<group>"; };
+		D63FBC8AC944254A539CB132 /* Pods-LXCategory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXCategory.release.xcconfig"; path = "Pods/Target Support Files/Pods-LXCategory/Pods-LXCategory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +102,22 @@
 			files = (
 				734555FD21A4271D006866A5 /* Foundation.framework in Frameworks */,
 				734555F721A4266C006866A5 /* UIKit.framework in Frameworks */,
+				71FD1F3F1FA70268B805C363 /* libPods-LXCategory.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B12602A1CD458867408E6C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FD3EB69EB37647FA5973E38 /* Pods-LXCategory.debug.xcconfig */,
+				D63FBC8AC944254A539CB132 /* Pods-LXCategory.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7311F1C921A7D0710053E2C7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,15 +125,23 @@
 				73BAD06B21D3A50000B1A274 /* UIView+LXCategory.m */,
 				731487C621D4759100480F08 /* UIControl+LXCategory.h */,
 				731487C721D4759100480F08 /* UIControl+LXCategory.m */,
+				731487E221D4EC6700480F08 /* UIColor+LXCategory.h */,
+				731487E321D4EC6700480F08 /* UIColor+LXCategory.m */,
+				731487E521D4EED400480F08 /* UITableView+LXCategory.h */,
+				731487E621D4EED400480F08 /* UITableView+LXCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		7311F1CA21A7D0710053E2C7 /* Model */ = {
+		731487DB21D4EB9400480F08 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				731487DE21D4EBBC00480F08 /* WTCommonNavigationBar.h */,
+				731487DC21D4EBBB00480F08 /* WTCommonNavigationBar.m */,
+				731487DD21D4EBBB00480F08 /* WTCommonViewController.h */,
+				731487DF21D4EBBC00480F08 /* WTCommonViewController.m */,
 			);
-			path = Model;
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		73330CAD21A3F61700233E6D = {
@@ -116,6 +150,7 @@
 				73330CB821A3F61800233E6D /* LXCategory */,
 				73330CB721A3F61800233E6D /* Products */,
 				734555F521A4266C006866A5 /* Frameworks */,
+				0B12602A1CD458867408E6C3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +165,7 @@
 		73330CB821A3F61800233E6D /* LXCategory */ = {
 			isa = PBXGroup;
 			children = (
+				731487DB21D4EB9400480F08 /* BaseViewController */,
 				73330CCF21A3F6D600233E6D /* LXChain */,
 				73330CB921A3F61800233E6D /* AppDelegate.h */,
 				73330CBA21A3F61800233E6D /* AppDelegate.m */,
@@ -168,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				7311F1C921A7D0710053E2C7 /* Category */,
-				7311F1CA21A7D0710053E2C7 /* Model */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -187,6 +222,7 @@
 			children = (
 				734555FC21A4271D006866A5 /* Foundation.framework */,
 				734555F621A4266C006866A5 /* UIKit.framework */,
+				1532E8ED1E93FFE6A822366F /* libPods-LXCategory.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -229,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73330CCC21A3F61900233E6D /* Build configuration list for PBXNativeTarget "LXCategory" */;
 			buildPhases = (
+				4B2024607B6138943914D333 /* [CP] Check Pods Manifest.lock */,
 				73330CB221A3F61700233E6D /* Sources */,
 				73330CB321A3F61700233E6D /* Frameworks */,
 				73330CB421A3F61700233E6D /* Resources */,
+				D9750063F22157052727CD55 /* [CP] Embed Pods Frameworks */,
+				4E9D769CFBD4614C784FE74E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,17 +326,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4B2024607B6138943914D333 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LXCategory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E9D769CFBD4614C784FE74E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LXCategory/Pods-LXCategory-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9750063F22157052727CD55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LXCategory/Pods-LXCategory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		73330CB221A3F61700233E6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				731487E021D4EBBC00480F08 /* WTCommonNavigationBar.m in Sources */,
+				731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */,
 				731487D721D4CE6D00480F08 /* LXTableViewChainModel.m in Sources */,
+				731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */,
 				731487BF21D45F3400480F08 /* LXLabelChainModel.m in Sources */,
 				731487D121D4C21300480F08 /* LXSwitchChainModel.m in Sources */,
 				731487C821D4759100480F08 /* UIControl+LXCategory.m in Sources */,
 				73330CBE21A3F61800233E6D /* ViewController.m in Sources */,
 				73330CC921A3F61900233E6D /* main.m in Sources */,
+				731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */,
 				731487D421D4C30D00480F08 /* LXScrollViewChainModel.m in Sources */,
 				73BAD06C21D3A50000B1A274 /* UIView+LXCategory.m in Sources */,
 				731487C221D46DD100480F08 /* LXImageViewChainModel.m in Sources */,
@@ -449,15 +543,13 @@
 		};
 		73330CCD21A3F61900233E6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FD3EB69EB37647FA5973E38 /* Pods-LXCategory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KQQLB9477;
 				INFOPLIST_FILE = LXCategory/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xllpp.www.LXCategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -466,15 +558,13 @@
 		};
 		73330CCE21A3F61900233E6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D63FBC8AC944254A539CB132 /* Pods-LXCategory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KQQLB9477;
 				INFOPLIST_FILE = LXCategory/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xllpp.www.LXCategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
