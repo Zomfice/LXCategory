@@ -8,5 +8,7 @@
 
 #ifndef LXCategory_h
 #define LXCategory_h
-
+#import "UIControl+LXCategory.h"
+#import "UIView+LXCategory.h"
+#import "UIControl+LXCategory.h"
 #endif /* LXCategory_h */

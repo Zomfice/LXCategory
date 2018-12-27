@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		731487B921D4578A00480F08 /* LXViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487B821D4578A00480F08 /* LXViewChainModel.m */; };
+		731487BC21D45CD600480F08 /* UIView+LXChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487BB21D45CD600480F08 /* UIView+LXChain.m */; };
+		731487BF21D45F3400480F08 /* LXLabelChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487BE21D45F3400480F08 /* LXLabelChainModel.m */; };
+		731487C221D46DD100480F08 /* LXImageViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487C121D46DD100480F08 /* LXImageViewChainModel.m */; };
+		731487C521D4713900480F08 /* LXControlChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487C421D4713900480F08 /* LXControlChainModel.m */; };
+		731487C821D4759100480F08 /* UIControl+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487C721D4759100480F08 /* UIControl+LXCategory.m */; };
+		731487CB21D4A24D00480F08 /* LXTextFieldChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487CA21D4A24D00480F08 /* LXTextFieldChainModel.m */; };
+		731487CE21D4AB1C00480F08 /* LXButtonChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487CD21D4AB1C00480F08 /* LXButtonChainModel.m */; };
+		731487D121D4C21300480F08 /* LXSwitchChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487D021D4C21300480F08 /* LXSwitchChainModel.m */; };
+		731487D421D4C30D00480F08 /* LXScrollViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487D321D4C30D00480F08 /* LXScrollViewChainModel.m */; };
+		731487D721D4CE6D00480F08 /* LXTableViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487D621D4CE6D00480F08 /* LXTableViewChainModel.m */; };
+		731487DA21D4E55100480F08 /* LXCollectionViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487D921D4E55100480F08 /* LXCollectionViewChainModel.m */; };
 		73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBA21A3F61800233E6D /* AppDelegate.m */; };
 		73330CBE21A3F61800233E6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBD21A3F61800233E6D /* ViewController.m */; };
 		73330CC121A3F61800233E6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73330CBF21A3F61800233E6D /* Main.storyboard */; };
@@ -16,9 +28,35 @@
 		734555EE21A41E88006866A5 /* NSObject+LX.m in Sources */ = {isa = PBXBuildFile; fileRef = 734555ED21A41E88006866A5 /* NSObject+LX.m */; };
 		734555F721A4266C006866A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734555F621A4266C006866A5 /* UIKit.framework */; };
 		734555FD21A4271D006866A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734555FC21A4271D006866A5 /* Foundation.framework */; };
+		73BAD06921D3982400B1A274 /* LXBaseViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BAD06821D3982400B1A274 /* LXBaseViewChainModel.m */; };
+		73BAD06C21D3A50000B1A274 /* UIView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BAD06B21D3A50000B1A274 /* UIView+LXCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		731487B721D4578A00480F08 /* LXViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXViewChainModel.h; sourceTree = "<group>"; };
+		731487B821D4578A00480F08 /* LXViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXViewChainModel.m; sourceTree = "<group>"; };
+		731487BA21D45CD600480F08 /* UIView+LXChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LXChain.h"; sourceTree = "<group>"; };
+		731487BB21D45CD600480F08 /* UIView+LXChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LXChain.m"; sourceTree = "<group>"; };
+		731487BD21D45F3400480F08 /* LXLabelChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLabelChainModel.h; sourceTree = "<group>"; };
+		731487BE21D45F3400480F08 /* LXLabelChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLabelChainModel.m; sourceTree = "<group>"; };
+		731487C021D46DD100480F08 /* LXImageViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXImageViewChainModel.h; sourceTree = "<group>"; };
+		731487C121D46DD100480F08 /* LXImageViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXImageViewChainModel.m; sourceTree = "<group>"; };
+		731487C321D4713900480F08 /* LXControlChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXControlChainModel.h; sourceTree = "<group>"; };
+		731487C421D4713900480F08 /* LXControlChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXControlChainModel.m; sourceTree = "<group>"; };
+		731487C621D4759100480F08 /* UIControl+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+LXCategory.h"; sourceTree = "<group>"; };
+		731487C721D4759100480F08 /* UIControl+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+LXCategory.m"; sourceTree = "<group>"; };
+		731487C921D4A24D00480F08 /* LXTextFieldChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTextFieldChainModel.h; sourceTree = "<group>"; };
+		731487CA21D4A24D00480F08 /* LXTextFieldChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTextFieldChainModel.m; sourceTree = "<group>"; };
+		731487CC21D4AB1C00480F08 /* LXButtonChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXButtonChainModel.h; sourceTree = "<group>"; };
+		731487CD21D4AB1C00480F08 /* LXButtonChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXButtonChainModel.m; sourceTree = "<group>"; };
+		731487CF21D4C21300480F08 /* LXSwitchChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXSwitchChainModel.h; sourceTree = "<group>"; };
+		731487D021D4C21300480F08 /* LXSwitchChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSwitchChainModel.m; sourceTree = "<group>"; };
+		731487D221D4C30D00480F08 /* LXScrollViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXScrollViewChainModel.h; sourceTree = "<group>"; };
+		731487D321D4C30D00480F08 /* LXScrollViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXScrollViewChainModel.m; sourceTree = "<group>"; };
+		731487D521D4CE6D00480F08 /* LXTableViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTableViewChainModel.h; sourceTree = "<group>"; };
+		731487D621D4CE6D00480F08 /* LXTableViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTableViewChainModel.m; sourceTree = "<group>"; };
+		731487D821D4E55100480F08 /* LXCollectionViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXCollectionViewChainModel.h; sourceTree = "<group>"; };
+		731487D921D4E55100480F08 /* LXCollectionViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXCollectionViewChainModel.m; sourceTree = "<group>"; };
 		73330CB621A3F61800233E6D /* LXCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73330CB921A3F61800233E6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73330CBA21A3F61800233E6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -35,6 +73,10 @@
 		734555ED21A41E88006866A5 /* NSObject+LX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LX.m"; sourceTree = "<group>"; };
 		734555F621A4266C006866A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		734555FC21A4271D006866A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		73BAD06721D3982400B1A274 /* LXBaseViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXBaseViewChainModel.h; sourceTree = "<group>"; };
+		73BAD06821D3982400B1A274 /* LXBaseViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXBaseViewChainModel.m; sourceTree = "<group>"; };
+		73BAD06A21D3A50000B1A274 /* UIView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LXCategory.h"; sourceTree = "<group>"; };
+		73BAD06B21D3A50000B1A274 /* UIView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LXCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +95,10 @@
 		7311F1C921A7D0710053E2C7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				73BAD06A21D3A50000B1A274 /* UIView+LXCategory.h */,
+				73BAD06B21D3A50000B1A274 /* UIView+LXCategory.m */,
+				731487C621D4759100480F08 /* UIControl+LXCategory.h */,
+				731487C721D4759100480F08 /* UIControl+LXCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -131,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				73330CD721A3F91400233E6D /* LXDefine.h */,
+				73BAD06621D397F700B1A274 /* LXChain */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -142,6 +189,37 @@
 				734555F621A4266C006866A5 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73BAD06621D397F700B1A274 /* LXChain */ = {
+			isa = PBXGroup;
+			children = (
+				73BAD06721D3982400B1A274 /* LXBaseViewChainModel.h */,
+				73BAD06821D3982400B1A274 /* LXBaseViewChainModel.m */,
+				731487B721D4578A00480F08 /* LXViewChainModel.h */,
+				731487B821D4578A00480F08 /* LXViewChainModel.m */,
+				731487BD21D45F3400480F08 /* LXLabelChainModel.h */,
+				731487BE21D45F3400480F08 /* LXLabelChainModel.m */,
+				731487C021D46DD100480F08 /* LXImageViewChainModel.h */,
+				731487C121D46DD100480F08 /* LXImageViewChainModel.m */,
+				731487C321D4713900480F08 /* LXControlChainModel.h */,
+				731487C421D4713900480F08 /* LXControlChainModel.m */,
+				731487C921D4A24D00480F08 /* LXTextFieldChainModel.h */,
+				731487CA21D4A24D00480F08 /* LXTextFieldChainModel.m */,
+				731487CC21D4AB1C00480F08 /* LXButtonChainModel.h */,
+				731487CD21D4AB1C00480F08 /* LXButtonChainModel.m */,
+				731487CF21D4C21300480F08 /* LXSwitchChainModel.h */,
+				731487D021D4C21300480F08 /* LXSwitchChainModel.m */,
+				731487D221D4C30D00480F08 /* LXScrollViewChainModel.h */,
+				731487D321D4C30D00480F08 /* LXScrollViewChainModel.m */,
+				731487D521D4CE6D00480F08 /* LXTableViewChainModel.h */,
+				731487D621D4CE6D00480F08 /* LXTableViewChainModel.m */,
+				731487D821D4E55100480F08 /* LXCollectionViewChainModel.h */,
+				731487D921D4E55100480F08 /* LXCollectionViewChainModel.m */,
+				731487BA21D45CD600480F08 /* UIView+LXChain.h */,
+				731487BB21D45CD600480F08 /* UIView+LXChain.m */,
+			);
+			path = LXChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,10 +292,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				731487D721D4CE6D00480F08 /* LXTableViewChainModel.m in Sources */,
+				731487BF21D45F3400480F08 /* LXLabelChainModel.m in Sources */,
+				731487D121D4C21300480F08 /* LXSwitchChainModel.m in Sources */,
+				731487C821D4759100480F08 /* UIControl+LXCategory.m in Sources */,
 				73330CBE21A3F61800233E6D /* ViewController.m in Sources */,
 				73330CC921A3F61900233E6D /* main.m in Sources */,
+				731487D421D4C30D00480F08 /* LXScrollViewChainModel.m in Sources */,
+				73BAD06C21D3A50000B1A274 /* UIView+LXCategory.m in Sources */,
+				731487C221D46DD100480F08 /* LXImageViewChainModel.m in Sources */,
+				731487CB21D4A24D00480F08 /* LXTextFieldChainModel.m in Sources */,
+				731487B921D4578A00480F08 /* LXViewChainModel.m in Sources */,
+				73BAD06921D3982400B1A274 /* LXBaseViewChainModel.m in Sources */,
+				731487DA21D4E55100480F08 /* LXCollectionViewChainModel.m in Sources */,
+				731487CE21D4AB1C00480F08 /* LXButtonChainModel.m in Sources */,
 				73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */,
+				731487BC21D45CD600480F08 /* UIView+LXChain.m in Sources */,
 				734555EE21A41E88006866A5 /* NSObject+LX.m in Sources */,
+				731487C521D4713900480F08 /* LXControlChainModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

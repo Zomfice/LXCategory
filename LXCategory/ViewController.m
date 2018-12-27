@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LXCategory.h"
 #import "LXDefine.h"
+#import "UIView+LXChain.h"
 @interface ViewController ()
 
 @end
@@ -18,12 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UILabel *view = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)].w_center_s(self.view.center);
-    view.backgroundColor = [UIColor redColor];
+    UIColor *color = [UIColor redColor];
+    [[UITableView alloc] init].makeChain
+    .backgroundColor(color)
+    .frame(CGRectMake(0, 0, 100, 100))
+    .center(self.view.center)
+    .addToSuperView(self.view)
+    .cornerRadius(50)
+    .border(1, [UIColor blackColor])
+    .registerCellClass([UITableViewCell class], @"class");
     
-    [self.view addSubview:view];
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 //- (NSInteger)aaaaa{
 //    return 1;
 //}
