@@ -10,9 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXTextFieldChainModel;
-@interface LXTextFieldChainModel : LXBaseViewChainModel<LXTextFieldChainModel*>
-
-LXCONTROLSUPERCHAINMODEL_INTEFACE(LXTextFieldChainModel)
+@interface LXTextFieldChainModel : LXControlChainModel<LXTextFieldChainModel*>
 
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ text)(NSString *text);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ attributedText)(NSAttributedString *attributedText);

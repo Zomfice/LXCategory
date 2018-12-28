@@ -10,8 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class LXTableViewChainModel;
-@interface LXTableViewChainModel : LXBaseViewChainModel<LXTableViewChainModel *>
-LXSCROLLVIEWSUPERCHAINMODEL_INTEFACE(LXTableViewChainModel)
+@interface LXTableViewChainModel : LXScrollViewChainModel<LXTableViewChainModel *>
+
 LXCATEGORY_CHAIN_PROPERTY LXTableViewChainModel * (^ delegate) (id <UITableViewDelegate> delegate);
 LXCATEGORY_CHAIN_PROPERTY LXTableViewChainModel * (^ dataSource) (id <UITableViewDataSource> dataSource);
 LXCATEGORY_CHAIN_PROPERTY LXTableViewChainModel * (^ adJustedContentIOS11)(void);

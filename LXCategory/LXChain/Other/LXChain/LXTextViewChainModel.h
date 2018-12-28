@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class LXTextViewChainModel;
-@interface LXTextViewChainModel : LXBaseViewChainModel<LXTextViewChainModel *>
-LXSCROLLVIEWSUPERCHAINMODEL_INTEFACE(LXTextViewChainModel)
-
+@interface LXTextViewChainModel : LXScrollViewChainModel<LXTextViewChainModel *>
 
 LXCATEGORY_CHAIN_PROPERTY LXTextViewChainModel *(^ delegate)(id<UITextViewDelegate> delegate);
 

@@ -11,9 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXButtonChainModel;
-@interface LXButtonChainModel : LXBaseViewChainModel<LXButtonChainModel *>
-
-LXCONTROLSUPERCHAINMODEL_INTEFACE(LXButtonChainModel)
+@interface LXButtonChainModel : LXControlChainModel<LXButtonChainModel *>
 
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ contentEdgeInsets)(UIEdgeInsets contentEdgeInsets);
 

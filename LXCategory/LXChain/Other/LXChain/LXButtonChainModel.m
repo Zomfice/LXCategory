@@ -7,10 +7,9 @@
 //
 
 #import "LXButtonChainModel.h"
+
 #define LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXButtonChainModel *,UIButton)
 @implementation LXButtonChainModel
-
-LXCONTROLSUPERCHAINMODEL_IMPLEMENTATION(LXButtonChainModel)
 
 LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(contentEdgeInsets, UIEdgeInsets)
 

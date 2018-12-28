@@ -9,7 +9,6 @@
 #import "LXCollectionViewChainModel.h"
 #define LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXCollectionViewChainModel *,UICollectionView)
 @implementation LXCollectionViewChainModel
-LXSCROLLVIEWSUPERCHAINMODEL_IMPLEMENTATION(LXCollectionViewChainModel)
 
 LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(collectionViewLayout, UICollectionViewLayout *)
 LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(delegate, id<UICollectionViewDelegate>)

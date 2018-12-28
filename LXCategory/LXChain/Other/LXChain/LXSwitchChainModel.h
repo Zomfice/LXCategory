@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXSwitchChainModel;
-@interface LXSwitchChainModel : LXBaseViewChainModel<LXSwitchChainModel *>
+@interface LXSwitchChainModel : LXControlChainModel<LXSwitchChainModel *>
+
 LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ on)(BOOL on);
 LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ onTintColor)(UIColor *onTintColor);
 LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ thumbTintColor)(UIColor *thumbTintColor);
@@ -19,7 +20,6 @@ LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ thumbTintColor)(UIColor *thumbT
 LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ onImage)(UIImage *onImage);
 LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ offImage)(UIImage *offImage);
 
-LXCONTROLSUPERCHAINMODEL_INTEFACE(LXSwitchChainModel)
 @end
 LXCATEGORY_EXINTERFACE(UISwitch, LXSwitchChainModel)
 NS_ASSUME_NONNULL_END

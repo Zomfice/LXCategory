@@ -11,7 +11,6 @@
 #import "LXDefine.h"
 #import "UIView+LXChain.h"
 @interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol>
-
 @end
 
 @implementation ViewController
@@ -23,8 +22,7 @@
     .text(@"海贼王", UIControlStateNormal)
     .textColor([UIColor blackColor], UIControlStateNormal);
     
-    self.tableView.makeChain
-    .registerCellClass([UITableViewCell class], @"cell");
+    self.tableView.makeChain.registerCellClass([UITableViewCell class], @"cell");
     
     [self.navigationBar setupTag:0 WithBlock:^(WTCommonNavigationBar * _Nonnull bar) {
         bar.line.hidden = YES;

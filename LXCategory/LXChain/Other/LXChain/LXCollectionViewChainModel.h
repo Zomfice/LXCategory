@@ -10,8 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @class LXCollectionViewChainModel;
-@interface LXCollectionViewChainModel : LXBaseViewChainModel<LXCollectionViewChainModel *>
-LXSCROLLVIEWSUPERCHAINMODEL_INTEFACE(LXCollectionViewChainModel)
+@interface LXCollectionViewChainModel : LXScrollViewChainModel<LXCollectionViewChainModel *>
+
 LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel *(^ collectionViewLayout)(UICollectionViewLayout *collectionViewLayout);
 LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel *(^ delegate)(id<UICollectionViewDelegate> delegate);
 LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel *(^ dataSource)(id<UICollectionViewDataSource> dataSource);
