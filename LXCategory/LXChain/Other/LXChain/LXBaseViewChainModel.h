@@ -34,7 +34,7 @@ LXCATEGORY_CHAIN_PROPERTY modelType * makeChain;\
 
 NS_ASSUME_NONNULL_BEGIN
 @class MASConstraintMaker;
-@interface LXBaseViewChainModel <ObjectType> : NSObject
+@interface LXBaseViewChainModel <__covariant  ObjectType> : NSObject
 
 - (instancetype)initWithTag:(NSInteger)tag andView:(UIView *)view;
 

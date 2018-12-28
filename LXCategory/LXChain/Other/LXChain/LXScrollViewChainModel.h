@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class LXScrollViewChainModel;
 
-@interface LXScrollViewChainModel<ObjectType> : LXBaseViewChainModel<ObjectType>
+@interface LXScrollViewChainModel<__covariant ObjectType> : LXBaseViewChainModel<ObjectType>
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ contentSize) (CGSize contentSize);
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ contentOffset) (CGPoint contentOffset);

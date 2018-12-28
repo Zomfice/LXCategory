@@ -57,15 +57,16 @@
 - (UIButton *)leftButton{
     if (!_leftButton && _delegate) {
         _leftButton = [[self getButtonClassIndex:0] buttonWithType:UIButtonTypeCustom];
-        [_leftButton setTitleColor:[UIColor colorWithHexString:@"666666"] forState:UIControlStateNormal];
-        _leftButton.titleLabel.font = [UIFont systemFontOfSize:17];
-        _leftButton.userInteractionEnabled = NO;
-        [self.leftView addSubview:_leftButton];
-        [_leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        _leftButton.makeChain
+        .textColor([UIColor colorWithHexString:@"666666"], UIControlStateNormal)
+        .font([UIFont systemFontOfSize:17])
+        .userInteractionEnabled(NO)
+        .addToSuperView(self.leftView)
+        .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
             make.left.mas_offset(10);
             make.top.bottom.mas_offset(0);
             make.right.mas_offset(-20);
-        }];
+        });
     }
     return _leftButton;
 }
@@ -73,14 +74,15 @@
 - (UIView *)leftView{
     if (!_leftView) {
         _leftView = [UIView new];
-        [self addSubview:_leftView];
-        [_leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+        _leftView.makeChain
+        .addToSuperView(self)
+        .addGesture([[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(leftViewTap)])
+        .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
             make.left.mas_offset(0);
             make.bottom.equalTo(self.line.mas_top);
             make.top.mas_offset(StatusBarHeight);
             make.width.lessThanOrEqualTo(@(100));
-        }];
-        [_leftView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(leftViewTap)]];
+        });
     }
     return _leftView;
 }
@@ -94,17 +96,18 @@
 - (UIButton *)middleButton{
     if (!_middleButton) {
         _middleButton = [[self getButtonClassIndex:1] buttonWithType:UIButtonTypeCustom];
-        _middleButton.titleLabel.font = [UIFont systemFontOfSize:17];
+        _middleButton.makeChain
+        .font([UIFont systemFontOfSize:17])
+        .textColor([UIColor colorWithHexString:@"474747"], UIControlStateNormal)
+        .addToSuperView(self)
+        .addTarget(self, @selector(middleButtonTap), UIControlEventTouchUpInside)
+        .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
+            make.centerX.equalTo(self);
+            make.width.lessThanOrEqualTo(@([UIScreen mainScreen].bounds.size.width - 140));
+            make.top.mas_offset(StatusBarHeight);
+            make.bottom.equalTo(self.line.mas_top);
+        });
         _middleButton.titleLabel.numberOfLines = 1;
-        [_middleButton setTitleColor:[UIColor colorWithHexString:@"474747"] forState:UIControlStateNormal];
-        [self addSubview:_middleButton];
-        [_middleButton mas_makeConstraints:^(MASConstraintMaker *make) {
-             make.centerX.equalTo(self);
-             make.width.lessThanOrEqualTo(@([UIScreen mainScreen].bounds.size.width - 140));
-             make.top.mas_offset(StatusBarHeight);
-             make.bottom.equalTo(self.line.mas_top);
-         }];
-        [_middleButton addTarget:self action:@selector(middleButtonTap) forControlEvents:UIControlEventTouchUpInside];
     }
     return _middleButton;
 }
@@ -118,15 +121,16 @@
 - (UIButton *)rightButton{
     if (!_rightButton && _delegate) {
         _rightButton = [[self getButtonClassIndex:2] buttonWithType:UIButtonTypeCustom];
-        _rightButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [_rightButton setTitleColor:[UIColor colorWithHexString:@"474747"] forState:UIControlStateNormal];
-        [self.rightView addSubview:_rightButton];
-        _rightButton.userInteractionEnabled = NO;
-        [_rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-             make.right.mas_offset(-10);
-             make.top.bottom.mas_offset(0);
-             make.right.mas_offset(-20);
-         }];
+        _rightButton.makeChain
+        .textColor([UIColor colorWithHexString:@"474747"], UIControlStateNormal)
+        .font([UIFont systemFontOfSize:17])
+        .userInteractionEnabled(NO)
+        .addToSuperView(self.rightView)
+        .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
+            make.left.mas_offset(10);
+            make.top.bottom.mas_offset(0);
+            make.right.mas_offset(-20);
+        });
     }
     return _rightButton;
 }
@@ -134,14 +138,15 @@
 - (UIView *)rightView{
     if (!_rightView) {
         _rightView = [UIView new];
-        [self addSubview:_rightView];
-        [_rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+        _rightView.makeChain
+        .addToSuperView(self)
+        .addGesture([[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rightViewTap)])
+        .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
             make.right.mas_offset(0);
             make.bottom.equalTo(self.line.mas_top);
             make.top.mas_offset(StatusBarHeight);
             make.width.lessThanOrEqualTo(@(100 *UTILS_SCALE));
-        }];
-        [_rightView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rightViewTap)]];
+        });
     }
     return _rightView;
 }
@@ -170,9 +175,9 @@
 
 - (UIView *)line{
     if (!_line) {
-        _line = [UIView new];
-        _line.backgroundColor = [UIColor colorWithHexString:@"dbdbdb"];
-        [self addSubview:_line];
+        _line = [UIView new].makeChain
+        .backgroundColor([UIColor colorWithHexString:@"dbdbdb"])
+        .addToSuperView(self).view;
     }
     return _line;
 }

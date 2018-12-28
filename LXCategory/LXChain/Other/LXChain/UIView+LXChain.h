@@ -18,6 +18,7 @@
 #import "LXTableViewChainModel.h"
 #import "LXCollectionViewChainModel.h"
 #import "LXTextViewChainModel.h"
+#import "LXTableViewCellChainModel.h"
 NS_ASSUME_NONNULL_BEGIN
 #define LXCATEGORY_STRONG_PROPERTY @property (nonatomic, strong, readonly)
 @interface UIView (LXChain)

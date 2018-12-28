@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LXCategory.h"
+#import "UIView+LXChain.h"
 #import "Masonry.h"
 NS_ASSUME_NONNULL_BEGIN
 @protocol WTCommonNavigationBarDelegate <NSObject>

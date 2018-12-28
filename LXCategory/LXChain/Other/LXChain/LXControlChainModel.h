@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @class LXControlChainModel;
-@interface LXControlChainModel <ObjectType>: LXBaseViewChainModel<ObjectType>
+@interface LXControlChainModel <__covariant ObjectType>: LXBaseViewChainModel<ObjectType>
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ enabled)(BOOL enabled);
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ selected)(BOOL selected);
