@@ -35,7 +35,7 @@
     };  \
 }
 
-#define LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, id,UIView)
+#define LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, id,UIView)
 
 
 #define     LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(LXMethod,LXParaType) \
@@ -428,4 +428,14 @@ LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(masonry, mas_makeConstraints);
 LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(updateMasonry, mas_updateConstraints);
 LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(remakeMasonry, mas_remakeConstraints);
 #endif
+
+- (id  _Nonnull (^)(void (^ _Nonnull)(id _Nonnull)))assignTo{
+    return ^ (void (^assignTo)(id view)){
+        if (assignTo) {
+            assignTo(self.view);
+        }
+        return self;
+    };
+}
+
 @end

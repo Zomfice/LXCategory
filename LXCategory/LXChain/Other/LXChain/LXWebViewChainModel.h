@@ -13,5 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LXWebViewChainModel : LXScrollViewChainModel<LXWebViewChainModel *>
 
 @end
+LXCreate(WKWebView)
 LXCATEGORY_EXINTERFACE(WKWebView, LXWebViewChainModel)
 NS_ASSUME_NONNULL_END

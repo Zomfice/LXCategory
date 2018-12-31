@@ -21,5 +21,6 @@ LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ onImage)(UIImage *onImage);
 LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ offImage)(UIImage *offImage);
 
 @end
+LXCreate(UISwitch)
 LXCATEGORY_EXINTERFACE(UISwitch, LXSwitchChainModel)
 NS_ASSUME_NONNULL_END

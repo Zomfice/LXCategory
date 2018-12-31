@@ -29,5 +29,9 @@ LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel *(^ registerViewNib)(UINib 
 
 LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel * (^ adJustedContentIOS11)(void);
 @end
+LXCreate(UICollectionView)
+static inline UICollectionView *UICollectionViewCreateWithLayout(UICollectionViewFlowLayout *layout){
+    return [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+}
 LXCATEGORY_EXINTERFACE(UICollectionView, LXCollectionViewChainModel)
 NS_ASSUME_NONNULL_END

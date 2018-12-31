@@ -7,7 +7,7 @@
 //
 
 #import "LXTableViewChainModel.h"
-#define LXCATEGORY_CHAIN_TABLEVIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXTableViewChainModel *,UITableView)
+#define LXCATEGORY_CHAIN_TABLEVIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXTableViewChainModel *,UITableView)
 @implementation LXTableViewChainModel
 
 
@@ -69,9 +69,10 @@ LXCATEGORY_CHAIN_TABLEVIEW_IMPLEMENTATION(sectionIndexColor, UIColor *)
 - (LXTableViewChainModel * _Nonnull (^)(Class  _Nonnull __unsafe_unretained, NSString * _Nonnull))registerViewClass{
     return ^ (Class class, NSString *identifier){
         [(UITableView *)self.view registerClass:class forHeaderFooterViewReuseIdentifier:identifier];
+        
         return self;
     };
 }
 
 @end
-LXCATEGORY_IMPLEMENTATION(UITableView, LXTableViewChainModel)
+LXCATEGORY_VIEW_IMPLEMENTATION(UITableView, LXTableViewChainModel)

@@ -42,5 +42,9 @@ LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ titleShadow) (UIColor *color, U
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ font) (UIFont *font);
 
 @end
+LXCreate(UIButton)
+static inline UIButton *UIButtonCreateWithType(UIButtonType buttonType){
+    return [UIButton buttonWithType:buttonType];
+}
 LXCATEGORY_EXINTERFACE(UIButton, LXButtonChainModel)
 NS_ASSUME_NONNULL_END

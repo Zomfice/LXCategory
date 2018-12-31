@@ -19,6 +19,12 @@
 #import "LXCollectionViewChainModel.h"
 #import "LXTextViewChainModel.h"
 #import "LXTableViewCellChainModel.h"
+#import "LXPanGestureChainModel.h"
+#import "LXTapGestureChainModel.h"
+#import "LXSwipeGestureChainModel.h"
+#import "LXPinchGestureChainModel.h"
+#import "LXRotationGestureChainModel.h"
+#import "LXLongPressGestureChainModel.h"
 NS_ASSUME_NONNULL_BEGIN
 #define LXCATEGORY_STRONG_PROPERTY @property (nonatomic, strong, readonly)
 @interface UIView (LXChain)

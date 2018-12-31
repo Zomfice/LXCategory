@@ -7,7 +7,7 @@
 //
 
 #import "LXTextFieldChainModel.h"
-#define LXCATEGORY_CHAIN_TEXTFIELD_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXTextFieldChainModel *,UITextField)
+#define LXCATEGORY_CHAIN_TEXTFIELD_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXTextFieldChainModel *,UITextField)
 
 @implementation LXTextFieldChainModel
 
@@ -63,4 +63,4 @@ LXCATEGORY_CHAIN_TEXTFIELD_IMPLEMENTATION(inputAccessoryView, UIView *);
 }
 
 @end
-LXCATEGORY_IMPLEMENTATION(UITextField, LXTextFieldChainModel)
+LXCATEGORY_VIEW_IMPLEMENTATION(UITextField, LXTextFieldChainModel)

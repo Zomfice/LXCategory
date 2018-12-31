@@ -16,18 +16,30 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LXControlChainModel <__covariant ObjectType>: LXBaseViewChainModel<ObjectType>
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ enabled)(BOOL enabled);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ selected)(BOOL selected);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ highlighted)(BOOL highlighted);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ contentVerticalAlignment)(UIControlContentVerticalAlignment contentVerticalAlignment);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ contentHorizontalAlignment)(UIControlContentHorizontalAlignment contentHorizontalAlignment);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTargetBlock)(void (^addTargetBlock)(id sender), UIControlEvents controlEvents);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ setTargetBlock)(void (^addTargetBlock)(id sender), UIControlEvents controlEvents);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTarget)(id target, SEL action, UIControlEvents controlEvents);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ setTarget)(id target, SEL action, UIControlEvents controlEvents);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ removeTarget) (id target,SEL action, UIControlEvents controlEvents);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ removeAllTarget)(void);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ removeAllTargetBlock)(UIControlEvents controlEvents);
 
 @end
+LXCreate(UIControl)
 LXCATEGORY_EXINTERFACE(UIControl, LXControlChainModel)
 NS_ASSUME_NONNULL_END

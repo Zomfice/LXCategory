@@ -54,5 +54,6 @@ LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ placeholderFont)(UIFont *fon
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ placeholderColor)(UIColor *color);
 
 @end
+LXCreate(UITextField)
 LXCATEGORY_EXINTERFACE(UITextField, LXTextFieldChainModel)
 NS_ASSUME_NONNULL_END

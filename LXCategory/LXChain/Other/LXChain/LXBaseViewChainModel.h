@@ -6,32 +6,16 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LXChainDefine.h"
 
+#define LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXModelType, LXPropertyClass) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, view, LXModelType, LXPropertyClass)
 
-#define LXCATEGORY_CHAIN_PROPERTY @property (nonatomic, copy, readonly)
-
-#define LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXModelType, LXViewClass)\
-- (LXModelType  _Nonnull (^)(LXParaType))LXMethod{\
-    return ^ (LXParaType LXMethod){\
-        ((LXViewClass *)self.view).LXMethod = LXMethod;\
-        return self;\
-    };\
-}\
-
-#define LXCATEGORY_EXINTERFACE(LXView, modelType)\
-@interface LXView(EXT)\
-LXCATEGORY_CHAIN_PROPERTY modelType * makeChain;\
-@end
-
-#define LXCATEGORY_IMPLEMENTATION(LXView, modelType)\
-@implementation LXView (EXT)\
+#define LXCATEGORY_VIEW_IMPLEMENTATION(LXClass, modelType)\
+@implementation LXClass (EXT)\
 - (modelType *)makeChain{\
-    return [[modelType alloc] initWithTag:self.tag andView:self];\
+return [[modelType alloc] initWithTag:self.tag andView:self];\
 }\
 @end
-
-
 NS_ASSUME_NONNULL_BEGIN
 @class MASConstraintMaker;
 @interface LXBaseViewChainModel <__covariant  ObjectType> : NSObject
@@ -174,6 +158,8 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ makeMasonry)( void (^constraints)(MASCon
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ updateMasonry)( void (^constraints)(MASConstraintMaker *make) );
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ remakeMasonry)( void (^constraints)(MASConstraintMaker *make) );
+
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ assignTo)(void (^assignTo)(id view));
 
 @end
 

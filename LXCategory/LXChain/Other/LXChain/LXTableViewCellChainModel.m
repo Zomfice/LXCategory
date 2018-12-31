@@ -7,7 +7,7 @@
 //
 
 #import "LXTableViewCellChainModel.h"
-#define LXCATEGORY_CHAIN_TABLEVIEWCELL_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXTableViewCellChainModel *,UITableViewCell)
+#define LXCATEGORY_CHAIN_TABLEVIEWCELL_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXTableViewCellChainModel *,UITableViewCell)
 @implementation LXTableViewCellChainModel
 
 LXCATEGORY_CHAIN_TABLEVIEWCELL_IMPLEMENTATION(selectionStyle, UITableViewCellSelectionStyle)
@@ -24,4 +24,4 @@ LXCATEGORY_CHAIN_TABLEVIEWCELL_IMPLEMENTATION(userInteractionEnabledWhileDraggin
     };
 }
 @end
-LXCATEGORY_IMPLEMENTATION(UITableViewCell, LXTableViewCellChainModel)
+LXCATEGORY_VIEW_IMPLEMENTATION(UITableViewCell, LXTableViewCellChainModel)

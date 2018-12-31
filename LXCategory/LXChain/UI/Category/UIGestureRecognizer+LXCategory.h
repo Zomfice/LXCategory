@@ -10,7 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^GestureTargetAction)(id gesture);
 @interface UIGestureRecognizer (LXCategory)
+
+- (instancetype)initWithActionBlock:(void (^)(id sender))block;
+
+- (void)addTargetBlock:(GestureTargetAction)block;
+
+- (void)addTargetBlock:(GestureTargetAction)block tag:(NSString *)tag;
+
+- (void)removeTargetBlockByTag:(NSString *)tag;
+
+- (void)removeAllTargetBlock;
 
 @end
 

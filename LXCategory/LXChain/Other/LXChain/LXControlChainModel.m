@@ -7,7 +7,7 @@
 //
 
 #import "LXControlChainModel.h"
-#define LXCATEGORY_CHAIN_CONTROL_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, id ,UIControl)
+#define LXCATEGORY_CHAIN_CONTROL_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, id ,UIControl)
 
 @implementation LXControlChainModel
 
@@ -62,4 +62,4 @@ LXCATEGORY_CHAIN_CONTROL_IMPLEMENTATION(contentHorizontalAlignment, UIControlCon
 }
 
 @end
-LXCATEGORY_IMPLEMENTATION(UIControl, LXControlChainModel)
+LXCATEGORY_VIEW_IMPLEMENTATION(UIControl, LXControlChainModel)

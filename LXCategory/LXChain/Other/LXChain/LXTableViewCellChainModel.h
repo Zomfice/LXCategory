@@ -20,5 +20,9 @@ LXCATEGORY_CHAIN_PROPERTY LXTableViewCellChainModel * (^ focusStyle)(UITableView
 LXCATEGORY_CHAIN_PROPERTY LXTableViewCellChainModel * (^ userInteractionEnabledWhileDragging)(BOOL userInteractionEnabledWhileDragging);
 
 @end
+LXCreate(UITableViewCell)
+static inline UITableViewCell * UITableViewCellCreateWithStyleAndIndentify(UITableViewCellStyle style, NSString *identifier){
+    return [[UITableViewCell alloc] initWithStyle:style reuseIdentifier:identifier];
+}
 LXCATEGORY_EXINTERFACE(UITableViewCell, LXTableViewCellChainModel)
 NS_ASSUME_NONNULL_END

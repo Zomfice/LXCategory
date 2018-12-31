@@ -35,5 +35,6 @@ LXCATEGORY_CHAIN_PROPERTY LXTextViewChainModel *(^ clearsOnInsertion)(BOOL clear
 LXCATEGORY_CHAIN_PROPERTY LXTextViewChainModel *(^ textContainerInset)(UIEdgeInsets textContainerInset);
 LXCATEGORY_CHAIN_PROPERTY LXTextViewChainModel *(^ linkTextAttributes)(NSDictionary *linkTextAttributes);
 @end
+LXCreate(UITextView)
 LXCATEGORY_EXINTERFACE(UITextView, LXTextViewChainModel)
 NS_ASSUME_NONNULL_END

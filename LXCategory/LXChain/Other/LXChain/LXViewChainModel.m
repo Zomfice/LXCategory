@@ -11,4 +11,4 @@
 @implementation LXViewChainModel
 
 @end
-LXCATEGORY_IMPLEMENTATION(UIView, LXViewChainModel)
+LXCATEGORY_VIEW_IMPLEMENTATION(UIView, LXViewChainModel)

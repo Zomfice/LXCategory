@@ -10,7 +10,8 @@
 #import "LXCategory.h"
 #import "LXDefine.h"
 #import "UIView+LXChain.h"
-@interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol>
+@interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol, UIGestureRecognizerDelegate>
+@property (nonatomic, strong) UILabel * label;
 @end
 
 @implementation ViewController
@@ -41,27 +42,23 @@
         }];
         
     }];
-    
     [self.navigationBar setTag:0];
-    
-    
-    
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSDate *startDate = [dateFormatter dateFromString:@"2018-07-27"];
-    NSDate *endDate = [dateFormatter dateFromString:@"2018-12-31"];
-    
-    //利用NSCalendar比较日期的差异
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSCalendarUnit unit = NSCalendarUnitDay;//只比较天数差异
-    //比较的结果是NSDateComponents类对象
-    NSDateComponents *delta = [calendar components:unit fromDate:startDate toDate:endDate options:0];
-    //打印
-    NSLog(@"%@",delta);
-    //获取其中的"天"
-    NSLog(@"%f",delta.day * 1.0 / 365 * 5);
-    
+   
+    UILabelCreate()
+    .makeChain
+    .text(@"23")
+    .textColor([UIColor yellowColor])
+    .frame(CGRectMake(0, 0, 100, 100))
+    .addToSuperView(self.view)
+    .backgroundColor([UIColor randomColor])
+    .center(self.view.center)
+    .userInteractionEnabled(YES)
+    .addGesture([[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+        NSLog(@"1");
+    }].makeChain.delegate(self).gesture)
+    .assignTo(^(id  _Nonnull view) {
+        self.label = view;
+    });
     // Do any additional setup after loading the view, typically from a nib.
 }
 

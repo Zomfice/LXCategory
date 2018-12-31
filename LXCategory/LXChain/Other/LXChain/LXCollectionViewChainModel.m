@@ -7,7 +7,7 @@
 //
 
 #import "LXCollectionViewChainModel.h"
-#define LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXCollectionViewChainModel *,UICollectionView)
+#define LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXCollectionViewChainModel *,UICollectionView)
 @implementation LXCollectionViewChainModel
 
 LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(collectionViewLayout, UICollectionViewLayout *)
@@ -54,4 +54,4 @@ LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(allowsMultipleSelection, BOOL)
 }
 
 @end
-LXCATEGORY_IMPLEMENTATION(UICollectionView, LXCollectionViewChainModel)
+LXCATEGORY_VIEW_IMPLEMENTATION(UICollectionView, LXCollectionViewChainModel)

@@ -37,5 +37,6 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ delegate) (id <UIScrollViewDelegate> del
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ adJustedContentIOS11)(void);
 
 @end
+LXCreate(UIScrollView)
 LXCATEGORY_EXINTERFACE(UIScrollView, LXScrollViewChainModel)
 NS_ASSUME_NONNULL_END

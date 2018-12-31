@@ -32,5 +32,6 @@ LXCATEGORY_CHAIN_PROPERTY LXImageViewChainModel *(^ animationRepeatCount)(NSInte
 LXCATEGORY_CHAIN_PROPERTY LXImageViewChainModel *(^ animationDuration)(NSTimeInterval animationDuration);
 
 @end
+LXCreate(UIImageView)
 LXCATEGORY_EXINTERFACE(UIImageView, LXImageViewChainModel)
 NS_ASSUME_NONNULL_END

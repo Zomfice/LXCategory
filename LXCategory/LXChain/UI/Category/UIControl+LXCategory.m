@@ -43,7 +43,7 @@ static const int block_key;
     if (!block) return;
     LXControlTarget *target = [[LXControlTarget alloc] initWithBlock:block events:events];
     [self addTarget:target action:@selector(sendControl:) forControlEvents:events];
-    NSMutableArray *targets = [self controlTarges];
+    NSMutableArray *targets = [self lx_controlTarges];
     [targets addObject:target];
 }
 
@@ -51,7 +51,7 @@ static const int block_key;
     [self.allTargets enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
         [self removeTarget:obj action:NULL forControlEvents:UIControlEventAllEvents];
     }];
-    [[self controlTarges] removeAllObjects];
+    [[self lx_controlTarges] removeAllObjects];
 }
 
 - (void)setTarget:(id)target eventAction:(SEL)action forControlEvents:(UIControlEvents)events{
@@ -73,7 +73,7 @@ static const int block_key;
 
 - (void)removeAllEventBlocksForEvents:(UIControlEvents)controlEvents{
     if (!controlEvents) return;
-    NSMutableArray *targets = [self controlTarges];
+    NSMutableArray *targets = [self lx_controlTarges];
     NSMutableArray *removes = [NSMutableArray array];
     for (LXControlTarget *target in targets) {
         if (target.events & controlEvents) {
@@ -92,7 +92,7 @@ static const int block_key;
 }
 
 
-- (NSMutableArray <LXControlTarget *>*)controlTarges{
+- (NSMutableArray <LXControlTarget *>*)lx_controlTarges{
     NSMutableArray *targets = objc_getAssociatedObject(self, &block_key);
     if (!targets) {
         targets = [NSMutableArray array];

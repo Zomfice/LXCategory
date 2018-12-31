@@ -48,5 +48,10 @@ LXCATEGORY_CHAIN_PROPERTY LXTableViewChainModel *(^ registerViewClass)(Class vie
 LXCATEGORY_CHAIN_PROPERTY LXTableViewChainModel *(^ registerViewNib)(UINib * viewNib, NSString *identifier);
 
 @end
+
+LXCreate(UITableView)
+static inline UITableView * UITableViewCreateWithStyle(UITableViewStyle style){
+    return [[UITableView alloc]initWithFrame:CGRectZero style:style];
+}
 LXCATEGORY_EXINTERFACE(UITableView, LXTableViewChainModel)
 NS_ASSUME_NONNULL_END

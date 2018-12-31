@@ -22,6 +22,6 @@ LXCATEGORY_CHAIN_PROPERTY LXLabelChainModel *(^ lineBreakMode)(NSLineBreakMode l
 LXCATEGORY_CHAIN_PROPERTY LXLabelChainModel *(^ adjustsFontSizeToFitWidth)(BOOL adjustsFontSizeToFitWidth);
 
 @end
-
+LXCreate(UILabel)
 LXCATEGORY_EXINTERFACE(UILabel, LXLabelChainModel)
 NS_ASSUME_NONNULL_END

@@ -8,7 +8,7 @@
 
 #import "LXButtonChainModel.h"
 
-#define LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXButtonChainModel *,UIButton)
+#define LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXButtonChainModel *,UIButton)
 @implementation LXButtonChainModel
 
 LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(contentEdgeInsets, UIEdgeInsets)
@@ -75,4 +75,4 @@ LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(reversesTitleShadowWhenHighlighted, BOOL)
 }
 
 @end
-LXCATEGORY_IMPLEMENTATION(UIButton, LXButtonChainModel)
+LXCATEGORY_VIEW_IMPLEMENTATION(UIButton, LXButtonChainModel)

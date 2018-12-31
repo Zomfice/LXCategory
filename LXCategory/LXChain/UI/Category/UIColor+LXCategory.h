@@ -15,6 +15,40 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 
 + (UIColor *)colorWithHexString:(NSString *)hexStr alpha:(CGFloat)alpha;
+
++ (UIColor *)randomColor;
+
++ (UIColor *)percentR:(NSInteger)r g:(NSInteger)g b:(NSInteger)b alpha:(CGFloat)alpha;
+
+- (NSString *)hexString;
+
+- (NSString *)hexStringWithAplha;
+
+- (UIColor *)addColor:(UIColor *)acolor blendMode:(CGBlendMode)blendModel;
+
+@property (nonatomic, assign, readonly) CGFloat  red;
+
+@property (nonatomic, assign, readonly) CGFloat  green;
+
+@property (nonatomic, assign, readonly) CGFloat  blue;
+
+@property (nonatomic, assign, readonly) CGFloat  alpha;
+
+@property (nonatomic, assign, readonly) CGFloat  hue;
+
+@property (nonatomic, assign, readonly) CGFloat  saturation;
+
+@property (nonatomic, assign, readonly) CGFloat  brightness;
+
+@property (nonatomic, readonly) CGColorSpaceModel colorSpaceModel;
+
+@property (nonatomic, readonly) NSString *colorSpaceString;
+
+/**
+ 反色调
+ */
+- (UIColor *)antiColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

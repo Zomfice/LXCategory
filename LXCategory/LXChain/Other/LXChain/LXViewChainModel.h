@@ -10,11 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LXViewChainModel;
+@class LXViewChainModel,UIView;
 @interface LXViewChainModel : LXBaseViewChainModel<LXViewChainModel *>
 
 @end
 
+LXCreate(UIView)
 LXCATEGORY_EXINTERFACE(UIView, LXViewChainModel)
 
 NS_ASSUME_NONNULL_END
