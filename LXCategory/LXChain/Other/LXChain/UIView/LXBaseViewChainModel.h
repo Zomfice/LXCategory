@@ -125,6 +125,16 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ insertSubViewIndex) (UIView* above, NSIn
 
 #pragma mark - layer -
 
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shouldRasterize)(BOOL shouldRasterize);
+
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ layerOpacity)(float layerOpacity);
+
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ layerBackGroundColor)(UIColor * backgroundColor);
+
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ layerOpaque)(BOOL opaque);
+
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ rasterizationScale)(CGFloat rasterizationScale);
+
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ masksToBounds)(BOOL masksToBounds);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ cornerRadius)(CGFloat cornerRadius);
@@ -150,6 +160,8 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shadowOffset)(CGSize shadowOffset);
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shadowRadius)(CGFloat shadowRadius);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ transform)(CATransform3D transform);
+
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shadowPath) (CGPathRef shadowPath);
 
 #pragma mark - layout -
 

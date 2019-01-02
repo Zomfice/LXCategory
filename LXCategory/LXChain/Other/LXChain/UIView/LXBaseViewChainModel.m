@@ -42,7 +42,7 @@
 - (id (^)(LXParaType LXMethod))LXMethod    \
 {   \
     return ^id (LXParaType LXMethod) {    \
-        LXMethod = LXMethod;   \
+        self.view.layer.LXMethod = LXMethod;   \
         return self;    \
     };\
 }
@@ -96,115 +96,33 @@ LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(right, CGFloat)
 
 - (CGFloat (^)(void))visibleAlpha{
     return ^(){
-        CGFloat ap = 0;
-        if ([self isKindOfClass:[UIWindow class]]) {
-            if (self.hidden) ap = 0;
-            ap = self.view.alpha;
-        }
-        if (!self.view.window) ap = 0;
-        ap = 1;
-        UIView *v = self.view;
-        while (v) {
-            if (v.hidden) {
-                ap = 0;
-                break;
-            }
-            ap *= v.alpha;
-            v = v.superview;
-        }
-        return ap;
+        return [self.view visibleAlpha];
     };
 }
 
 
 - (CGRect (^)(CGRect, UIView * _Nonnull))convertRectTo{
     return  ^(CGRect rect, UIView *view){
-        UIView *myView = self.view;
-        CGRect toRect;
-        if (!view) {
-            if ([myView isKindOfClass:[UIWindow class]]) {
-                toRect = [((UIWindow *)myView) convertRect:rect toWindow:nil];
-            } else {
-                toRect = [myView convertRect:rect toView:nil];
-            }
-        }
-        
-        UIWindow *from = [myView isKindOfClass:[UIWindow class]] ? (id)myView : myView.window;
-        UIWindow *to = [view isKindOfClass:[UIWindow class]] ? (id)view : view.window;
-        if (!from || !to) return [myView convertRect:rect toView:view];
-        if (from == to) return [myView convertRect:rect toView:view];
-        rect = [myView convertRect:rect toView:from];
-        rect = [to convertRect:rect fromWindow:from];
-        toRect = [view convertRect:rect fromView:to];
-        return toRect;
+        return [self.view convertRectTo:rect :view];
     };
 }
 
 
 - (CGRect (^)(CGRect, UIView * _Nonnull))convertRectFrom{
-    
     return  ^(CGRect rect, UIView *view){
-        CGRect fromRect;
-        UIView *myView = self.view;
-        if (!view) {
-            if ([myView isKindOfClass:[UIWindow class]]) {
-                fromRect = [((UIWindow *)myView) convertRect:rect fromWindow:nil];
-            } else {
-                fromRect = [myView convertRect:rect fromView:nil];
-            }
-        }
-        
-        UIWindow *from = [view isKindOfClass:[UIWindow class]] ? (id)view : view.window;
-        UIWindow *to = [myView isKindOfClass:[UIWindow class]] ? (id)myView : myView.window;
-        if ((!from || !to) || (from == to)) return [myView convertRect:rect fromView:view];
-        rect = [from convertRect:rect fromView:view];
-        rect = [to convertRect:rect fromWindow:from];
-        fromRect = [myView convertRect:rect fromView:to];
-        return fromRect;
+        return [self.view convertRectFrom:rect :view];
     };
 }
 
 - (CGPoint (^)(CGPoint, UIView * _Nonnull))convertPointTo{
     return  ^(CGPoint point, UIView *view){
-        UIView *myView = self.view;
-        CGPoint endPoint;
-        if (!view) {
-            if ([myView isKindOfClass:[UIWindow class]]) {
-                endPoint = [((UIWindow *)myView) convertPoint:point toWindow:nil];
-            } else {
-                endPoint = [myView convertPoint:point toView:nil];
-            }
-        }
-        
-        UIWindow *from = [myView isKindOfClass:[UIWindow class]] ? (id)myView : myView.window;
-        UIWindow *to = [view isKindOfClass:[UIWindow class]] ? (id)view : view.window;
-        if ((!from || !to) || (from == to)) return [myView convertPoint:point toView:view];
-        point = [myView convertPoint:point toView:from];
-        point = [to convertPoint:point fromWindow:from];
-        endPoint = [view convertPoint:point fromView:to];
-        return endPoint;
+        return [self.view convertPointTo:point :view];
     };
 }
 
 - (CGPoint (^)(CGPoint, UIView * _Nonnull))convertPointFrom{
     return  ^(CGPoint point, UIView *view){
-        CGPoint endPoint;
-        UIView *myView = self.view;
-        if (!view) {
-            if ([myView isKindOfClass:[UIWindow class]]) {
-                endPoint = [(UIWindow *)myView convertPoint:point fromWindow:nil];
-            }else{
-                endPoint = [myView convertPoint:point fromView:nil];
-            }
-        }else{
-            UIWindow *from = [view isKindOfClass:[UIWindow class]] ? (id)view : view.window;
-            UIWindow *to = [myView isKindOfClass:[UIWindow class]] ? (id)myView : myView.window;
-            if ((!from || !to) || (from == to)) return [myView convertPoint:point fromView:view];
-            point = [from convertPoint:point fromView:view];
-            point = [to convertPoint:point fromWindow:from];
-            endPoint = [myView convertPoint:point fromView:to];
-        }
-        return endPoint;
+        return [self.view convertPointFrom:point :view];
     };
 }
 #pragma mark - show -
@@ -382,7 +300,6 @@ LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(contentMode, UIViewContentMode)
 - (id (^)(CGFloat cornerRadius))cornerRadius
 {
     return ^__kindof LXBaseViewChainModel *(CGFloat cornerRadius) {
-        [self.view.layer setMasksToBounds:YES];
         [self.view.layer setCornerRadius:cornerRadius];
         return self;
     };
@@ -407,6 +324,28 @@ LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(contentMode, UIViewContentMode)
         return self;
     };
 }
+
+- (id  _Nonnull (^)(float))layerOpacity{
+    return ^ (float opacity){
+        self.view.layer.opacity = opacity;
+        return self;
+    };
+}
+
+- (id  _Nonnull (^)(BOOL))layerOpaque{
+    return ^ (BOOL opaque){
+        self.view.layer.opaque = opaque;
+        return self;
+    };
+}
+
+- (id  _Nonnull (^)(UIColor * _Nonnull))layerBackGroundColor{
+    return ^ (UIColor *color){
+        self.view.layer.backgroundColor = color.CGColor;
+        return self;
+    };
+}
+
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(masksToBounds, BOOL);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shadowColor, CGColorRef);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shadowOpacity, CGFloat);
@@ -417,7 +356,9 @@ LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(borderWidth, CGFloat);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(borderColor, CGColorRef);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(zPosition, CGFloat);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(anchorPoint, CGPoint);
-
+LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shouldRasterize, BOOL);
+LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(rasterizationScale, CGFloat);
+LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shadowPath, CGPathRef);
 
 #if __has_include(<Masonry.h>) || __has_include("Masonry.h")
 LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION(makeMasonry, mas_makeConstraints);

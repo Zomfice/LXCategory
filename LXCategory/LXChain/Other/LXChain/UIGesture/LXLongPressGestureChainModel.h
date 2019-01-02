@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @class LXLongPressGestureChainModel;
 @interface LXLongPressGestureChainModel : LXBaseGestureChainModel<LXLongPressGestureChainModel *>
+
 LXCATEGORY_CHAIN_PROPERTY LXLongPressGestureChainModel * (^ numberOfTapsRequired) (NSUInteger numberOfTapsRequired);
 
 LXCATEGORY_CHAIN_PROPERTY LXLongPressGestureChainModel * (^ minimumPressDuration) (NSTimeInterval minimumPressDuration);

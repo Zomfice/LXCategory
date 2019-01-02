@@ -126,10 +126,173 @@
     self.frame = frame;
 }
 
-- (void)setCornerRadiusAngle:(UIRectCorner)corner cornerSize:(CGSize)size{
-    
+- (void)removeAllSubViews{
+    while (self.subviews.count == 0) {
+        [[self.subviews firstObject] removeFromSuperview];
+    }
+}
+
+- (UIViewController *)viewController{
+    id nextResponder = [self nextResponder];
+    UIView *view = self;
+    while (![nextResponder isKindOfClass:[UIViewController class]]) {
+        view = view.superview;
+        nextResponder = [view nextResponder];
+    }
+    return nextResponder;
+}
+
+- (CGFloat)visibleAlpha{
+    if ([self isKindOfClass:[UIWindow class]]) {
+        if (self.hidden) return 0;
+        return self.alpha;
+    }
+    if (!self.window) return 0;
+    CGFloat alpha = 1;
+    UIView *v = self;
+    while (v) {
+        if (v.hidden) {
+            alpha = 0;
+            break;
+        }
+        alpha *= v.alpha;
+        v = v.superview;
+    }
+    return alpha;
+}
+
+- (UIImage *)snapshotImage{
+    UIGraphicsBeginImageContextWithOptions(self.size, self.opaque > 0, 0);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return snap;
+}
+
+- (UIImage *)snapshotImageAfterScreenUpdates:(BOOL)afterUpdates{
+    if (![self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+        return [self snapshotImage];
+    }
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque > 0, 0);
+    [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:afterUpdates];
+    UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return snap;
 }
 
 
+- (NSData *)snapshotPDF{
+    CGRect bounds = self.bounds;
+    NSMutableData *data = [NSMutableData data];
+    CGDataConsumerRef consumer = CGDataConsumerCreateWithCFData((__bridge CFMutableDataRef)data);
+    CGContextRef context = CGPDFContextCreate(consumer, &bounds, NULL);
+    CGDataConsumerRelease(consumer);
+    if (!context) return nil;
+    CGPDFContextBeginPage(context, NULL);
+    CGContextTranslateCTM(context, 0, bounds.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    [self.layer renderInContext:context];
+    CGPDFContextEndPage(context);
+    CGPDFContextClose(context);
+    CGContextRelease(context);
+    return data;
+}
+
+#pragma mark - convert -
+- (CGPoint)convertPointTo:(CGPoint)point :(UIView *)view{
+    UIView *myView = self;
+    CGPoint endPoint;
+    if (!view) {
+        if ([myView isKindOfClass:[UIWindow class]]) {
+            endPoint = [((UIWindow *)myView) convertPoint:point toWindow:nil];
+        } else {
+            endPoint = [myView convertPoint:point toView:nil];
+        }
+    }
+    
+    UIWindow *from = [myView isKindOfClass:[UIWindow class]] ? (id)myView : myView.window;
+    UIWindow *to = [view isKindOfClass:[UIWindow class]] ? (id)view : view.window;
+    if ((!from || !to) || (from == to)) return [myView convertPoint:point toView:view];
+    point = [myView convertPoint:point toView:from];
+    point = [to convertPoint:point fromWindow:from];
+    endPoint = [view convertPoint:point fromView:to];
+    return endPoint;
+}
+- (CGPoint)convertPointFrom:(CGPoint)point :(UIView *)view{
+    CGPoint endPoint;
+    UIView *myView = self;
+    if (!view) {
+        if ([myView isKindOfClass:[UIWindow class]]) {
+            endPoint = [(UIWindow *)myView convertPoint:point fromWindow:nil];
+        }else{
+            endPoint = [myView convertPoint:point fromView:nil];
+        }
+    }else{
+        UIWindow *from = [view isKindOfClass:[UIWindow class]] ? (id)view : view.window;
+        UIWindow *to = [myView isKindOfClass:[UIWindow class]] ? (id)myView : myView.window;
+        if ((!from || !to) || (from == to)) return [myView convertPoint:point fromView:view];
+        point = [from convertPoint:point fromView:view];
+        point = [to convertPoint:point fromWindow:from];
+        endPoint = [myView convertPoint:point fromView:to];
+    }
+    return endPoint;
+}
+- (CGRect)convertRectTo:(CGRect)rect :(UIView *)view{
+    UIView *myView = self;
+    CGRect toRect;
+    if (!view) {
+        if ([myView isKindOfClass:[UIWindow class]]) {
+            toRect = [((UIWindow *)myView) convertRect:rect toWindow:nil];
+        } else {
+            toRect = [myView convertRect:rect toView:nil];
+        }
+    }
+    
+    UIWindow *from = [myView isKindOfClass:[UIWindow class]] ? (id)myView : myView.window;
+    UIWindow *to = [view isKindOfClass:[UIWindow class]] ? (id)view : view.window;
+    if (!from || !to) return [myView convertRect:rect toView:view];
+    if (from == to) return [myView convertRect:rect toView:view];
+    rect = [myView convertRect:rect toView:from];
+    rect = [to convertRect:rect fromWindow:from];
+    toRect = [view convertRect:rect fromView:to];
+    return toRect;
+}
+- (CGRect)convertRectFrom:(CGRect)rect :(UIView *)view{
+    CGRect fromRect;
+    UIView *myView = self;
+    if (!view) {
+        if ([myView isKindOfClass:[UIWindow class]]) {
+            fromRect = [((UIWindow *)myView) convertRect:rect fromWindow:nil];
+        } else {
+            fromRect = [myView convertRect:rect fromView:nil];
+        }
+    }
+    
+    UIWindow *from = [view isKindOfClass:[UIWindow class]] ? (id)view : view.window;
+    UIWindow *to = [myView isKindOfClass:[UIWindow class]] ? (id)myView : myView.window;
+    if ((!from || !to) || (from == to)) return [myView convertRect:rect fromView:view];
+    rect = [from convertRect:rect fromView:view];
+    rect = [to convertRect:rect fromWindow:from];
+    fromRect = [myView convertRect:rect fromView:to];
+    return fromRect;
+}
+
+#pragma mark - draw -
+- (CAShapeLayer *)setCornerRadiusAngle:(UIRectCorner)corner cornerSize:(CGSize)size{
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corner cornerRadii:size];
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.path = bezierPath.CGPath;
+//    [self.layer addSublayer:layer];
+    return layer;
+}
+
+- (void)setLayerShadow:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius {
+    self.layer.shadowColor = color.CGColor;
+    self.layer.shadowOffset = offset;
+    self.layer.shadowRadius = radius;
+    self.layer.shadowOpacity = 1;
+    self.layer.shouldRasterize = YES;
+    self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+}
 
 @end

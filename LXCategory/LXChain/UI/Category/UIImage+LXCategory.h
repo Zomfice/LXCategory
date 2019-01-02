@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (LXCategory)
 
++ (UIImage *)imageWithColor:(UIColor *)color;
+
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -51,4 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+static inline UIColor *UIColorHexString(NSString *hexString){
+    return [UIColor colorWithHexString:hexString];
+}
+
+static inline UIColor *UIColorHexAlpha(NSString *hexString, CGFloat alpha){
+    return [UIColor colorWithHexString:hexString alpha:alpha];
+}
 NS_ASSUME_NONNULL_END

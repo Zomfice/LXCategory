@@ -24,7 +24,29 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGFloat left;
 @property (nonatomic) CGFloat right;
 
-- (void)setCornerRadiusAngle:(UIRectCorner)corner cornerSize:(CGSize)size;
+- (void)removeAllSubViews;
+
+- (UIViewController *)viewController;
+
+- (CGFloat)visibleAlpha;
+
+- (UIImage *)snapshotImage;
+
+- (UIImage *)snapshotImageAfterScreenUpdates:(BOOL)afterUpdates;
+
+- (NSData *)snapshotPDF;
+
+#pragma mark - convert -
+
+- (CGPoint)convertPointTo:(CGPoint)point :(UIView *)view;
+- (CGPoint)convertPointFrom:(CGPoint)point :(UIView *)view;
+- (CGRect)convertRectTo:(CGRect)rect :(UIView *)view;
+- (CGRect)convertRectFrom:(CGRect)rect :(UIView *)view;
+
+#pragma mark - draw -
+- (CAShapeLayer *)setCornerRadiusAngle:(UIRectCorner)corner cornerSize:(CGSize)size;
+
+- (void)setLayerShadow:(nullable UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
 
 @end
 
