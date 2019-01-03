@@ -12,8 +12,9 @@
 #import "UIView+LXChain.h"
 #import "YYClassInfo.h"
 
+
 @interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol, UIGestureRecognizerDelegate>
-@property (nonatomic, strong) UILabel * label;
+@property (nonatomic, strong) UIButton * label;
 @end
 
 @implementation ViewController
@@ -47,26 +48,26 @@
     }];
     [self.navigationBar setTag:0];
     
-    UILabelCreate().makeChain
-    .text(@"23")
-    .textAlignment(NSTextAlignmentCenter)
-    .textColor([UIColor yellowColor])
-    .frame(CGRectMake(0, 0, 100, 100))
+    NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:@"asdfasdf" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor redColor]}];
+    [att appendAttributedString:[[NSAttributedString alloc] initWithString:@"麻小亮" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:10]}]];
+    UIButtonCreate().makeChain
     .addToSuperView(self.view)
     .center(self.view.center)
     .userInteractionEnabled(YES)
-    .layerBackGroundColor([UIColor whiteColor])
-    .addGesture([[UITapGestureRecognizer alloc] initWithActionBlock:^(UITapGestureRecognizer *  _Nonnull sender) {
-        [sender.view.layer setBackgroundColor:[UIColor randomColor].CGColor];
-    }].makeChain.delegate(self).gesture)
+    .backgroundColor([UIColor yellowColor])
+    .attributedTitle(att, UIControlStateNormal)
+    .textColor([UIColor blackColor], UIControlStateNormal)
+    .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
+        make.center.equalTo(self.view);
+    })
     .assignTo(^(id  _Nonnull view) {
         self.label = view;
-    });
-    [self.label setLayerShadow:UIColorHexString(@"333333") offset:CGSizeMake(2, 2) radius:50];
-    self.label.makeChain.cornerRadius(50);
+    }).image([[[UIImage imageNamed:@"Bitmap"] imageByGrayColor] imageByResizeToSize:CGSizeMake(50, 40)], UIControlStateNormal)
+    .font([UIFont systemFontOfSize:14])
+    .imageDirection(LXButtonImageDirectionRight, 0);
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
-
 
 
 - (void)viewDidAppear:(BOOL)animated{
