@@ -35,7 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (UIImage *)imageByGrayColor;
 
-
+/**
+ 动画图片
+ */
++ (UIImage *)animatedGifName:(NSString *)name;
++ (UIImage *)animatedGifName:(NSString *)name scale:(CGFloat)scale;
 /**
  修正图片
  */

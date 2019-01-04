@@ -14,7 +14,14 @@ static inline ViewClass *ViewClass##Create(void){\
 return [ViewClass new];\
 }
 
+#define LXCreateLayer(ViewClass)\
+static inline ViewClass *ViewClass##Create(void){\
+return [ViewClass layer];\
+}
+
 #define LXCATEGORY_CHAIN_PROPERTY @property (nonatomic, copy, readonly)
+
+#define LXCATEGORY_STRONG_PROPERTY @property (nonatomic, strong, readonly)
 
 #define LXCATEGORY_CHAIN_IMPLEMENTATION(LXMethod,LXParaType, LXProperty, LXModelType, LXPropertyClass)\
 - (LXModelType  _Nonnull (^)(LXParaType))LXMethod{\

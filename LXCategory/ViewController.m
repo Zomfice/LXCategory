@@ -12,6 +12,30 @@
 #import "UIView+LXChain.h"
 #import "YYClassInfo.h"
 
+@interface AA : NSObject<NSCopying, NSMutableCopying>
+@property (nonatomic, copy) NSString  * aa;
+@end
+@implementation AA
+
+
+- (id)copyWithZone:(NSZone *)zone{
+    AA *a = [AA allocWithZone:zone];
+    if (a) {
+        a.aa = self.aa;
+    }
+    return a;
+}
+
+- (id)mutableCopyWithZone:(NSZone *)zone{
+    AA *a = [AA allocWithZone:zone];
+    if (a) {
+        a.aa = self.aa;
+    }
+    return a;
+}
+
+
+@end
 
 @interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIButton * label;
@@ -21,7 +45,9 @@
 @synthesize tableView = _tableView, navigationBar = _navigationBar;
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     self.navigationController.navigationBar.hidden = YES;
     self.navigationBar.middleButton.makeChain
     .text(@"海贼王", UIControlStateNormal)
@@ -48,23 +74,38 @@
     }];
     [self.navigationBar setTag:0];
     
-    NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:@"asdfasdf" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor redColor]}];
+    NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:@"我爱" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor redColor]}];
     [att appendAttributedString:[[NSAttributedString alloc] initWithString:@"麻小亮" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:10]}]];
     UIButtonCreate().makeChain
     .addToSuperView(self.view)
     .center(self.view.center)
     .userInteractionEnabled(YES)
-    .backgroundColor([UIColor yellowColor])
+    .layerBackGroundColor([UIColor yellowColor])
     .attributedTitle(att, UIControlStateNormal)
     .textColor([UIColor blackColor], UIControlStateNormal)
+    .addTargetBlock(^(id  _Nonnull sender) {
+        NSLog(@"1");
+    }, UIControlEventTouchUpInside)
     .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
         make.center.equalTo(self.view);
+        make.width.mas_equalTo(200);
+        make.height.mas_equalTo(100);
     })
     .assignTo(^(id  _Nonnull view) {
         self.label = view;
-    }).image([[[UIImage imageNamed:@"Bitmap"] imageByGrayColor] imageByResizeToSize:CGSizeMake(50, 40)], UIControlStateNormal)
+        
+    }).image([UIImage animatedGifName:@"11"], UIControlStateNormal)
     .font([UIFont systemFontOfSize:14])
-    .imageDirection(LXButtonImageDirectionRight, 0);
+    .imageDirection(LXButtonImageDirectionRight,5);
+    
+    self.label.layer.makeChain
+    .borderColor(UIColorHexString(@"333333").CGColor)
+    .cornerRadius(50)
+    .borderWidth(1)
+    .shadowColor(UIColorHexString(@"adfadf").CGColor)
+    .shadowRadius(10)
+    .shadowOpacity(1);
+    
     
     // Do any additional setup after loading the view, typically from a nib.
 }

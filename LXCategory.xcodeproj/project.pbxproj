@@ -28,6 +28,19 @@
 		731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DF21D4EBBC00480F08 /* WTCommonViewController.m */; };
 		731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E321D4EC6700480F08 /* UIColor+LXCategory.m */; };
 		731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E621D4EED400480F08 /* UITableView+LXCategory.m */; };
+		7319C6E121DEED0500156813 /* 11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7319C6E021DEED0500156813 /* 11.gif */; };
+		7319C6E421DF00B600156813 /* LXLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6E321DF00B600156813 /* LXLayerChainModel.m */; };
+		7319C6ED21DF31F300156813 /* LXShaperLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6EC21DF31F300156813 /* LXShaperLayerChainModel.m */; };
+		7319C6F321DF321F00156813 /* LXEmiiterLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6F221DF321F00156813 /* LXEmiiterLayerChainModel.m */; };
+		7319C6F621DF323100156813 /* LXScrollLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6F521DF323100156813 /* LXScrollLayerChainModel.m */; };
+		7319C6F921DF324200156813 /* LXTextLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6F821DF324200156813 /* LXTextLayerChainModel.m */; };
+		7319C6FC21DF325200156813 /* LXTiledLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6FB21DF325200156813 /* LXTiledLayerChainModel.m */; };
+		7319C6FF21DF326600156813 /* LXTransFormLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6FE21DF326600156813 /* LXTransFormLayerChainModel.m */; };
+		7319C70221DF327E00156813 /* LXGradientLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70121DF327E00156813 /* LXGradientLayerChainModel.m */; };
+		7319C70521DF329C00156813 /* LXReplicatorLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70421DF329C00156813 /* LXReplicatorLayerChainModel.m */; };
+		7319C70821DF4CA100156813 /* CALayer+LXChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70721DF4CA100156813 /* CALayer+LXChain.m */; };
+		7319C70B21DF5DAD00156813 /* UITextView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70A21DF5DAD00156813 /* UITextView+LXCategory.m */; };
+		7319C70E21DF5E7E00156813 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70D21DF5E7D00156813 /* UITextView+Placeholder.m */; };
 		73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBA21A3F61800233E6D /* AppDelegate.m */; };
 		73330CBE21A3F61800233E6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBD21A3F61800233E6D /* ViewController.m */; };
 		73330CC121A3F61800233E6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73330CBF21A3F61800233E6D /* Main.storyboard */; };
@@ -103,6 +116,34 @@
 		731487E321D4EC6700480F08 /* UIColor+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LXCategory.m"; sourceTree = "<group>"; };
 		731487E521D4EED400480F08 /* UITableView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LXCategory.h"; sourceTree = "<group>"; };
 		731487E621D4EED400480F08 /* UITableView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LXCategory.m"; sourceTree = "<group>"; };
+		7319C6E021DEED0500156813 /* 11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 11.gif; sourceTree = "<group>"; };
+		7319C6E221DF00B600156813 /* LXLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLayerChainModel.h; sourceTree = "<group>"; };
+		7319C6E321DF00B600156813 /* LXLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLayerChainModel.m; sourceTree = "<group>"; };
+		7319C6E821DF156900156813 /* LXViewChainHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXViewChainHeader.h; sourceTree = "<group>"; };
+		7319C6E921DF157C00156813 /* LXGestureChainHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGestureChainHeader.h; sourceTree = "<group>"; };
+		7319C6EA21DF158A00156813 /* LXLayerChainHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLayerChainHeader.h; sourceTree = "<group>"; };
+		7319C6EB21DF31F300156813 /* LXShaperLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXShaperLayerChainModel.h; sourceTree = "<group>"; };
+		7319C6EC21DF31F300156813 /* LXShaperLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXShaperLayerChainModel.m; sourceTree = "<group>"; };
+		7319C6F121DF321F00156813 /* LXEmiiterLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXEmiiterLayerChainModel.h; sourceTree = "<group>"; };
+		7319C6F221DF321F00156813 /* LXEmiiterLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXEmiiterLayerChainModel.m; sourceTree = "<group>"; };
+		7319C6F421DF323100156813 /* LXScrollLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXScrollLayerChainModel.h; sourceTree = "<group>"; };
+		7319C6F521DF323100156813 /* LXScrollLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXScrollLayerChainModel.m; sourceTree = "<group>"; };
+		7319C6F721DF324200156813 /* LXTextLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTextLayerChainModel.h; sourceTree = "<group>"; };
+		7319C6F821DF324200156813 /* LXTextLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTextLayerChainModel.m; sourceTree = "<group>"; };
+		7319C6FA21DF325200156813 /* LXTiledLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTiledLayerChainModel.h; sourceTree = "<group>"; };
+		7319C6FB21DF325200156813 /* LXTiledLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTiledLayerChainModel.m; sourceTree = "<group>"; };
+		7319C6FD21DF326600156813 /* LXTransFormLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTransFormLayerChainModel.h; sourceTree = "<group>"; };
+		7319C6FE21DF326600156813 /* LXTransFormLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTransFormLayerChainModel.m; sourceTree = "<group>"; };
+		7319C70021DF327E00156813 /* LXGradientLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGradientLayerChainModel.h; sourceTree = "<group>"; };
+		7319C70121DF327E00156813 /* LXGradientLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGradientLayerChainModel.m; sourceTree = "<group>"; };
+		7319C70321DF329C00156813 /* LXReplicatorLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXReplicatorLayerChainModel.h; sourceTree = "<group>"; };
+		7319C70421DF329C00156813 /* LXReplicatorLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXReplicatorLayerChainModel.m; sourceTree = "<group>"; };
+		7319C70621DF4CA100156813 /* CALayer+LXChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+LXChain.h"; sourceTree = "<group>"; };
+		7319C70721DF4CA100156813 /* CALayer+LXChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LXChain.m"; sourceTree = "<group>"; };
+		7319C70921DF5DAD00156813 /* UITextView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+LXCategory.h"; sourceTree = "<group>"; };
+		7319C70A21DF5DAD00156813 /* UITextView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+LXCategory.m"; sourceTree = "<group>"; };
+		7319C70C21DF5E7D00156813 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		7319C70D21DF5E7D00156813 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		73330CB621A3F61800233E6D /* LXCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73330CB921A3F61800233E6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73330CBA21A3F61800233E6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -219,6 +260,8 @@
 				7307CFA521D646BD0005C962 /* UIButton+LXCategory.m */,
 				7307CFA721D646DE0005C962 /* UITextField+LXCategory.h */,
 				7307CFA821D646DE0005C962 /* UITextField+LXCategory.m */,
+				7319C70921DF5DAD00156813 /* UITextView+LXCategory.h */,
+				7319C70A21DF5DAD00156813 /* UITextView+LXCategory.m */,
 				7307CFAA21D647370005C962 /* UIImageView+LXCategory.h */,
 				7307CFAB21D647370005C962 /* UIImageView+LXCategory.m */,
 				7307E05B21DC6484000752F6 /* UIAlertController+LXCategory.h */,
@@ -263,8 +306,11 @@
 				73330CCF21A3F6D600233E6D /* LXCategory */,
 				73330CB921A3F61800233E6D /* AppDelegate.h */,
 				73330CBA21A3F61800233E6D /* AppDelegate.m */,
+				7319C6E021DEED0500156813 /* 11.gif */,
 				73330CBC21A3F61800233E6D /* ViewController.h */,
 				73330CBD21A3F61800233E6D /* ViewController.m */,
+				7319C70C21DF5E7D00156813 /* UITextView+Placeholder.h */,
+				7319C70D21DF5E7D00156813 /* UITextView+Placeholder.m */,
 				7311819F21DDF6F900077485 /* Bitmap@2x.png */,
 				73330CBF21A3F61800233E6D /* Main.storyboard */,
 				73330CC221A3F61900233E6D /* Assets.xcassets */,
@@ -329,6 +375,27 @@
 			children = (
 				7311819A21DDD3F900077485 /* LXBaseLayerChainModel.h */,
 				7311819B21DDD3F900077485 /* LXBaseLayerChainModel.m */,
+				7319C6E221DF00B600156813 /* LXLayerChainModel.h */,
+				7319C6E321DF00B600156813 /* LXLayerChainModel.m */,
+				7319C6EB21DF31F300156813 /* LXShaperLayerChainModel.h */,
+				7319C6EC21DF31F300156813 /* LXShaperLayerChainModel.m */,
+				7319C6F121DF321F00156813 /* LXEmiiterLayerChainModel.h */,
+				7319C6F221DF321F00156813 /* LXEmiiterLayerChainModel.m */,
+				7319C6F421DF323100156813 /* LXScrollLayerChainModel.h */,
+				7319C6F521DF323100156813 /* LXScrollLayerChainModel.m */,
+				7319C6F721DF324200156813 /* LXTextLayerChainModel.h */,
+				7319C6F821DF324200156813 /* LXTextLayerChainModel.m */,
+				7319C6FA21DF325200156813 /* LXTiledLayerChainModel.h */,
+				7319C6FB21DF325200156813 /* LXTiledLayerChainModel.m */,
+				7319C6FD21DF326600156813 /* LXTransFormLayerChainModel.h */,
+				7319C6FE21DF326600156813 /* LXTransFormLayerChainModel.m */,
+				7319C70021DF327E00156813 /* LXGradientLayerChainModel.h */,
+				7319C70121DF327E00156813 /* LXGradientLayerChainModel.m */,
+				7319C70321DF329C00156813 /* LXReplicatorLayerChainModel.h */,
+				7319C70421DF329C00156813 /* LXReplicatorLayerChainModel.m */,
+				7319C6EA21DF158A00156813 /* LXLayerChainHeader.h */,
+				7319C70621DF4CA100156813 /* CALayer+LXChain.h */,
+				7319C70721DF4CA100156813 /* CALayer+LXChain.m */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -350,6 +417,7 @@
 				7362521021DCD4130049F5E2 /* LXRotationGestureChainModel.m */,
 				7362521221DCD4130049F5E2 /* LXLongPressGestureChainModel.h */,
 				7362520B21DCD4130049F5E2 /* LXLongPressGestureChainModel.m */,
+				7319C6E921DF157C00156813 /* LXGestureChainHeader.h */,
 			);
 			path = UIGesture;
 			sourceTree = "<group>";
@@ -387,6 +455,7 @@
 				7362523021DCD4130049F5E2 /* LXTextViewChainModel.h */,
 				7362522221DCD4130049F5E2 /* LXImageViewChainModel.h */,
 				7362523221DCD4130049F5E2 /* LXImageViewChainModel.m */,
+				7319C6E821DF156900156813 /* LXViewChainHeader.h */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -464,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73330CC621A3F61900233E6D /* LaunchScreen.storyboard in Resources */,
+				7319C6E121DEED0500156813 /* 11.gif in Resources */,
 				73330CC321A3F61900233E6D /* Assets.xcassets in Resources */,
 				73330CC121A3F61800233E6D /* Main.storyboard in Resources */,
 				731181A021DDF6F900077485 /* Bitmap@2x.png in Resources */,
@@ -529,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7362524521DCD4130049F5E2 /* LXLabelChainModel.m in Sources */,
+				7319C70221DF327E00156813 /* LXGradientLayerChainModel.m in Sources */,
 				731487E021D4EBBC00480F08 /* WTCommonNavigationBar.m in Sources */,
 				7307CF9721D6465E0005C962 /* UICollectionView+LXCategory.m in Sources */,
 				7307CFA621D646BD0005C962 /* UIButton+LXCategory.m in Sources */,
@@ -543,9 +614,12 @@
 				7362524421DCD4130049F5E2 /* LXControlChainModel.m in Sources */,
 				7362524321DCD4130049F5E2 /* LXTextFieldChainModel.m in Sources */,
 				7307CFA021D6469C0005C962 /* UIImage+LXCategory.m in Sources */,
+				7319C6E421DF00B600156813 /* LXLayerChainModel.m in Sources */,
 				7362523821DCD4130049F5E2 /* LXTapGestureChainModel.m in Sources */,
 				731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */,
+				7319C6F321DF321F00156813 /* LXEmiiterLayerChainModel.m in Sources */,
 				731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */,
+				7319C70B21DF5DAD00156813 /* UITextView+LXCategory.m in Sources */,
 				731487C821D4759100480F08 /* UIControl+LXCategory.m in Sources */,
 				7362523B21DCD4130049F5E2 /* LXBaseViewChainModel.m in Sources */,
 				7362524221DCD4130049F5E2 /* LXSwitchChainModel.m in Sources */,
@@ -554,24 +628,32 @@
 				73330CC921A3F61900233E6D /* main.m in Sources */,
 				7307E05D21DC6484000752F6 /* UIAlertController+LXCategory.m in Sources */,
 				731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */,
+				7319C6FF21DF326600156813 /* LXTransFormLayerChainModel.m in Sources */,
 				731181A621DE26FC00077485 /* NSString+LXCategory.m in Sources */,
 				7362523721DCD4130049F5E2 /* LXSwipeGestureChainModel.m in Sources */,
+				7319C70821DF4CA100156813 /* CALayer+LXChain.m in Sources */,
 				7362523621DCD4130049F5E2 /* LXLongPressGestureChainModel.m in Sources */,
+				7319C6F621DF323100156813 /* LXScrollLayerChainModel.m in Sources */,
 				7362523521DCD4130049F5E2 /* LXPanGestureChainModel.m in Sources */,
 				73BAD06C21D3A50000B1A274 /* UIView+LXCategory.m in Sources */,
 				7307CF9D21D6468C0005C962 /* UIDevice+LXCategory.m in Sources */,
 				7362524021DCD4130049F5E2 /* LXTextViewChainModel.m in Sources */,
 				7307CF9421D6463C0005C962 /* UIFont+LXCategory.m in Sources */,
+				7319C70521DF329C00156813 /* LXReplicatorLayerChainModel.m in Sources */,
 				7362523421DCD4130049F5E2 /* LXPinchGestureChainModel.m in Sources */,
 				73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */,
 				7362524821DCD4130049F5E2 /* LXWebViewChainModel.m in Sources */,
 				7362523921DCD4130049F5E2 /* LXBaseGestureChainModel.m in Sources */,
+				7319C70E21DF5E7E00156813 /* UITextView+Placeholder.m in Sources */,
 				7362523C21DCD4130049F5E2 /* LXTableViewChainModel.m in Sources */,
 				7362523D21DCD4130049F5E2 /* LXCollectionViewChainModel.m in Sources */,
+				7319C6ED21DF31F300156813 /* LXShaperLayerChainModel.m in Sources */,
 				7307CFA321D646B00005C962 /* UILabel+LXCategory.m in Sources */,
+				7319C6FC21DF325200156813 /* LXTiledLayerChainModel.m in Sources */,
 				7307CFAC21D647370005C962 /* UIImageView+LXCategory.m in Sources */,
 				7307CF9A21D646790005C962 /* UIScreen+LXCategory.m in Sources */,
 				7362524121DCD4130049F5E2 /* UIView+LXChain.m in Sources */,
+				7319C6F921DF324200156813 /* LXTextLayerChainModel.m in Sources */,
 				7311819C21DDD3F900077485 /* LXBaseLayerChainModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

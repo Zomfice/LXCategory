@@ -20,19 +20,19 @@
     space = space / 2;
     switch (direction) {
         case LXButtonImageDirectionTop:{
-            x = imageHeight / 2 + space;
+            x = textHeight / 2 + space;
             y = textWidth / 2;
             self.imageEdgeInsets = UIEdgeInsetsMake(-x, y, x, - y);
-            x = textHeight / 2 + space;
+            x = imageHeight / 2 + space;
             y = imageWidth / 2;
             self.titleEdgeInsets = UIEdgeInsetsMake(x, - y, - x, y);
         }
             break;
         case LXButtonImageDirectionBottom:{
-            x = imageHeight / 2 + space;
+            x = textHeight / 2 + space;
             y = textWidth / 2;
             self.imageEdgeInsets = UIEdgeInsetsMake(x, y, -x, - y);
-            x = textHeight / 2 + space;
+            x = imageHeight / 2 + space;
             y = imageWidth / 2;
             self.titleEdgeInsets = UIEdgeInsetsMake(-x, - y, x, y);
         }

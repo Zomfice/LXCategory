@@ -58,6 +58,7 @@
     return self;
 }
 #pragma mark - frame -
+LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(bounds, CGRect)
 
 LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(frame, CGRect)
 
@@ -86,6 +87,10 @@ LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(bottom, CGFloat)
 LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(left, CGFloat)
 
 LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(right, CGFloat)
+
+LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(autoresizingMask, UIViewAutoresizing)
+
+LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(autoresizesSubviews, BOOL)
 
 - (UIView * _Nonnull (^)(NSInteger))viewWithTag{
     return ^ (NSInteger tag){
@@ -360,6 +365,8 @@ LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shouldRasterize, BOOL);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(rasterizationScale, CGFloat);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shadowPath, CGPathRef);
 
+
+
 #if __has_include(<Masonry.h>) || __has_include("Masonry.h")
 LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION(makeMasonry, mas_makeConstraints);
 LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION(updateMasonry, mas_updateConstraints);
@@ -379,9 +386,51 @@ LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(remakeMasonry, mas_remakeConstraint
     };
 }
 
-- (void)dealloc
-{
-    
+- (id  _Nonnull (^)(void))removeFormSuperView{
+    return ^ (){
+        [self.view removeFromSuperview];
+        return self;
+    };
+}
+
+- (id  _Nonnull (^)(void))sizeToFit{
+    return ^ (){
+        [self.view sizeToFit];
+        return self;
+    };
+}
+
+- (id  _Nonnull (^)(void))layoutIfNeeded{
+    return ^ (){
+        [self.view layoutIfNeeded];
+        return self;
+    };
+}
+
+- (id  _Nonnull (^)(void))setNeedsLayout{
+    return ^ (){
+        [self.view setNeedsLayout];
+        return self;
+    };
+}
+- (id  _Nonnull (^)(void))setNeedsDisplay{
+    return ^ (){
+        [self.view setNeedsDisplay];
+        return self;
+    };
+}
+
+- (CGSize (^)(CGSize))sizeToFitSize{
+    return ^ (CGSize size){
+       return [self.view sizeThatFits:size];
+    };
+}
+
+- (id (^)(CGRect))setNeedsDisplayRect{
+    return ^ (CGRect rect){
+        [self.view setNeedsDisplayInRect:rect];
+        return self;
+    };
 }
 
 @end

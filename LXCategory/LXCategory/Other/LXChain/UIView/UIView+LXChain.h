@@ -7,26 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LXViewChainModel.h"
-#import "LXLabelChainModel.h"
-#import "LXImageViewChainModel.h"
-#import "LXControlChainModel.h"
-#import "LXTextFieldChainModel.h"
-#import "LXButtonChainModel.h"
-#import "LXSwitchChainModel.h"
-#import "LXScrollViewChainModel.h"
-#import "LXTableViewChainModel.h"
-#import "LXCollectionViewChainModel.h"
-#import "LXTextViewChainModel.h"
-#import "LXTableViewCellChainModel.h"
-#import "LXPanGestureChainModel.h"
-#import "LXTapGestureChainModel.h"
-#import "LXSwipeGestureChainModel.h"
-#import "LXPinchGestureChainModel.h"
-#import "LXRotationGestureChainModel.h"
-#import "LXLongPressGestureChainModel.h"
+#import "LXViewChainHeader.h"
+#import "LXLayerChainHeader.h"
+#import "LXGestureChainHeader.h"
 NS_ASSUME_NONNULL_BEGIN
-#define LXCATEGORY_STRONG_PROPERTY @property (nonatomic, strong, readonly)
 @interface UIView (LXChain)
 
 LXCATEGORY_STRONG_PROPERTY LXViewChainModel *(^ addView)(NSInteger tag);

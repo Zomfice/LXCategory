@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) Class viewClass;
 
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ bounds) (CGRect frame);
 #pragma mark - frame -
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ frame) (CGRect frame);
 
@@ -91,6 +92,13 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ multipleTouchEnabled) (BOOL multipleTouc
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ endEditing) (BOOL endEditing);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ contentMode) (UIViewContentMode contentMode);
+
+
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ autoresizingMask) (UIViewAutoresizing autoresizingMask);
+
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ autoresizesSubviews) (BOOL autoresizesSubviews);
+
+
 
 #pragma mark - control -
 
@@ -163,7 +171,7 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ transform)(CATransform3D transform);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shadowPath) (CGPathRef shadowPath);
 
-#pragma mark - layout -
+#pragma mark - method -
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ makeMasonry)( void (^constraints)(MASConstraintMaker *make) );
 
@@ -173,6 +181,13 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ remakeMasonry)( void (^constraints)(MASC
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ assignTo)(void (^assignTo)(id view));
 
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ sizeToFit) (void);
+LXCATEGORY_CHAIN_PROPERTY CGSize (^ sizeToFitSize) (CGSize size);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ removeFormSuperView) (void);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ layoutIfNeeded) (void);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ setNeedsLayout) (void);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ setNeedsDisplay) (void);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ setNeedsDisplayRect) (CGRect rect);
 @end
 
 NS_ASSUME_NONNULL_END
