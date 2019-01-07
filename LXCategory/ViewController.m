@@ -7,38 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "LXCategory.h"
-#import "LXDefine.h"
-#import "UIView+LXChain.h"
-#import "YYClassInfo.h"
+#import "YYModel.h"
 
-@interface AA : NSObject<NSCopying, NSMutableCopying>
-@property (nonatomic, copy) NSString  * aa;
-@end
-@implementation AA
+@interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol>
 
-
-- (id)copyWithZone:(NSZone *)zone{
-    AA *a = [AA allocWithZone:zone];
-    if (a) {
-        a.aa = self.aa;
-    }
-    return a;
-}
-
-- (id)mutableCopyWithZone:(NSZone *)zone{
-    AA *a = [AA allocWithZone:zone];
-    if (a) {
-        a.aa = self.aa;
-    }
-    return a;
-}
-
-
-@end
-
-@interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol, UIGestureRecognizerDelegate>
-@property (nonatomic, strong) UIButton * label;
 @end
 
 @implementation ViewController
@@ -73,39 +45,7 @@
         
     }];
     [self.navigationBar setTag:0];
-    
-    NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:@"我爱" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor redColor]}];
-    [att appendAttributedString:[[NSAttributedString alloc] initWithString:@"麻小亮" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:10]}]];
-    UIButtonCreate().makeChain
-    .addToSuperView(self.view)
-    .center(self.view.center)
-    .userInteractionEnabled(YES)
-    .layerBackGroundColor([UIColor yellowColor])
-    .attributedTitle(att, UIControlStateNormal)
-    .textColor([UIColor blackColor], UIControlStateNormal)
-    .addTargetBlock(^(id  _Nonnull sender) {
-        NSLog(@"1");
-    }, UIControlEventTouchUpInside)
-    .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
-        make.center.equalTo(self.view);
-        make.width.mas_equalTo(200);
-        make.height.mas_equalTo(100);
-    })
-    .assignTo(^(id  _Nonnull view) {
-        self.label = view;
-        
-    }).image([UIImage animatedGifName:@"11"], UIControlStateNormal)
-    .font([UIFont systemFontOfSize:14])
-    .imageDirection(LXButtonImageDirectionRight,5);
-    
-    self.label.layer.makeChain
-    .borderColor(UIColorHexString(@"333333").CGColor)
-    .cornerRadius(50)
-    .borderWidth(1)
-    .shadowColor(UIColorHexString(@"adfadf").CGColor)
-    .shadowRadius(10)
-    .shadowOpacity(1);
-    
+    NSLog(@"%@", [[@"222" dataUsingEncoding:NSUTF8StringEncoding] hmacMD5StringWithKey:@"sdaf"]);
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -137,6 +77,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *clasName = [NSString stringWithFormat:@"LXMa%ld", indexPath.row];
+    Class clas = NSClassFromString(clasName);
+    if (clas) {
+        [self.navigationController pushViewController:[clas new] animated:YES];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

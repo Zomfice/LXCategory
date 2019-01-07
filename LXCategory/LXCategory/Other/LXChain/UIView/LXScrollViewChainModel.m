@@ -7,7 +7,7 @@
 //
 
 #import "LXScrollViewChainModel.h"
-
+#import "UIScrollView+LXCategory.h"
 #define LXCATEGORY_CHAIN_SCROLLVIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType,  id ,UIScrollView)
 @implementation LXScrollViewChainModel
 
@@ -16,7 +16,7 @@ LXCATEGORY_CHAIN_SCROLLVIEW_IMPLEMENTATION(delegate, id<UIScrollViewDelegate>)
 - (id _Nonnull (^)(void))adJustedContentIOS11{
     return ^ (){
         if (@available(iOS 11.0, *)) {
-            [(UIScrollView *)self.view setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+            [(UIScrollView *)self.view adJustedContentIOS11];
         }
         return self;
     };

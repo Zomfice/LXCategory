@@ -7,7 +7,7 @@
 //
 
 #import "UICollectionView+LXCategory.h"
-
+#import "UIScrollView+LXCategory.h"
 @implementation UICollectionView (LXCategory)
 
 @end

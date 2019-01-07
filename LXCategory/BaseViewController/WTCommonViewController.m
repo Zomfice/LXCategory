@@ -64,6 +64,7 @@
     tableView.delegate = vc;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     vc.tableView = tableView;
+    [tableView adJustedContentIOS11];
     UIView *view = self.view;
     SEL sel1 = NSSelectorFromString(@"comonTableViewSuperView");
     if ([self respondsToSelector:sel1]) {

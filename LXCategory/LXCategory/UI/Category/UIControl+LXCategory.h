@@ -29,6 +29,19 @@ typedef void(^controlTargeAction)(id sender);
 - (void)setTarget:(id)target eventAction:(SEL)action forControlEvents:(UIControlEvents)events;
 
 /**
+ 添加点击block
+ @param key 键值
+ */
+- (void)addEventBlock:(controlTargeAction)block forEvents:(UIControlEvents)events ForKey:(NSString *)key;
+
+/**
+ 移除点击block
+
+ @param key 键值
+ */
+- (void)removeEventBlockForKey:(NSString *)key event:(UIControlEvents)events;
+
+/**
  移除所有block，并添加一个新的block
  */
 - (void)setEventBlock:(controlTargeAction)block forEvents:(UIControlEvents)events;

@@ -7,7 +7,7 @@
 //
 
 #import "UITableView+LXCategory.h"
-
+#import "UIScrollView+LXCategory.h"
 @implementation UITableView (LXCategory)
 
 + (UITableView *)tableViewStyle:(UITableViewStyle)style{
@@ -17,5 +17,13 @@
     tableView.showsVerticalScrollIndicator = NO;
     tableView.showsHorizontalScrollIndicator = NO;
     return tableView;
+}
+
+- (void)adJustedContentIOS11{
+    UITableView *tableView = (UITableView *)self;
+    [tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    tableView.estimatedRowHeight = 0;
+    tableView.estimatedSectionHeaderHeight = 0;
+    tableView.estimatedSectionFooterHeight = 0;
 }
 @end

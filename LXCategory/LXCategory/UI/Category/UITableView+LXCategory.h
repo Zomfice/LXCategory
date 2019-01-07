@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (LXCategory)
 + (UITableView *)tableViewStyle:(UITableViewStyle)style;
+
 @end
 
 NS_ASSUME_NONNULL_END

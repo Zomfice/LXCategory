@@ -7,6 +7,7 @@
 //
 
 #import "LXTableViewChainModel.h"
+#import "UIScrollView+LXCategory.h"
 #define LXCATEGORY_CHAIN_TABLEVIEW_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXTableViewChainModel *,UITableView)
 @implementation LXTableViewChainModel
 
@@ -16,11 +17,7 @@ LXCATEGORY_CHAIN_TABLEVIEW_IMPLEMENTATION(dataSource, id<UITableViewDataSource>)
 - (LXTableViewChainModel * _Nonnull (^)(void))adJustedContentIOS11{
     return ^ (){
         if (@available(iOS 11.0, *)) {
-            UITableView *tableView = (UITableView *)self.view;
-            [tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-            tableView.estimatedRowHeight = 0;
-            tableView.estimatedSectionHeaderHeight = 0;
-            tableView.estimatedSectionFooterHeight = 0;
+            [(UIScrollView *)self.view adJustedContentIOS11];
         }
         return self;
     };

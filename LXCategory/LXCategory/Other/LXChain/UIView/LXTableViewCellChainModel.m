@@ -7,6 +7,7 @@
 //
 
 #import "LXTableViewCellChainModel.h"
+
 #define LXCATEGORY_CHAIN_TABLEVIEWCELL_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXTableViewCellChainModel *,UITableViewCell)
 @implementation LXTableViewCellChainModel
 

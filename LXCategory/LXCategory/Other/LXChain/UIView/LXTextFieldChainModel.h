@@ -47,6 +47,7 @@ LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ leftViewMode)(UITextFieldVie
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ rightView)(UIView *rightView);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ rightViewMode)(UITextFieldViewMode rightViewMode);
 
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ limitLength) (NSUInteger limitLength);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ inputView)(UIView *inputView);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ inputAccessoryView)(UIView *inputAccessoryView);
 

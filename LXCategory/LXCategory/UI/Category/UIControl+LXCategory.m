@@ -8,8 +8,9 @@
 
 #import "UIControl+LXCategory.h"
 #import <objc/runtime.h>
-static const int block_key;
-
+#import "LXSafeDictionary.h"
+static const int block_array_key;
+static const int block_dic_key;
 @interface LXControlTarget : NSObject
 
 @property (nonatomic, copy) controlTargeAction block;
@@ -43,7 +44,7 @@ static const int block_key;
     if (!block) return;
     LXControlTarget *target = [[LXControlTarget alloc] initWithBlock:block events:events];
     [self addTarget:target action:@selector(sendControl:) forControlEvents:events];
-    NSMutableArray *targets = [self lx_controlTarges];
+    NSMutableArray *targets = [self lx_controlTargetsArray];
     [targets addObject:target];
 }
 
@@ -51,7 +52,9 @@ static const int block_key;
     [self.allTargets enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
         [self removeTarget:obj action:NULL forControlEvents:UIControlEventAllEvents];
     }];
-    [[self lx_controlTarges] removeAllObjects];
+    
+    [[self lx_controlTargetsArray] removeAllObjects];
+    [[self lx_controlTargetsDic] removeAllObjects];
 }
 
 - (void)setTarget:(id)target eventAction:(SEL)action forControlEvents:(UIControlEvents)events{
@@ -71,9 +74,35 @@ static const int block_key;
     [self addEventBlock:block forEvents:events];
 }
 
+- (void)addEventBlock:(controlTargeAction)block forEvents:(UIControlEvents)events ForKey:(NSString *)key{
+    if (!block || !events || !key) return;
+    [self removeEventBlockForKey:key event:events];
+    LXControlTarget *target = [[LXControlTarget alloc] initWithBlock:block events:events];
+    [self addTarget:target action:@selector(sendControl:) forControlEvents:events];
+    [[self lx_controlTargetsDic] setObject:target forKey:key];
+}
+
+- (void)removeEventBlockForKey:(NSString *)key event:(UIControlEvents)events{
+    NSMutableDictionary *dic = [self lx_controlTargetsDic];
+    LXControlTarget *target = [dic objectForKey:key];
+    if (target) {
+        UIControlEvents newEVent = target.events & (~events);
+        if (newEVent) {
+            [self removeTarget:target action:@selector(sendControl:) forControlEvents:target.events];
+            target.events = newEVent;
+            [self addTarget:target action:@selector(sendControl:) forControlEvents:target.events];
+        }else{
+            [self removeTarget:target action:@selector(sendControl:) forControlEvents:target.events];
+            [dic removeObjectForKey:key];
+        }
+        
+    }
+}
+
+
 - (void)removeAllEventBlocksForEvents:(UIControlEvents)controlEvents{
     if (!controlEvents) return;
-    NSMutableArray *targets = [self lx_controlTarges];
+    NSMutableArray *targets = [self lx_controlTargetsArray];
     NSMutableArray *removes = [NSMutableArray array];
     for (LXControlTarget *target in targets) {
         if (target.events & controlEvents) {
@@ -89,14 +118,40 @@ static const int block_key;
         }
     }
     [targets removeObjectsInArray:removes];
+    
+    NSMutableArray *removeDicKeys = [NSMutableArray array];
+    NSMutableDictionary *targetsDic = [self lx_controlTargetsDic];
+    [targetsDic enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, LXControlTarget * _Nonnull target, BOOL * _Nonnull stop) {
+        if (target.events & controlEvents) {
+            UIControlEvents newEVent = target.events & (~controlEvents);
+            if (newEVent) {
+                [self removeTarget:target action:@selector(sendControl:) forControlEvents:target.events];
+                target.events = newEVent;
+                [self addTarget:target action:@selector(sendControl:) forControlEvents:target.events];
+            }else{
+                [self removeTarget:target action:@selector(sendControl:) forControlEvents:target.events];
+                [removeDicKeys addObject:key];
+            }
+        }
+    }];
+    [targetsDic removeObjectsForKeys:removeDicKeys];
 }
 
 
-- (NSMutableArray <LXControlTarget *>*)lx_controlTarges{
-    NSMutableArray *targets = objc_getAssociatedObject(self, &block_key);
+- (NSMutableArray <LXControlTarget *>*)lx_controlTargetsArray{
+    NSMutableArray *targets = objc_getAssociatedObject(self, &block_array_key);
     if (!targets) {
         targets = [NSMutableArray array];
-        objc_setAssociatedObject(self, &block_key, targets, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, &block_array_key, targets, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return targets;
+}
+
+- (LXSafeDictionary <NSString * ,LXControlTarget *>*)lx_controlTargetsDic{
+    LXSafeDictionary *targets = objc_getAssociatedObject(self, &block_dic_key);
+    if (!targets) {
+        targets = [[LXSafeDictionary alloc] init];
+        objc_setAssociatedObject(self, &block_dic_key, targets, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return targets;
 }

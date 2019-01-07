@@ -17,7 +17,6 @@
 		7307CFA321D646B00005C962 /* UILabel+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7307CFA221D646B00005C962 /* UILabel+LXCategory.m */; };
 		7307CFA621D646BD0005C962 /* UIButton+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7307CFA521D646BD0005C962 /* UIButton+LXCategory.m */; };
 		7307CFA921D646DE0005C962 /* UITextField+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7307CFA821D646DE0005C962 /* UITextField+LXCategory.m */; };
-		7307CFAC21D647370005C962 /* UIImageView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7307CFAB21D647370005C962 /* UIImageView+LXCategory.m */; };
 		7307E05D21DC6484000752F6 /* UIAlertController+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7307E05C21DC6484000752F6 /* UIAlertController+LXCategory.m */; };
 		7311819C21DDD3F900077485 /* LXBaseLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7311819B21DDD3F900077485 /* LXBaseLayerChainModel.m */; };
 		731181A021DDF6F900077485 /* Bitmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7311819F21DDF6F900077485 /* Bitmap@2x.png */; };
@@ -28,6 +27,24 @@
 		731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DF21D4EBBC00480F08 /* WTCommonViewController.m */; };
 		731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E321D4EC6700480F08 /* UIColor+LXCategory.m */; };
 		731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E621D4EED400480F08 /* UITableView+LXCategory.m */; };
+		73168EFD21E2EBE6005A6879 /* LXSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168EFC21E2EBE6005A6879 /* LXSafeDictionary.m */; };
+		73168F0221E2F8E3005A6879 /* LXMa1.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F0121E2F8E3005A6879 /* LXMa1.m */; };
+		73168F0521E31D6A005A6879 /* UIScrollView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F0421E31D6A005A6879 /* UIScrollView+LXCategory.m */; };
+		73168F0821E338CF005A6879 /* UIApplication+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F0721E338CF005A6879 /* UIApplication+LXCategory.m */; };
+		73168F2D21E33E55005A6879 /* RHCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F0A21E33E55005A6879 /* RHCacheManager.m */; };
+		73168F2E21E33E55005A6879 /* RHCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F0D21E33E55005A6879 /* RHCache.m */; };
+		73168F2F21E33E55005A6879 /* RHRequestConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F1021E33E55005A6879 /* RHRequestConfiguration.m */; };
+		73168F3021E33E55005A6879 /* RHRequestNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F1721E33E55005A6879 /* RHRequestNetworkManager.m */; };
+		73168F3121E33E55005A6879 /* RHBatchRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F1921E33E55005A6879 /* RHBatchRequestManager.m */; };
+		73168F3221E33E55005A6879 /* RHRequestUniquePackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F1A21E33E55005A6879 /* RHRequestUniquePackage.m */; };
+		73168F3321E33E55005A6879 /* RHRequestSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F1C21E33E55005A6879 /* RHRequestSessionManager.m */; };
+		73168F3421E33E55005A6879 /* RHRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F1E21E33E55005A6879 /* RHRequestTool.m */; };
+		73168F3521E33E55005A6879 /* RHRequestLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F2121E33E55005A6879 /* RHRequestLogManager.m */; };
+		73168F3621E33E55005A6879 /* RHRequestCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F2521E33E55005A6879 /* RHRequestCategory.m */; };
+		73168F3721E33E55005A6879 /* RHBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F2721E33E55005A6879 /* RHBatchRequest.m */; };
+		73168F3821E33E55005A6879 /* RHBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F2821E33E55005A6879 /* RHBaseRequest.m */; };
+		73168F3921E33E55005A6879 /* RHChainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F2C21E33E55005A6879 /* RHChainRequest.m */; };
+		73168F3C21E34183005A6879 /* NSData+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168F3B21E34183005A6879 /* NSData+LXCategory.m */; };
 		7319C6E121DEED0500156813 /* 11.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7319C6E021DEED0500156813 /* 11.gif */; };
 		7319C6E421DF00B600156813 /* LXLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6E321DF00B600156813 /* LXLayerChainModel.m */; };
 		7319C6ED21DF31F300156813 /* LXShaperLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C6EC21DF31F300156813 /* LXShaperLayerChainModel.m */; };
@@ -39,8 +56,6 @@
 		7319C70221DF327E00156813 /* LXGradientLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70121DF327E00156813 /* LXGradientLayerChainModel.m */; };
 		7319C70521DF329C00156813 /* LXReplicatorLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70421DF329C00156813 /* LXReplicatorLayerChainModel.m */; };
 		7319C70821DF4CA100156813 /* CALayer+LXChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70721DF4CA100156813 /* CALayer+LXChain.m */; };
-		7319C70B21DF5DAD00156813 /* UITextView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70A21DF5DAD00156813 /* UITextView+LXCategory.m */; };
-		7319C70E21DF5E7E00156813 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7319C70D21DF5E7D00156813 /* UITextView+Placeholder.m */; };
 		73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBA21A3F61800233E6D /* AppDelegate.m */; };
 		73330CBE21A3F61800233E6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73330CBD21A3F61800233E6D /* ViewController.m */; };
 		73330CC121A3F61800233E6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73330CBF21A3F61800233E6D /* Main.storyboard */; };
@@ -95,8 +110,6 @@
 		7307CFA521D646BD0005C962 /* UIButton+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LXCategory.m"; sourceTree = "<group>"; };
 		7307CFA721D646DE0005C962 /* UITextField+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+LXCategory.h"; sourceTree = "<group>"; };
 		7307CFA821D646DE0005C962 /* UITextField+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+LXCategory.m"; sourceTree = "<group>"; };
-		7307CFAA21D647370005C962 /* UIImageView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LXCategory.h"; sourceTree = "<group>"; };
-		7307CFAB21D647370005C962 /* UIImageView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LXCategory.m"; sourceTree = "<group>"; };
 		7307E05B21DC6484000752F6 /* UIAlertController+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+LXCategory.h"; sourceTree = "<group>"; };
 		7307E05C21DC6484000752F6 /* UIAlertController+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+LXCategory.m"; sourceTree = "<group>"; };
 		7311819A21DDD3F900077485 /* LXBaseLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXBaseLayerChainModel.h; sourceTree = "<group>"; };
@@ -116,6 +129,44 @@
 		731487E321D4EC6700480F08 /* UIColor+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LXCategory.m"; sourceTree = "<group>"; };
 		731487E521D4EED400480F08 /* UITableView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LXCategory.h"; sourceTree = "<group>"; };
 		731487E621D4EED400480F08 /* UITableView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LXCategory.m"; sourceTree = "<group>"; };
+		73168EFB21E2EBE6005A6879 /* LXSafeDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXSafeDictionary.h; sourceTree = "<group>"; };
+		73168EFC21E2EBE6005A6879 /* LXSafeDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSafeDictionary.m; sourceTree = "<group>"; };
+		73168F0021E2F8E3005A6879 /* LXMa1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXMa1.h; sourceTree = "<group>"; };
+		73168F0121E2F8E3005A6879 /* LXMa1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXMa1.m; sourceTree = "<group>"; };
+		73168F0321E31D6A005A6879 /* UIScrollView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LXCategory.h"; sourceTree = "<group>"; };
+		73168F0421E31D6A005A6879 /* UIScrollView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LXCategory.m"; sourceTree = "<group>"; };
+		73168F0621E338CF005A6879 /* UIApplication+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+LXCategory.h"; sourceTree = "<group>"; };
+		73168F0721E338CF005A6879 /* UIApplication+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+LXCategory.m"; sourceTree = "<group>"; };
+		73168F0A21E33E55005A6879 /* RHCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHCacheManager.m; sourceTree = "<group>"; };
+		73168F0B21E33E55005A6879 /* RHCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHCache.h; sourceTree = "<group>"; };
+		73168F0C21E33E55005A6879 /* RHCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHCacheManager.h; sourceTree = "<group>"; };
+		73168F0D21E33E55005A6879 /* RHCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHCache.m; sourceTree = "<group>"; };
+		73168F1021E33E55005A6879 /* RHRequestConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRequestConfiguration.m; sourceTree = "<group>"; };
+		73168F1121E33E55005A6879 /* RHRequestConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestConfiguration.h; sourceTree = "<group>"; };
+		73168F1221E33E55005A6879 /* RHRequestDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestDefines.h; sourceTree = "<group>"; };
+		73168F1321E33E55005A6879 /* RHRequestNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestNetWork.h; sourceTree = "<group>"; };
+		73168F1521E33E55005A6879 /* RHRequestUniquePackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestUniquePackage.h; sourceTree = "<group>"; };
+		73168F1621E33E55005A6879 /* RHBatchRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHBatchRequestManager.h; sourceTree = "<group>"; };
+		73168F1721E33E55005A6879 /* RHRequestNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRequestNetworkManager.m; sourceTree = "<group>"; };
+		73168F1821E33E55005A6879 /* RHRequestSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestSessionManager.h; sourceTree = "<group>"; };
+		73168F1921E33E55005A6879 /* RHBatchRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHBatchRequestManager.m; sourceTree = "<group>"; };
+		73168F1A21E33E55005A6879 /* RHRequestUniquePackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRequestUniquePackage.m; sourceTree = "<group>"; };
+		73168F1B21E33E55005A6879 /* RHRequestNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestNetworkManager.h; sourceTree = "<group>"; };
+		73168F1C21E33E55005A6879 /* RHRequestSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRequestSessionManager.m; sourceTree = "<group>"; };
+		73168F1E21E33E55005A6879 /* RHRequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRequestTool.m; sourceTree = "<group>"; };
+		73168F1F21E33E55005A6879 /* RHRequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestTool.h; sourceTree = "<group>"; };
+		73168F2121E33E55005A6879 /* RHRequestLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRequestLogManager.m; sourceTree = "<group>"; };
+		73168F2221E33E55005A6879 /* RHRequestLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestLogManager.h; sourceTree = "<group>"; };
+		73168F2421E33E55005A6879 /* RHRequestCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHRequestCategory.h; sourceTree = "<group>"; };
+		73168F2521E33E55005A6879 /* RHRequestCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHRequestCategory.m; sourceTree = "<group>"; };
+		73168F2721E33E55005A6879 /* RHBatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHBatchRequest.m; sourceTree = "<group>"; };
+		73168F2821E33E55005A6879 /* RHBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHBaseRequest.m; sourceTree = "<group>"; };
+		73168F2921E33E55005A6879 /* RHChainRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHChainRequest.h; sourceTree = "<group>"; };
+		73168F2A21E33E55005A6879 /* RHBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHBatchRequest.h; sourceTree = "<group>"; };
+		73168F2B21E33E55005A6879 /* RHBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHBaseRequest.h; sourceTree = "<group>"; };
+		73168F2C21E33E55005A6879 /* RHChainRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHChainRequest.m; sourceTree = "<group>"; };
+		73168F3A21E34183005A6879 /* NSData+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+LXCategory.h"; sourceTree = "<group>"; };
+		73168F3B21E34183005A6879 /* NSData+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+LXCategory.m"; sourceTree = "<group>"; };
 		7319C6E021DEED0500156813 /* 11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 11.gif; sourceTree = "<group>"; };
 		7319C6E221DF00B600156813 /* LXLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLayerChainModel.h; sourceTree = "<group>"; };
 		7319C6E321DF00B600156813 /* LXLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLayerChainModel.m; sourceTree = "<group>"; };
@@ -140,10 +191,6 @@
 		7319C70421DF329C00156813 /* LXReplicatorLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXReplicatorLayerChainModel.m; sourceTree = "<group>"; };
 		7319C70621DF4CA100156813 /* CALayer+LXChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+LXChain.h"; sourceTree = "<group>"; };
 		7319C70721DF4CA100156813 /* CALayer+LXChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LXChain.m"; sourceTree = "<group>"; };
-		7319C70921DF5DAD00156813 /* UITextView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+LXCategory.h"; sourceTree = "<group>"; };
-		7319C70A21DF5DAD00156813 /* UITextView+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+LXCategory.m"; sourceTree = "<group>"; };
-		7319C70C21DF5E7D00156813 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
-		7319C70D21DF5E7D00156813 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		73330CB621A3F61800233E6D /* LXCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73330CB921A3F61800233E6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73330CBA21A3F61800233E6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -242,6 +289,8 @@
 				731487E321D4EC6700480F08 /* UIColor+LXCategory.m */,
 				731487E521D4EED400480F08 /* UITableView+LXCategory.h */,
 				731487E621D4EED400480F08 /* UITableView+LXCategory.m */,
+				73168F0321E31D6A005A6879 /* UIScrollView+LXCategory.h */,
+				73168F0421E31D6A005A6879 /* UIScrollView+LXCategory.m */,
 				7307CF8F21D646240005C962 /* UIGestureRecognizer+LXCategory.h */,
 				7307CF9021D646240005C962 /* UIGestureRecognizer+LXCategory.m */,
 				7307CF9221D6463C0005C962 /* UIFont+LXCategory.h */,
@@ -250,6 +299,8 @@
 				7307CF9621D6465E0005C962 /* UICollectionView+LXCategory.m */,
 				7307CF9821D646790005C962 /* UIScreen+LXCategory.h */,
 				7307CF9921D646790005C962 /* UIScreen+LXCategory.m */,
+				73168F0621E338CF005A6879 /* UIApplication+LXCategory.h */,
+				73168F0721E338CF005A6879 /* UIApplication+LXCategory.m */,
 				7307CF9B21D6468C0005C962 /* UIDevice+LXCategory.h */,
 				7307CF9C21D6468C0005C962 /* UIDevice+LXCategory.m */,
 				7307CF9E21D6469C0005C962 /* UIImage+LXCategory.h */,
@@ -260,10 +311,6 @@
 				7307CFA521D646BD0005C962 /* UIButton+LXCategory.m */,
 				7307CFA721D646DE0005C962 /* UITextField+LXCategory.h */,
 				7307CFA821D646DE0005C962 /* UITextField+LXCategory.m */,
-				7319C70921DF5DAD00156813 /* UITextView+LXCategory.h */,
-				7319C70A21DF5DAD00156813 /* UITextView+LXCategory.m */,
-				7307CFAA21D647370005C962 /* UIImageView+LXCategory.h */,
-				7307CFAB21D647370005C962 /* UIImageView+LXCategory.m */,
 				7307E05B21DC6484000752F6 /* UIAlertController+LXCategory.h */,
 				7307E05C21DC6484000752F6 /* UIAlertController+LXCategory.m */,
 			);
@@ -279,6 +326,113 @@
 				731487DF21D4EBBC00480F08 /* WTCommonViewController.m */,
 			);
 			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		73168EFE21E2F421005A6879 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				73168EFF21E2F421005A6879 /* LXSafeDictionary */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		73168EFF21E2F421005A6879 /* LXSafeDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				73168EFB21E2EBE6005A6879 /* LXSafeDictionary.h */,
+				73168EFC21E2EBE6005A6879 /* LXSafeDictionary.m */,
+			);
+			path = LXSafeDictionary;
+			sourceTree = "<group>";
+		};
+		73168F0921E33E55005A6879 /* RHCaches */ = {
+			isa = PBXGroup;
+			children = (
+				73168F0A21E33E55005A6879 /* RHCacheManager.m */,
+				73168F0B21E33E55005A6879 /* RHCache.h */,
+				73168F0C21E33E55005A6879 /* RHCacheManager.h */,
+				73168F0D21E33E55005A6879 /* RHCache.m */,
+			);
+			path = RHCaches;
+			sourceTree = "<group>";
+		};
+		73168F0E21E33E55005A6879 /* RHRequest */ = {
+			isa = PBXGroup;
+			children = (
+				73168F0F21E33E55005A6879 /* RequestModel */,
+				73168F1321E33E55005A6879 /* RHRequestNetWork.h */,
+				73168F1421E33E55005A6879 /* RequestDispose */,
+				73168F1D21E33E55005A6879 /* RequestUntil */,
+				73168F2021E33E55005A6879 /* RequestLog */,
+				73168F2321E33E55005A6879 /* ReuqestCategory */,
+				73168F2621E33E55005A6879 /* BaseRequest */,
+			);
+			path = RHRequest;
+			sourceTree = "<group>";
+		};
+		73168F0F21E33E55005A6879 /* RequestModel */ = {
+			isa = PBXGroup;
+			children = (
+				73168F1121E33E55005A6879 /* RHRequestConfiguration.h */,
+				73168F1021E33E55005A6879 /* RHRequestConfiguration.m */,
+				73168F1221E33E55005A6879 /* RHRequestDefines.h */,
+			);
+			path = RequestModel;
+			sourceTree = "<group>";
+		};
+		73168F1421E33E55005A6879 /* RequestDispose */ = {
+			isa = PBXGroup;
+			children = (
+				73168F1521E33E55005A6879 /* RHRequestUniquePackage.h */,
+				73168F1A21E33E55005A6879 /* RHRequestUniquePackage.m */,
+				73168F1B21E33E55005A6879 /* RHRequestNetworkManager.h */,
+				73168F1721E33E55005A6879 /* RHRequestNetworkManager.m */,
+				73168F1621E33E55005A6879 /* RHBatchRequestManager.h */,
+				73168F1921E33E55005A6879 /* RHBatchRequestManager.m */,
+				73168F1821E33E55005A6879 /* RHRequestSessionManager.h */,
+				73168F1C21E33E55005A6879 /* RHRequestSessionManager.m */,
+			);
+			path = RequestDispose;
+			sourceTree = "<group>";
+		};
+		73168F1D21E33E55005A6879 /* RequestUntil */ = {
+			isa = PBXGroup;
+			children = (
+				73168F1F21E33E55005A6879 /* RHRequestTool.h */,
+				73168F1E21E33E55005A6879 /* RHRequestTool.m */,
+			);
+			path = RequestUntil;
+			sourceTree = "<group>";
+		};
+		73168F2021E33E55005A6879 /* RequestLog */ = {
+			isa = PBXGroup;
+			children = (
+				73168F2221E33E55005A6879 /* RHRequestLogManager.h */,
+				73168F2121E33E55005A6879 /* RHRequestLogManager.m */,
+			);
+			path = RequestLog;
+			sourceTree = "<group>";
+		};
+		73168F2321E33E55005A6879 /* ReuqestCategory */ = {
+			isa = PBXGroup;
+			children = (
+				73168F2421E33E55005A6879 /* RHRequestCategory.h */,
+				73168F2521E33E55005A6879 /* RHRequestCategory.m */,
+			);
+			path = ReuqestCategory;
+			sourceTree = "<group>";
+		};
+		73168F2621E33E55005A6879 /* BaseRequest */ = {
+			isa = PBXGroup;
+			children = (
+				73168F2A21E33E55005A6879 /* RHBatchRequest.h */,
+				73168F2721E33E55005A6879 /* RHBatchRequest.m */,
+				73168F2B21E33E55005A6879 /* RHBaseRequest.h */,
+				73168F2821E33E55005A6879 /* RHBaseRequest.m */,
+				73168F2921E33E55005A6879 /* RHChainRequest.h */,
+				73168F2C21E33E55005A6879 /* RHChainRequest.m */,
+			);
+			path = BaseRequest;
 			sourceTree = "<group>";
 		};
 		73330CAD21A3F61700233E6D = {
@@ -302,6 +456,8 @@
 		73330CB821A3F61800233E6D /* LXCategory */ = {
 			isa = PBXGroup;
 			children = (
+				73168F0921E33E55005A6879 /* RHCaches */,
+				73168F0E21E33E55005A6879 /* RHRequest */,
 				731487DB21D4EB9400480F08 /* BaseViewController */,
 				73330CCF21A3F6D600233E6D /* LXCategory */,
 				73330CB921A3F61800233E6D /* AppDelegate.h */,
@@ -309,8 +465,8 @@
 				7319C6E021DEED0500156813 /* 11.gif */,
 				73330CBC21A3F61800233E6D /* ViewController.h */,
 				73330CBD21A3F61800233E6D /* ViewController.m */,
-				7319C70C21DF5E7D00156813 /* UITextView+Placeholder.h */,
-				7319C70D21DF5E7D00156813 /* UITextView+Placeholder.m */,
+				73168F0021E2F8E3005A6879 /* LXMa1.h */,
+				73168F0121E2F8E3005A6879 /* LXMa1.m */,
 				7311819F21DDF6F900077485 /* Bitmap@2x.png */,
 				73330CBF21A3F61800233E6D /* Main.storyboard */,
 				73330CC221A3F61900233E6D /* Assets.xcassets */,
@@ -337,6 +493,8 @@
 			children = (
 				731181A421DE26FC00077485 /* NSString+LXCategory.h */,
 				731181A521DE26FC00077485 /* NSString+LXCategory.m */,
+				73168F3A21E34183005A6879 /* NSData+LXCategory.h */,
+				73168F3B21E34183005A6879 /* NSData+LXCategory.m */,
 				731181AA21DE2D5C00077485 /* NSAttributedString+LXCategory.h */,
 				731181AB21DE2D5C00077485 /* NSAttributedString+LXCategory.m */,
 			);
@@ -355,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				73330CD721A3F91400233E6D /* LXDefine.h */,
+				73168EFE21E2F421005A6879 /* Custom */,
 				73BAD06621D397F700B1A274 /* LXChain */,
 			);
 			path = Other;
@@ -599,17 +758,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				7362524521DCD4130049F5E2 /* LXLabelChainModel.m in Sources */,
+				73168F3521E33E55005A6879 /* RHRequestLogManager.m in Sources */,
 				7319C70221DF327E00156813 /* LXGradientLayerChainModel.m in Sources */,
 				731487E021D4EBBC00480F08 /* WTCommonNavigationBar.m in Sources */,
 				7307CF9721D6465E0005C962 /* UICollectionView+LXCategory.m in Sources */,
 				7307CFA621D646BD0005C962 /* UIButton+LXCategory.m in Sources */,
 				7362523E21DCD4130049F5E2 /* LXButtonChainModel.m in Sources */,
+				73168EFD21E2EBE6005A6879 /* LXSafeDictionary.m in Sources */,
 				7362524621DCD4130049F5E2 /* LXScrollViewChainModel.m in Sources */,
+				73168F0821E338CF005A6879 /* UIApplication+LXCategory.m in Sources */,
 				7362524721DCD4130049F5E2 /* LXViewChainModel.m in Sources */,
 				7362523F21DCD4130049F5E2 /* LXTableViewCellChainModel.m in Sources */,
 				7362523A21DCD4130049F5E2 /* LXRotationGestureChainModel.m in Sources */,
 				731181AC21DE2D5C00077485 /* NSAttributedString+LXCategory.m in Sources */,
 				7362524921DCD4130049F5E2 /* LXImageViewChainModel.m in Sources */,
+				73168F3721E33E55005A6879 /* RHBatchRequest.m in Sources */,
 				7307CF9121D646240005C962 /* UIGestureRecognizer+LXCategory.m in Sources */,
 				7362524421DCD4130049F5E2 /* LXControlChainModel.m in Sources */,
 				7362524321DCD4130049F5E2 /* LXTextFieldChainModel.m in Sources */,
@@ -619,41 +782,52 @@
 				731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */,
 				7319C6F321DF321F00156813 /* LXEmiiterLayerChainModel.m in Sources */,
 				731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */,
-				7319C70B21DF5DAD00156813 /* UITextView+LXCategory.m in Sources */,
+				73168F2F21E33E55005A6879 /* RHRequestConfiguration.m in Sources */,
 				731487C821D4759100480F08 /* UIControl+LXCategory.m in Sources */,
+				73168F3221E33E55005A6879 /* RHRequestUniquePackage.m in Sources */,
 				7362523B21DCD4130049F5E2 /* LXBaseViewChainModel.m in Sources */,
 				7362524221DCD4130049F5E2 /* LXSwitchChainModel.m in Sources */,
 				73330CBE21A3F61800233E6D /* ViewController.m in Sources */,
+				73168F3021E33E55005A6879 /* RHRequestNetworkManager.m in Sources */,
 				7307CFA921D646DE0005C962 /* UITextField+LXCategory.m in Sources */,
 				73330CC921A3F61900233E6D /* main.m in Sources */,
 				7307E05D21DC6484000752F6 /* UIAlertController+LXCategory.m in Sources */,
 				731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */,
 				7319C6FF21DF326600156813 /* LXTransFormLayerChainModel.m in Sources */,
+				73168F3121E33E55005A6879 /* RHBatchRequestManager.m in Sources */,
 				731181A621DE26FC00077485 /* NSString+LXCategory.m in Sources */,
 				7362523721DCD4130049F5E2 /* LXSwipeGestureChainModel.m in Sources */,
+				73168F0221E2F8E3005A6879 /* LXMa1.m in Sources */,
 				7319C70821DF4CA100156813 /* CALayer+LXChain.m in Sources */,
+				73168F2D21E33E55005A6879 /* RHCacheManager.m in Sources */,
 				7362523621DCD4130049F5E2 /* LXLongPressGestureChainModel.m in Sources */,
 				7319C6F621DF323100156813 /* LXScrollLayerChainModel.m in Sources */,
 				7362523521DCD4130049F5E2 /* LXPanGestureChainModel.m in Sources */,
 				73BAD06C21D3A50000B1A274 /* UIView+LXCategory.m in Sources */,
+				73168F3921E33E55005A6879 /* RHChainRequest.m in Sources */,
 				7307CF9D21D6468C0005C962 /* UIDevice+LXCategory.m in Sources */,
+				73168F2E21E33E55005A6879 /* RHCache.m in Sources */,
 				7362524021DCD4130049F5E2 /* LXTextViewChainModel.m in Sources */,
 				7307CF9421D6463C0005C962 /* UIFont+LXCategory.m in Sources */,
 				7319C70521DF329C00156813 /* LXReplicatorLayerChainModel.m in Sources */,
 				7362523421DCD4130049F5E2 /* LXPinchGestureChainModel.m in Sources */,
+				73168F0521E31D6A005A6879 /* UIScrollView+LXCategory.m in Sources */,
 				73330CBB21A3F61800233E6D /* AppDelegate.m in Sources */,
+				73168F3421E33E55005A6879 /* RHRequestTool.m in Sources */,
 				7362524821DCD4130049F5E2 /* LXWebViewChainModel.m in Sources */,
 				7362523921DCD4130049F5E2 /* LXBaseGestureChainModel.m in Sources */,
-				7319C70E21DF5E7E00156813 /* UITextView+Placeholder.m in Sources */,
 				7362523C21DCD4130049F5E2 /* LXTableViewChainModel.m in Sources */,
 				7362523D21DCD4130049F5E2 /* LXCollectionViewChainModel.m in Sources */,
 				7319C6ED21DF31F300156813 /* LXShaperLayerChainModel.m in Sources */,
 				7307CFA321D646B00005C962 /* UILabel+LXCategory.m in Sources */,
+				73168F3321E33E55005A6879 /* RHRequestSessionManager.m in Sources */,
 				7319C6FC21DF325200156813 /* LXTiledLayerChainModel.m in Sources */,
-				7307CFAC21D647370005C962 /* UIImageView+LXCategory.m in Sources */,
+				73168F3821E33E55005A6879 /* RHBaseRequest.m in Sources */,
+				73168F3621E33E55005A6879 /* RHRequestCategory.m in Sources */,
 				7307CF9A21D646790005C962 /* UIScreen+LXCategory.m in Sources */,
 				7362524121DCD4130049F5E2 /* UIView+LXChain.m in Sources */,
 				7319C6F921DF324200156813 /* LXTextLayerChainModel.m in Sources */,
+				73168F3C21E34183005A6879 /* NSData+LXCategory.m in Sources */,
 				7311819C21DDD3F900077485 /* LXBaseLayerChainModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
