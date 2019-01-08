@@ -11,9 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (LXCategory)
-
-+ (NSString *)stringWithUUID;
-
 #pragma mark - 对象转换 -
 #pragma mark - 字符串转换 -
 - (NSData *)utf8Data;
@@ -25,11 +22,56 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray *)jsonArray;
 
+- (id)jsonObject;
+
 #pragma mark - 加密 -
 
 
 #pragma mark - 大小 -
 - (CGSize)sizeWithAttributes:(NSDictionary<NSAttributedStringKey,id> *)attrs limitSize:(CGSize)size;
+
+@end
+
+@interface NSString (Contains)
+
+/**
+ 是不是电话
+ */
+- (BOOL)isMobileNumber;
+
+/**
+ 是不是邮箱
+ */
+- (BOOL)isEmailAddress;
+
+/**
+ ip有没有效
+ */
+- (BOOL)isIPAddress;
+
+/**
+ Mac地址有效性
+ */
+- (BOOL)isMacAddress;
+
+/**
+ 是否是有效的邮政编码
+ */
+- (BOOL)isValidPostalcode;
+/**
+ 纯汉字
+ */
+- (BOOL)isValidChinese;
+
+/**
+ 网址有效性
+ */
+- (BOOL)isValidUrl;
+
+/**
+ 表情
+ */
+- (BOOL)isContainEmoji;
 
 @end
 
@@ -68,24 +110,118 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface NSString (Code)
+
 - (nullable NSString *)base64EncodedString;
+
 + (nullable NSString *)stringWithBase64EncodedString:(NSString *)base64EncodedString;
 
+
 /**
- URL encode a string in utf-8.
- @return the encoded string.
+ 用utf8-编码字符串
  */
 - (NSString *)stringByURLEncode;
 /**
- URL decode a string in utf-8.
- @return the decoded string.
+ 解码utf-8中的字符串
  */
 - (NSString *)stringByURLDecode;
 /**
- Escape commmon HTML to Entity.
- Example: "a>b" will be escape to "a&gt;b".
+ 将普通HTML转义到实体。
+ a > b -> a&gt;b
  */
 - (NSString *)stringByEscapingHTML;
+
 @end
+
+
+@interface NSString (RegularExpression)
+
+/**
+ 匹配正则
+ */
+- (BOOL)matchesRegex:(NSString *)regex options:(NSRegularExpressionOptions)options;
+
+- (void)enumerateRegexMatches:(NSString *)regex
+                      options:(NSRegularExpressionOptions)options
+                   usingBlock:(void (^)(NSString *match, NSRange matchRange, BOOL *stop))block;
+- (NSString *)stringByReplacingRegex:(NSString *)regex
+                             options:(NSRegularExpressionOptions)options
+                          withString:(NSString *)replacement;
+
+@end
+
+@interface NSString (Number)
+@property (readonly) char charValue;
+@property (readonly) unsigned char unsignedCharValue;
+@property (readonly) short shortValue;
+@property (readonly) unsigned short unsignedShortValue;
+@property (readonly) unsigned int unsignedIntValue;
+@property (readonly) long longValue;
+@property (readonly) unsigned long unsignedLongValue;
+@property (readonly) unsigned long long unsignedLongLongValue;
+@property (readonly) NSUInteger unsignedIntegerValue;
+@end
+
+@interface NSString (PinYin)
+///拼音 ->pinyin
+- (NSString*)transformToPinyin;
+
+///拼音首字母 -> py
+- (NSString *)transformToPinyinFirstLetter;
+
+@end
+
+
+@interface NSString (Utility)
+
+/**
+ 返回UUID
+
+ */
++ (NSString *)stringWithUUID;
+
+/**
+ 返回一个字符串，该字符串包含给定UTF32Char中的字符
+ */
++ (NSString *)stringWithUTF32Char:(UTF32Char)char32;
+
+/**
+ 返回一个字符串，该字符串包含给定UTF32Char数组中的字符。
+ */
++ (NSString *)stringWithUTF32Chars:(const UTF32Char *)char32 length:(NSUInteger)length;
+
+/**
+ 去除空字符和换行
+ */
+- (void)enumerateUTF32CharInRange:(NSRange)range usingBlock:(void (^)(UTF32Char char32, NSRange range, BOOL *stop))block;
+
+- (NSString *)stringByTrim;
+
+- (BOOL)isNotBlank;
+
+- (BOOL)containsString:(NSString *)string;
+
+- (BOOL)containsCharacterSet:(NSCharacterSet *)set;
+
+- (NSNumber *)numberValue;
+
+- (NSData *)dataValue;
+
+- (NSRange)rangeOfAll;
+
++ (NSString *)stringNamed:(NSString *)name;
+
+
+/**
+ 
+ 数字
+ 转换为汉字
+ */
++ (NSString *)covert:(NSUInteger)num;
+
+- (NSString *)deleteEmoji;
+
+@end
+
+
 
 NS_ASSUME_NONNULL_END

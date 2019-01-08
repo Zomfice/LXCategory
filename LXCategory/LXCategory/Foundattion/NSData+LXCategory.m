@@ -187,11 +187,60 @@ return data;
 @end
 @implementation NSData (Code)
 
-- (nullable NSData *)aes256EncryptWithKey:(NSData *)key iv:(nullable NSData *)iv{
-    if (key.length != 16 && key.length != 24 && key.length != 32) {
+- (nullable NSData *)aes256EncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv{
+    return [self aes256EncryptOriWithKey:(void *)key.bytes size:key.length iv:(void *)iv.bytes size:iv.length];
+}
+
+- (nullable NSData *)aes256DecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv{
+    return [self aes256DecryptOriWithkey:(void *)key.bytes size:key.length iv:(void *)iv.bytes size:iv.length];
+}
+
+- (nullable NSData *)aes256EncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv{
+    if (key.length == 0)return nil;
+    char keyData[kCCKeySizeAES128 + 1];
+    size_t keySize = sizeof(keyData);
+    memset(keyData, 0, keySize);
+    [key getCString:keyData maxLength:keySize encoding:NSUTF8StringEncoding];
+    keySize --;
+    size_t ivSize = 0;
+    void * ivVoid = NULL;
+    if (iv.length > 0) {
+        char ivData[kCCBlockSizeAES128 + 1];
+        ivSize = sizeof(ivData);
+        memset(ivData, 0, ivSize);
+        [key getCString:ivData maxLength:ivSize encoding:NSUTF8StringEncoding];
+        ivSize --;
+        ivVoid = ivData;
+    }
+    return [self aes256EncryptOriWithKey:keyData size:keySize iv:ivVoid size:ivSize];
+}
+
+- (nullable NSData *)aes256DecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv{
+    if (key.length == 0)return nil;
+    char keyData[kCCKeySizeAES128 + 1];
+    size_t keySize = sizeof(keyData);
+    memset(keyData, 0, keySize);
+    [key getCString:keyData maxLength:keySize encoding:NSUTF8StringEncoding];
+    keySize --;
+    size_t ivSize = 0;
+    void * ivVoid = NULL;
+    if (iv.length > 0) {
+        char ivData[kCCBlockSizeAES128 + 1];
+        ivSize = sizeof(ivData);
+        memset(ivData, 0, ivSize);
+        [key getCString:ivData maxLength:ivSize encoding:NSUTF8StringEncoding];
+        ivSize --;
+        ivVoid = ivData;
+    }
+    return [self aes256DecryptOriWithkey:keyData size:keySize iv:ivVoid size:ivSize];
+}
+
+
+- (nullable NSData *)aes256EncryptOriWithKey:(void *)key size:(size_t)keySize iv:( void *)iv size:(size_t)ivSize{
+    if (keySize != 16 && keySize != 24 && keySize != 32) {
         return nil;
     }
-    if (iv.length != 16 && iv.length != 0) {
+    if (ivSize != 16 && ivSize != 0) {
         return nil;
     }
     
@@ -203,9 +252,9 @@ return data;
     CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
                                           kCCAlgorithmAES128,
                                           kCCOptionPKCS7Padding,
-                                          key.bytes,
-                                          key.length,
-                                          iv.bytes,
+                                          key,
+                                          keySize,
+                                          iv,
                                           self.bytes,
                                           self.length,
                                           buffer,
@@ -221,11 +270,11 @@ return data;
     }
 }
 
-- (nullable NSData *)aes256DecryptWithkey:(NSData *)key iv:(nullable NSData *)iv{
-    if (key.length != 16 && key.length != 24 && key.length != 32) {
+- (nullable NSData *)aes256DecryptOriWithkey:(void *)key size:(size_t)keySize iv:( void *)iv size:(size_t)ivSize{
+    if (keySize != 16 && keySize != 24 && keySize != 32) {
         return nil;
     }
-    if (iv.length != 16 && iv.length != 0) {
+    if (ivSize != 16 && ivSize != 0) {
         return nil;
     }
     
@@ -237,9 +286,9 @@ return data;
     CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
                                           kCCAlgorithmAES128,
                                           kCCOptionPKCS7Padding,
-                                          key.bytes,
-                                          key.length,
-                                          iv.bytes,
+                                          key,
+                                          keySize,
+                                          iv,
                                           self.bytes,
                                           self.length,
                                           buffer,

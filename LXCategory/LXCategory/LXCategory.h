@@ -27,5 +27,6 @@
 #import "NSString+LXCategory.h"
 #import "NSAttributedString+LXCategory.h"
 #import "NSData+LXCategory.h"
+#import "NSNumber+LXCategory.h"
 #import "LXDefine.h"
 #endif /* LXCategory_h */

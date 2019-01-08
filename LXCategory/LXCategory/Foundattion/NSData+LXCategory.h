@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (LXCategory)
+
 + (nullable NSData *)dataNamed:(NSString *)name;
+
 @end
 
 @interface NSData (Hash)
@@ -84,9 +86,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (Code)
 
-- (nullable NSData *)aes256EncryptWithKey:(NSData *)key iv:(nullable NSData *)iv;
+- (nullable NSData *)aes256EncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv;
 
-- (nullable NSData *)aes256DecryptWithkey:(NSData *)key iv:(nullable NSData *)iv;
+- (nullable NSData *)aes256DecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv;
+
+- (nullable NSData *)aes256EncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv;
+
+- (nullable NSData *)aes256DecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv;
 
 - (NSString *)utf8String;
 
@@ -110,17 +116,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSData *)gzipInflate;
 
-
 /**
  压缩
  */
 - (nullable NSData *)gzipDeflate;
 
-
 - (nullable NSData *)zlibInflate;
 
-
 - (nullable NSData *)zlibDeflate;
+
 @end
 
 NS_ASSUME_NONNULL_END
