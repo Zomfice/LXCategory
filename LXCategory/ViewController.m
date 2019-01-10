@@ -59,20 +59,10 @@ static Byte AES_IV[16] = {
         
     }];
     [self.navigationBar setTag:0];
-    NSData *data = [NSData dataWithBytes:AES_KEY length:32];
-    NSData *vi = [NSData dataWithBytes:vi length:16];
-    NSData *data = [[@"麻小亮" utf8Data] aes256EncryptWithKey:data iv:vi];
-    
-    NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-    NSLog(@"%@", [data aes256DecryptWithkey:[@"asdfas阿斯顿发到付" utf8Data] iv:[@"asdfas阿斯顿发到付" utf8Data]]);
-    // Do any additional setup after loading the view, typically from a nib.
 }
-
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    
 }
 
 - (void)middleButtonTap:(UIButton *)button{

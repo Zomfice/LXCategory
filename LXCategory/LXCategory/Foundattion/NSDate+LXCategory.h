@@ -1,18 +1,16 @@
 //
-//  LXMa1.h
+//  NSDate+LXCategory.h
 //  LXCategory
 //
-//  Created by 麻小亮 on 2019/1/7.
+//  Created by 麻小亮 on 2019/1/9.
 //  Copyright © 2019 xllpp. All rights reserved.
 //
 
-#import "WTCommonViewController.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXMa1 : WTCommonViewController
-
-
+@interface NSDate (LXCategory)
 
 @end
 

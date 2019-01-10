@@ -12,8 +12,6 @@
 #include <CommonCrypto/CommonCrypto.h>
 @implementation NSString (LXCategory)
 
-#pragma mark - 对象转换 -
-#pragma mark - 字符串转换 -
 - (NSData *)utf8Data{
     NSString *string = self;
     string = [string stringByReplacingOccurrencesOfString:@"\r" withString:@""];
@@ -114,6 +112,16 @@
     return [self isValidateByRegex:chineseRegex];
 }
 
+- (BOOL)isContainChinese{
+    for(int i=0; i< [self length];i++)
+    {
+        int a =[self characterAtIndex:i];
+        if( a >0x4e00&& a <0x9fff){
+            return YES;
+        }
+    }
+    return NO;
+}
 
 - (BOOL)isValidUrl{
     NSString *regex = @"^((http)|(https))+:[^\\s]+\\.[^\\s]*$";
@@ -200,9 +208,10 @@ return [[self utf8Data] hmac##method##StringWithKey:key];
 - (nullable NSString *)base64EncodedString{
     return [[self utf8Data] base64EncodedString];
 }
-+ (nullable NSString *)stringWithBase64EncodedString:(NSString *)base64EncodedString{
-    NSData *data = [NSData dataWithBase64EncodedString:base64EncodedString];
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+- (NSString *)base64DecodedString{
+    NSData *data = [NSData dataWithBase64EncodedString:self];
+    return [data utf8String];
 }
 
 /**
@@ -316,6 +325,23 @@ return [[self utf8Data] hmac##method##StringWithKey:key];
     }
     free(buf);
     return result;
+}
+
+
+-(NSString *)removeHtmlString
+{
+    NSString *html = self.copy;
+    NSScanner * scanner = [NSScanner scannerWithString:html];
+    NSString * text = nil;
+    while([scanner isAtEnd]==NO)
+    {
+        [scanner scanUpToString:@"<" intoString:nil];
+        [scanner scanUpToString:@">" intoString:&text];
+        html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>",text] withString:@""];
+        //去除空格 &nbsp;
+        html = [html stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@""];
+    }
+    return html;
 }
 
 @end

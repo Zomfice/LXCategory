@@ -18,6 +18,15 @@
         return chainModel;      \
     };      \
 }
+#define LXCATEGORY_ADDLAYER(method, modelClass, LayerClass)\
+- (modelClass * _Nonnull (^)(void))method{\
+return ^ (){\
+    LayerClass *layer = [LayerClass layer];\
+    modelClass *chainModel = [[modelClass alloc] initWithLayer:layer];\
+    [self.layer addSublayer:layer];\
+    return chainModel;\
+};\
+}
 
 
 @implementation UIView (LXChain)
@@ -47,4 +56,16 @@ LXCATEGORY_ADDVIEW(addTableView, LXTableViewChainModel, UITableView);
     };
 }
 
+LXCATEGORY_ADDLAYER(addLayer, LXLayerChainModel, CALayer)
+LXCATEGORY_ADDLAYER(addShaperLayer, LXShaperLayerChainModel, CAShapeLayer)
+LXCATEGORY_ADDLAYER(addEmiiterLayer, LXEmiiterLayerChainModel, CAEmitterLayer)
+LXCATEGORY_ADDLAYER(addScrollLayer, LXScrollLayerChainModel, CAScrollLayer)
+LXCATEGORY_ADDLAYER(addTextLayer, LXTextLayerChainModel, CATextLayer)
+LXCATEGORY_ADDLAYER(addTiledLayer, LXTiledLayerChainModel, CATiledLayer)
+LXCATEGORY_ADDLAYER(addTransFormLayer, LXTransFormLayerChainModel, CATransformLayer)
+LXCATEGORY_ADDLAYER(addGradientLayer, LXGradientLayerChainModel, CAGradientLayer)
+LXCATEGORY_ADDLAYER(addReplicatorLayer, LXReplicatorLayerChainModel, CAReplicatorLayer)
+
 @end
+#undef LXCATEGORY_ADDVIEW
+#undef LXCATEGORY_ADDLAYER

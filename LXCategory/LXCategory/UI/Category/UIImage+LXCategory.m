@@ -67,20 +67,7 @@
     }
 }
 
-- (UIImage *)imageByGrayColor{
-    CGColorSpaceRef spaceRef = CGColorSpaceCreateDeviceGray();
-    CGFloat width = self.size.width;
-    CGFloat height = self.size.height;
-    CGContextRef context = CGBitmapContextCreate (nil,width,height,8,0,spaceRef,kCGImageAlphaNone);
-    CGColorSpaceRelease(spaceRef);
-    if (context == NULL) return nil;
-    CGContextDrawImage(context,CGRectMake(0, 0, width, height), self.CGImage);
-    CGImageRef contextRef = CGBitmapContextCreateImage(context);
-    UIImage *grayImage = [UIImage imageWithCGImage:contextRef];
-    CGContextRelease(context);
-    CGImageRelease(contextRef);
-    return grayImage;
-}
+
 
 
 + (UIImage *)animatedGifName:(NSString *)name{

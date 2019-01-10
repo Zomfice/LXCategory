@@ -11,8 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (LXCategory)
-#pragma mark - 对象转换 -
-#pragma mark - 字符串转换 -
+
 - (NSData *)utf8Data;
 
 /**
@@ -64,6 +63,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isValidChinese;
 
 /**
+ 是否包含汉字
+ */
+- (BOOL)isContainChinese;
+
+/**
  网址有效性
  */
 - (BOOL)isValidUrl;
@@ -113,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSString *)base64EncodedString;
 
-+ (nullable NSString *)stringWithBase64EncodedString:(NSString *)base64EncodedString;
+- (nullable NSString *)base64DecodedString;
 
 
 /**
@@ -129,6 +133,8 @@ NS_ASSUME_NONNULL_BEGIN
  a > b -> a&gt;b
  */
 - (NSString *)stringByEscapingHTML;
+
+- (NSString *)removeHtmlString;
 
 @end
 

@@ -100,8 +100,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable NSData *)dataWithHexString:(NSString *)hexString;
 
+/**
+ 编码
+ */
 - (nullable NSString *)base64EncodedString;
 
+/**
+ 解码
+ */
 + (nullable NSData *)dataWithBase64EncodedString:(NSString *)base64EncodedString;
 
 - (nullable id)jsonValueDecoded;

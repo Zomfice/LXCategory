@@ -31,11 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)hasAlphaChannel;
 
 /**
- 黑白照片
- */
-- (UIImage *)imageByGrayColor;
-
-/**
  动画图片
  */
 + (UIImage *)animatedGifName:(NSString *)name;
