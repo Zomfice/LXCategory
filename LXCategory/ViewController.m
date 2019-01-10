@@ -59,6 +59,7 @@ static Byte AES_IV[16] = {
         
     }];
     [self.navigationBar setTag:0];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated{
