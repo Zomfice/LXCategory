@@ -45,7 +45,7 @@
         
     });
     
-    [[NSFileManager defaultManager] addPreNameAtPath:@"/Users/maxiaoliang/Desktop/1/LSYReader/LSYReader/Reader/MXLCatalogVC" preName:@"MXL"];
+    
     
 }
 
