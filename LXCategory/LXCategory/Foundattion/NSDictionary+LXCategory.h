@@ -112,5 +112,5 @@ LXMUTABLEDICTION_PROPERTY ( ^ addValueForKey)(ObjectType object, KeyType key);
 LXMUTABLEDICTION_PROPERTY ( ^ removeValueForKey)(KeyType key);
 
 @end
-
+#undef LXMUTABLEDICTION_PROPERTY
 NS_ASSUME_NONNULL_END

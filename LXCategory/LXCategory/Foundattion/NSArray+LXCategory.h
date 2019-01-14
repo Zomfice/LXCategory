@@ -91,3 +91,4 @@ LXMUTABLEARRAY_PROPERTY (^insertObjectsChainAtIndex) (NSArray <ObjectType>* obje
 
 @end
 NS_ASSUME_NONNULL_END
+#undef LXMUTABLEARRAY_PROPERTY
