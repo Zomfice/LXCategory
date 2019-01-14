@@ -53,6 +53,17 @@ LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION(allowsMultipleSelection, BOOL)
     };
 }
 
+- (LXCollectionViewChainModel * _Nonnull (^)(void))reloadData{
+    return ^ (){
+        [CATransaction begin];
+        [CATransaction setDisableActions:YES];
+        [(UICollectionView *)self.view reloadData];
+        [CATransaction commit];
+        
+        return self;
+    };
+}
+
 @end
 LXCATEGORY_VIEW_IMPLEMENTATION(UICollectionView, LXCollectionViewChainModel)
 #undef LXCATEGORY_CHAIN_COLLECTIONVIEW_IMPLEMENTATION

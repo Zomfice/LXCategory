@@ -42,7 +42,11 @@ LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ titleShadow) (UIColor *color, U
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ font) (UIFont *font);
 
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel * (^ imageDirection) (LXButtonImageDirection imageDirection, CGFloat space);
-
+LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ textAlignment)(NSTextAlignment textAlignment);
+LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ numberOfLines)(NSInteger numberOfLines);
+LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ lineBreakMode)(NSLineBreakMode lineBreakMode);
+LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ adjustsFontSizeToFitWidth)(BOOL adjustsFontSizeToFitWidth);
+LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ baselineAdjustment)(UIBaselineAdjustment baselineAdjustment);
 @end
 LXCreate(UIButton)
 static inline UIButton *UIButtonCreateWithType(UIButtonType buttonType){

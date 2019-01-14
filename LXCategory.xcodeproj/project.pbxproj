@@ -24,8 +24,8 @@
 		731181A621DE26FC00077485 /* NSString+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731181A521DE26FC00077485 /* NSString+LXCategory.m */; };
 		731181AC21DE2D5C00077485 /* NSAttributedString+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731181AB21DE2D5C00077485 /* NSAttributedString+LXCategory.m */; };
 		731487C821D4759100480F08 /* UIControl+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487C721D4759100480F08 /* UIControl+LXCategory.m */; };
-		731487E021D4EBBC00480F08 /* WTCommonNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DC21D4EBBB00480F08 /* WTCommonNavigationBar.m */; };
-		731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DF21D4EBBC00480F08 /* WTCommonViewController.m */; };
+		731487E021D4EBBC00480F08 /* LXommonNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DC21D4EBBB00480F08 /* LXommonNavigationBar.m */; };
+		731487E121D4EBBC00480F08 /* LXommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487DF21D4EBBC00480F08 /* LXommonViewController.m */; };
 		731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E321D4EC6700480F08 /* UIColor+LXCategory.m */; };
 		731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731487E621D4EED400480F08 /* UITableView+LXCategory.m */; };
 		73168EFD21E2EBE6005A6879 /* LXSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 73168EFC21E2EBE6005A6879 /* LXSafeDictionary.m */; };
@@ -57,6 +57,14 @@
 		73337B2121E5ACCF00200EB3 /* NSTimer+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 73337B2021E5ACCF00200EB3 /* NSTimer+LXCategory.m */; };
 		734555F721A4266C006866A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734555F621A4266C006866A5 /* UIKit.framework */; };
 		734555FD21A4271D006866A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734555FC21A4271D006866A5 /* Foundation.framework */; };
+		735C555721E8240C00030E22 /* NSFileManager+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C555621E8240C00030E22 /* NSFileManager+LXCategory.m */; };
+		735C569021E8922100030E22 /* LXActivityIndicatorViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C568F21E8922100030E22 /* LXActivityIndicatorViewChainModel.m */; };
+		735C569321E8958D00030E22 /* LXDatePickerViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C569221E8958D00030E22 /* LXDatePickerViewChainModel.m */; };
+		735C569621E8962A00030E22 /* LXPickerViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C569521E8962A00030E22 /* LXPickerViewChainModel.m */; };
+		735C569921E8964E00030E22 /* LXProgressViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C569821E8964E00030E22 /* LXProgressViewChainModel.m */; };
+		735C569C21E8970900030E22 /* LXVisualEffectViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C569B21E8970900030E22 /* LXVisualEffectViewChainModel.m */; };
+		735C569F21E8973400030E22 /* LXSliderViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C569E21E8973400030E22 /* LXSliderViewChainModel.m */; };
+		735C56A221E8975600030E22 /* LXSegmentedControlChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C56A121E8975600030E22 /* LXSegmentedControlChainModel.m */; };
 		7362523421DCD4130049F5E2 /* LXPinchGestureChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362520621DCD4130049F5E2 /* LXPinchGestureChainModel.m */; };
 		7362523521DCD4130049F5E2 /* LXPanGestureChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362520A21DCD4130049F5E2 /* LXPanGestureChainModel.m */; };
 		7362523621DCD4130049F5E2 /* LXLongPressGestureChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362520B21DCD4130049F5E2 /* LXLongPressGestureChainModel.m */; };
@@ -116,10 +124,10 @@
 		731181AB21DE2D5C00077485 /* NSAttributedString+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+LXCategory.m"; sourceTree = "<group>"; };
 		731487C621D4759100480F08 /* UIControl+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+LXCategory.h"; sourceTree = "<group>"; };
 		731487C721D4759100480F08 /* UIControl+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+LXCategory.m"; sourceTree = "<group>"; };
-		731487DC21D4EBBB00480F08 /* WTCommonNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCommonNavigationBar.m; sourceTree = "<group>"; };
-		731487DD21D4EBBB00480F08 /* WTCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCommonViewController.h; sourceTree = "<group>"; };
-		731487DE21D4EBBC00480F08 /* WTCommonNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCommonNavigationBar.h; sourceTree = "<group>"; };
-		731487DF21D4EBBC00480F08 /* WTCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCommonViewController.m; sourceTree = "<group>"; };
+		731487DC21D4EBBB00480F08 /* LXommonNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXommonNavigationBar.m; sourceTree = "<group>"; };
+		731487DD21D4EBBB00480F08 /* LXommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXommonViewController.h; sourceTree = "<group>"; };
+		731487DE21D4EBBC00480F08 /* LXommonNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXommonNavigationBar.h; sourceTree = "<group>"; };
+		731487DF21D4EBBC00480F08 /* LXommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXommonViewController.m; sourceTree = "<group>"; };
 		731487E221D4EC6700480F08 /* UIColor+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+LXCategory.h"; sourceTree = "<group>"; };
 		731487E321D4EC6700480F08 /* UIColor+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LXCategory.m"; sourceTree = "<group>"; };
 		731487E521D4EED400480F08 /* UITableView+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LXCategory.h"; sourceTree = "<group>"; };
@@ -182,6 +190,22 @@
 		73337B2021E5ACCF00200EB3 /* NSTimer+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+LXCategory.m"; sourceTree = "<group>"; };
 		734555F621A4266C006866A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		734555FC21A4271D006866A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		735C555521E8240C00030E22 /* NSFileManager+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+LXCategory.h"; sourceTree = "<group>"; };
+		735C555621E8240C00030E22 /* NSFileManager+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+LXCategory.m"; sourceTree = "<group>"; };
+		735C568E21E8922100030E22 /* LXActivityIndicatorViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXActivityIndicatorViewChainModel.h; sourceTree = "<group>"; };
+		735C568F21E8922100030E22 /* LXActivityIndicatorViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXActivityIndicatorViewChainModel.m; sourceTree = "<group>"; };
+		735C569121E8958D00030E22 /* LXDatePickerViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDatePickerViewChainModel.h; sourceTree = "<group>"; };
+		735C569221E8958D00030E22 /* LXDatePickerViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDatePickerViewChainModel.m; sourceTree = "<group>"; };
+		735C569421E8962A00030E22 /* LXPickerViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXPickerViewChainModel.h; sourceTree = "<group>"; };
+		735C569521E8962A00030E22 /* LXPickerViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXPickerViewChainModel.m; sourceTree = "<group>"; };
+		735C569721E8964E00030E22 /* LXProgressViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXProgressViewChainModel.h; sourceTree = "<group>"; };
+		735C569821E8964E00030E22 /* LXProgressViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXProgressViewChainModel.m; sourceTree = "<group>"; };
+		735C569A21E8970900030E22 /* LXVisualEffectViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXVisualEffectViewChainModel.h; sourceTree = "<group>"; };
+		735C569B21E8970900030E22 /* LXVisualEffectViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXVisualEffectViewChainModel.m; sourceTree = "<group>"; };
+		735C569D21E8973400030E22 /* LXSliderViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXSliderViewChainModel.h; sourceTree = "<group>"; };
+		735C569E21E8973400030E22 /* LXSliderViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSliderViewChainModel.m; sourceTree = "<group>"; };
+		735C56A021E8975600030E22 /* LXSegmentedControlChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXSegmentedControlChainModel.h; sourceTree = "<group>"; };
+		735C56A121E8975600030E22 /* LXSegmentedControlChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSegmentedControlChainModel.m; sourceTree = "<group>"; };
 		7362520621DCD4130049F5E2 /* LXPinchGestureChainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPinchGestureChainModel.m; sourceTree = "<group>"; };
 		7362520721DCD4130049F5E2 /* LXBaseGestureChainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBaseGestureChainModel.h; sourceTree = "<group>"; };
 		7362520821DCD4130049F5E2 /* LXTapGestureChainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTapGestureChainModel.h; sourceTree = "<group>"; };
@@ -297,10 +321,10 @@
 		731487DB21D4EB9400480F08 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
-				731487DE21D4EBBC00480F08 /* WTCommonNavigationBar.h */,
-				731487DC21D4EBBB00480F08 /* WTCommonNavigationBar.m */,
-				731487DD21D4EBBB00480F08 /* WTCommonViewController.h */,
-				731487DF21D4EBBC00480F08 /* WTCommonViewController.m */,
+				731487DE21D4EBBC00480F08 /* LXommonNavigationBar.h */,
+				731487DC21D4EBBB00480F08 /* LXommonNavigationBar.m */,
+				731487DD21D4EBBB00480F08 /* LXommonViewController.h */,
+				731487DF21D4EBBC00480F08 /* LXommonViewController.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -394,6 +418,8 @@
 				73337B1D21E5AB5300200EB3 /* NSObject+LXCategory.m */,
 				73337B1F21E5ACCF00200EB3 /* NSTimer+LXCategory.h */,
 				73337B2021E5ACCF00200EB3 /* NSTimer+LXCategory.m */,
+				735C555521E8240C00030E22 /* NSFileManager+LXCategory.h */,
+				735C555621E8240C00030E22 /* NSFileManager+LXCategory.m */,
 			);
 			path = Foundattion;
 			sourceTree = "<group>";
@@ -511,6 +537,20 @@
 				7362523021DCD4130049F5E2 /* LXTextViewChainModel.h */,
 				7362522221DCD4130049F5E2 /* LXImageViewChainModel.h */,
 				7362523221DCD4130049F5E2 /* LXImageViewChainModel.m */,
+				735C568E21E8922100030E22 /* LXActivityIndicatorViewChainModel.h */,
+				735C568F21E8922100030E22 /* LXActivityIndicatorViewChainModel.m */,
+				735C569121E8958D00030E22 /* LXDatePickerViewChainModel.h */,
+				735C569221E8958D00030E22 /* LXDatePickerViewChainModel.m */,
+				735C569421E8962A00030E22 /* LXPickerViewChainModel.h */,
+				735C569521E8962A00030E22 /* LXPickerViewChainModel.m */,
+				735C569721E8964E00030E22 /* LXProgressViewChainModel.h */,
+				735C569821E8964E00030E22 /* LXProgressViewChainModel.m */,
+				735C569A21E8970900030E22 /* LXVisualEffectViewChainModel.h */,
+				735C569B21E8970900030E22 /* LXVisualEffectViewChainModel.m */,
+				735C569D21E8973400030E22 /* LXSliderViewChainModel.h */,
+				735C569E21E8973400030E22 /* LXSliderViewChainModel.m */,
+				735C56A021E8975600030E22 /* LXSegmentedControlChainModel.h */,
+				735C56A121E8975600030E22 /* LXSegmentedControlChainModel.m */,
 				7319C6E821DF156900156813 /* LXViewChainHeader.h */,
 			);
 			path = UIView;
@@ -654,9 +694,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735C555721E8240C00030E22 /* NSFileManager+LXCategory.m in Sources */,
 				7362524521DCD4130049F5E2 /* LXLabelChainModel.m in Sources */,
 				7319C70221DF327E00156813 /* LXGradientLayerChainModel.m in Sources */,
-				731487E021D4EBBC00480F08 /* WTCommonNavigationBar.m in Sources */,
+				731487E021D4EBBC00480F08 /* LXommonNavigationBar.m in Sources */,
 				7307CF9721D6465E0005C962 /* UICollectionView+LXCategory.m in Sources */,
 				7307CFA621D646BD0005C962 /* UIButton+LXCategory.m in Sources */,
 				7362523E21DCD4130049F5E2 /* LXButtonChainModel.m in Sources */,
@@ -667,19 +708,23 @@
 				7362523F21DCD4130049F5E2 /* LXTableViewCellChainModel.m in Sources */,
 				7362523A21DCD4130049F5E2 /* LXRotationGestureChainModel.m in Sources */,
 				731181AC21DE2D5C00077485 /* NSAttributedString+LXCategory.m in Sources */,
+				735C569321E8958D00030E22 /* LXDatePickerViewChainModel.m in Sources */,
+				735C569621E8962A00030E22 /* LXPickerViewChainModel.m in Sources */,
 				73337B1E21E5AB5300200EB3 /* NSObject+LXCategory.m in Sources */,
 				7362524921DCD4130049F5E2 /* LXImageViewChainModel.m in Sources */,
 				7307CF9121D646240005C962 /* UIGestureRecognizer+LXCategory.m in Sources */,
+				735C569921E8964E00030E22 /* LXProgressViewChainModel.m in Sources */,
 				7362524421DCD4130049F5E2 /* LXControlChainModel.m in Sources */,
 				7362524321DCD4130049F5E2 /* LXTextFieldChainModel.m in Sources */,
 				7307CFA021D6469C0005C962 /* UIImage+LXCategory.m in Sources */,
+				735C56A221E8975600030E22 /* LXSegmentedControlChainModel.m in Sources */,
 				7319C6E421DF00B600156813 /* LXLayerChainModel.m in Sources */,
 				730A1EA521E44CEB003D9A1F /* NSNumber+LXCategory.m in Sources */,
 				7362523821DCD4130049F5E2 /* LXTapGestureChainModel.m in Sources */,
 				731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */,
 				7319C6F321DF321F00156813 /* LXEmiiterLayerChainModel.m in Sources */,
 				73337B2121E5ACCF00200EB3 /* NSTimer+LXCategory.m in Sources */,
-				731487E121D4EBBC00480F08 /* WTCommonViewController.m in Sources */,
+				731487E121D4EBBC00480F08 /* LXommonViewController.m in Sources */,
 				73337B1B21E5AB4400200EB3 /* NSDate+LXCategory.m in Sources */,
 				731487C821D4759100480F08 /* UIControl+LXCategory.m in Sources */,
 				73337B1821E5AB1F00200EB3 /* NSDictionary+LXCategory.m in Sources */,
@@ -691,6 +736,7 @@
 				7307E05D21DC6484000752F6 /* UIAlertController+LXCategory.m in Sources */,
 				731487E721D4EED400480F08 /* UITableView+LXCategory.m in Sources */,
 				7319C6FF21DF326600156813 /* LXTransFormLayerChainModel.m in Sources */,
+				735C569F21E8973400030E22 /* LXSliderViewChainModel.m in Sources */,
 				731181A621DE26FC00077485 /* NSString+LXCategory.m in Sources */,
 				7362523721DCD4130049F5E2 /* LXSwipeGestureChainModel.m in Sources */,
 				73168F0221E2F8E3005A6879 /* LXMa1.m in Sources */,
@@ -710,6 +756,8 @@
 				7362523921DCD4130049F5E2 /* LXBaseGestureChainModel.m in Sources */,
 				7362523C21DCD4130049F5E2 /* LXTableViewChainModel.m in Sources */,
 				7362523D21DCD4130049F5E2 /* LXCollectionViewChainModel.m in Sources */,
+				735C569C21E8970900030E22 /* LXVisualEffectViewChainModel.m in Sources */,
+				735C569021E8922100030E22 /* LXActivityIndicatorViewChainModel.m in Sources */,
 				7319C6ED21DF31F300156813 /* LXShaperLayerChainModel.m in Sources */,
 				7307CFA321D646B00005C962 /* UILabel+LXCategory.m in Sources */,
 				7319C6FC21DF325200156813 /* LXTiledLayerChainModel.m in Sources */,

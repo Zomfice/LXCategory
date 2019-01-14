@@ -9,6 +9,16 @@
 #import "LXButtonChainModel.h"
 
 #define LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, LXButtonChainModel *,UIButton)
+
+#define LXCATEGORY_CHAIN_BUTTONLABEL_IMPLEMENTATION(LXMethod,LXParaType)\
+- (LXButtonChainModel * (^)(LXParaType LXMethod))LXMethod    \
+{   \
+return ^ (LXParaType LXMethod) {    \
+((UIButton *)self.view).titleLabel.LXMethod = LXMethod;   \
+return self;    \
+};\
+}
+
 @implementation LXButtonChainModel
 
 LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(contentEdgeInsets, UIEdgeInsets)
@@ -24,6 +34,13 @@ LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(showsTouchWhenHighlighted, BOOL)
 LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(adjustsImageWhenDisabled, BOOL)
 
 LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(reversesTitleShadowWhenHighlighted, BOOL)
+
+LXCATEGORY_CHAIN_BUTTONLABEL_IMPLEMENTATION(textAlignment, NSTextAlignment)
+LXCATEGORY_CHAIN_BUTTONLABEL_IMPLEMENTATION(numberOfLines, NSInteger)
+LXCATEGORY_CHAIN_BUTTONLABEL_IMPLEMENTATION(lineBreakMode, NSLineBreakMode)
+LXCATEGORY_CHAIN_BUTTONLABEL_IMPLEMENTATION(adjustsFontSizeToFitWidth, BOOL)
+LXCATEGORY_CHAIN_BUTTONLABEL_IMPLEMENTATION(baselineAdjustment, UIBaselineAdjustment)
+
 
 - (LXButtonChainModel * _Nonnull (^)(UIImage * _Nonnull, UIControlState))image{
     return ^ (UIImage *image, UIControlState state){
@@ -84,3 +101,4 @@ LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION(reversesTitleShadowWhenHighlighted, BOOL)
 @end
 LXCATEGORY_VIEW_IMPLEMENTATION(UIButton, LXButtonChainModel)
 #undef LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION
+#undef LXCATEGORY_CHAIN_BUTTONLABEL_IMPLEMENTATION

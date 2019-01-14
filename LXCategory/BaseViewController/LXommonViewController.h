@@ -1,15 +1,15 @@
 //
-//  WTCommonViewController.h
+//  LXommonViewController.h
 //  WisdomTree
 //
 //  Created by 麻小亮 on 2018/12/20.
 //  Copyright © 2018 able-elec. All rights reserved.
 //
 
-#import "WTCommonNavigationBar.h"
+#import "LXommonNavigationBar.h"
 
 //------------------tableView
-@interface WTCommonTableViewModel : NSObject
+@interface LXommonTableViewModel : NSObject
 //tableView的类
 @property (nonatomic, copy) NSString * clas;
 //tableView的样式
@@ -21,7 +21,7 @@
 @end
 
 //协议
-@protocol WTCommonTableViewProtocol <UITableViewDelegate,UITableViewDataSource>
+@protocol LXommonTableViewProtocol <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView * tableView;
 
@@ -29,14 +29,14 @@
 //设置父视图
 - (UIView *)comonTableViewSuperView;
 //设置一些属性
-- (void)commonTableViewModel:(WTCommonTableViewModel *)model;
+- (void)commonTableViewModel:(LXommonTableViewModel *)model;
 
 @end
 
 
 //------------------collectionView
 
-@interface WTCommonCollectionViewModel : NSObject
+@interface LXommonCollectionViewModel : NSObject
 
 @property (nonatomic, strong) UICollectionViewFlowLayout * layout;
 
@@ -44,20 +44,20 @@
 
 @end
 
-@protocol WTCommonCollectionViewProtocol <UICollectionViewDelegate, UICollectionViewDataSource>
+@protocol LXommonCollectionViewProtocol <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView * collectionView;
 @optional
 
 - (UIView *)commonCollectionViewSuperView;
 
-- (void)commonCollectionModel:(WTCommonCollectionViewModel *)model;
+- (void)commonCollectionModel:(LXommonCollectionViewModel *)model;
 
 @end
 
-@protocol WTCommonNavigationProtocol <WTCommonNavigationBarDelegate>
+@protocol LXommonNavigationProtocol <LXommonNavigationBarDelegate>
 
-@property (nonatomic, strong) WTCommonNavigationBar * navigationBar;
+@property (nonatomic, strong) LXommonNavigationBar * navigationBar;
 
 @optional
 - (UIView *)commonNavigationViewSuperView;
@@ -65,7 +65,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WTCommonViewController : UIViewController
+@interface LXommonViewController : UIViewController
 @property (nonatomic, assign) BOOL swipeCanPop;
 @end
 

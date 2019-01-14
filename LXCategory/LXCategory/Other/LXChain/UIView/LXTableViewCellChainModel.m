@@ -24,6 +24,16 @@ LXCATEGORY_CHAIN_TABLEVIEWCELL_IMPLEMENTATION(userInteractionEnabledWhileDraggin
         return self;
     };
 }
+- (LXTableViewCellChainModel * _Nonnull (^)(void))reloadData{
+    return ^ (){
+        [CATransaction begin];
+        [CATransaction setDisableActions:YES];
+        [(UICollectionView *)self.view reloadData];
+        [CATransaction commit];
+        
+        return self;
+    };
+}
 @end
 LXCATEGORY_VIEW_IMPLEMENTATION(UITableViewCell, LXTableViewCellChainModel)
 #undef LXCATEGORY_CHAIN_TABLEVIEWCELL_IMPLEMENTATION

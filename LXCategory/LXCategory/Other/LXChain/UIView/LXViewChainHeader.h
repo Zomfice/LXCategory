@@ -21,6 +21,11 @@
 #import "LXCollectionViewChainModel.h"
 #import "LXTextViewChainModel.h"
 #import "LXTableViewCellChainModel.h"
-
-
+#import "LXActivityIndicatorViewChainModel.h"
+#import "LXDatePickerViewChainModel.h"
+#import "LXPickerViewChainModel.h"
+#import "LXProgressViewChainModel.h"
+#import "LXVisualEffectViewChainModel.h"
+#import "LXSliderViewChainModel.h"
+#import "LXSegmentedControlChainModel.h"
 #endif /* LXViewChainHeader_h */

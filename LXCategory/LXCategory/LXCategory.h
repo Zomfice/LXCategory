@@ -33,5 +33,6 @@
 #import "NSDate+LXCategory.h"
 #import "NSObject+LXCategory.h"
 #import "NSTimer+LXCategory.h"
+#import "NSFileManager+LXCategory.h"
 #import "LXDefine.h"
 #endif /* LXCategory_h */

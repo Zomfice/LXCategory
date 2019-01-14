@@ -6,10 +6,12 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "WTCommonViewController.h"
+#import "LXommonViewController.h"
 
+@interface ss : NSObject
 
-@interface ViewController : WTCommonViewController
+@end
+@interface ViewController : LXommonViewController
 
 
 @end

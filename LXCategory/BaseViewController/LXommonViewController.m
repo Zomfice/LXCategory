@@ -1,36 +1,36 @@
 //
-//  WTCommonViewController.m
+//  LXommonViewController.m
 //  WisdomTree
 //
 //  Created by 麻小亮 on 2018/12/20.
 //  Copyright © 2018 able-elec. All rights reserved.
 //
 
-#import "WTCommonViewController.h"
-@implementation WTCommonTableViewModel
+#import "LXommonViewController.h"
+@implementation LXommonTableViewModel
 
 @end
 
-@implementation WTCommonCollectionViewModel
+@implementation LXommonCollectionViewModel
 
 @end
 
-@interface WTCommonViewController ()
+@interface LXommonViewController ()
 
 @end
 
-@implementation WTCommonViewController
+@implementation LXommonViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    if ([self conformsToProtocol:@protocol(WTCommonNavigationProtocol)]) {
+    if ([self conformsToProtocol:@protocol(LXommonNavigationProtocol)]) {
         [self commonSetupNavigationView];
     }
-    if ([self conformsToProtocol:@protocol(WTCommonTableViewProtocol)]) {
+    if ([self conformsToProtocol:@protocol(LXommonTableViewProtocol)]) {
         [self commonSetupTableView];
     }
-    if ([self conformsToProtocol:@protocol(WTCommonCollectionViewProtocol)]) {
+    if ([self conformsToProtocol:@protocol(LXommonCollectionViewProtocol)]) {
         [self commonSetupCollectionView];
     }
     // Do any additional setup after loading the view.
@@ -42,9 +42,9 @@
 }
 
 - (void)commonSetupTableView{
-    id <WTCommonTableViewProtocol> vc = (id <WTCommonTableViewProtocol>) self;
+    id <LXommonTableViewProtocol> vc = (id <LXommonTableViewProtocol>) self;
     SEL sel = NSSelectorFromString(@"commonTableViewModel:");
-    WTCommonTableViewModel *model = [WTCommonTableViewModel new];
+    LXommonTableViewModel *model = [LXommonTableViewModel new];
     if ([self respondsToSelector:sel]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -81,8 +81,8 @@
     }
     
     UIView *topView = nil;
-    if ([self conformsToProtocol:@protocol(WTCommonNavigationProtocol)]) {
-        topView = [(id <WTCommonNavigationProtocol>) vc navigationBar];
+    if ([self conformsToProtocol:@protocol(LXommonNavigationProtocol)]) {
+        topView = [(id <LXommonNavigationProtocol>) vc navigationBar];
         [self.view bringSubviewToFront:topView];
     }
     
@@ -100,9 +100,9 @@
 
 
 - (void)commonSetupCollectionView{
-    id <WTCommonCollectionViewProtocol> vc = (id <WTCommonCollectionViewProtocol>) self;
+    id <LXommonCollectionViewProtocol> vc = (id <LXommonCollectionViewProtocol>) self;
     SEL sel = NSSelectorFromString(@"commonCollectionModel:");
-    WTCommonCollectionViewModel *model = [WTCommonCollectionViewModel new];
+    LXommonCollectionViewModel *model = [LXommonCollectionViewModel new];
     if ([self respondsToSelector:sel]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -135,8 +135,8 @@
         [view addSubview:collectionView];
     }
     UIView *topView = nil;
-    if ([self conformsToProtocol:@protocol(WTCommonNavigationProtocol)]) {
-        topView = [(id <WTCommonNavigationProtocol>) vc navigationBar];
+    if ([self conformsToProtocol:@protocol(LXommonNavigationProtocol)]) {
+        topView = [(id <LXommonNavigationProtocol>) vc navigationBar];
         [self.view bringSubviewToFront:topView];
     }
     if (view == self.view) {
@@ -154,8 +154,8 @@
 
 
 - (void)commonSetupNavigationView{
-    WTCommonNavigationBar *bar = [WTCommonNavigationBar new];
-    id <WTCommonNavigationProtocol> vc =  (id <WTCommonNavigationProtocol>)self;
+    LXommonNavigationBar *bar = [LXommonNavigationBar new];
+    id <LXommonNavigationProtocol> vc =  (id <LXommonNavigationProtocol>)self;
     [vc setNavigationBar:bar];
     bar.delegate = vc;
     UIView * view = self.view;

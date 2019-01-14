@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (LXCategory)
 
++ (nullable UIImage *)imageWithSmallGIFData:(NSData *)data scale:(CGFloat)scale;
+
 + (UIImage *)imageWithColor:(UIColor *)color;
 
 /**

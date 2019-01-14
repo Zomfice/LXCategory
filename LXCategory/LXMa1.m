@@ -23,36 +23,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [UIImageView new].makeChain
+    NSString *filePath1 = [[NSBundle mainBundle] pathForResource:@"11" ofType:@"gif"];
+    NSData*  data=[NSData dataWithContentsOfFile:filePath1];
+    UIActivityIndicatorViewCreate().makeChain
     .addToSuperView(self.view)
     .center(self.view.center)
     .userInteractionEnabled(YES)
-    .layerBackGroundColor([UIColor yellowColor])
+    .activityIndicatorViewStyle(UIActivityIndicatorViewStyleGray)
+    .addGesture(UITapGestureRecognizerCreate().makeChain.addTargetBlock(^(id  _Nonnull gesture) {
+        NSLog(@"1");
+    }).gesture)
+    .color([UIColor blackColor])
+    .startAnimating()
     .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
         make.centerX.equalTo(self.view);
         make.centerY.equalTo(self.view).offset(-100);
-        make.width.mas_equalTo(200);
-        make.height.mas_equalTo(100);
     })
-    .image([[UIImage imageNamed:@"Bitmap"] imageByBlurRadius:20 tintColor:[UIColor colorWithWhite:1 alpha:0.5] tintMode:kCGBlendModeNormal saturation:1.0 maskImage:nil])
+//    .image([UIImage imageWithSmallGIFData:data scale:1])
     .assignTo(^(id  _Nonnull view) {
         self.label = view;
         
     });
-    //    .image([UIImage animatedGifName:@"11"], UIControlStateNormal)
-    //    .imageDirection(LXButtonImageDirectionRight,5);
     
-    //    self.label.layer.makeChain
-    //    .borderColor(UIColorHexString(@"333333").CGColor)
-    //    .cornerRadius(50)
-    //    .borderWidth(1)
-    //    .shadowColor(UIColorHexString(@"adfadf").CGColor)
-    //    .shadowRadius(10)
-    //    .shadowOpacity(1);
+    [[NSFileManager defaultManager] addPreNameAtPath:@"/Users/maxiaoliang/Desktop/1/LSYReader/LSYReader/Reader/MXLCatalogVC" preName:@"MXL"];
     
 }
 
+- (void)changeFileName{
+    
+}
 
 
 //- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{

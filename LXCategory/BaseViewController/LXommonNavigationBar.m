@@ -1,14 +1,14 @@
 //
-//  WTCommonNavigationBar.m
+//  LXommonNavigationBar.m
 //  WisdomTree
 //
 //  Created by 麻小亮 on 2018/12/20.
 //  Copyright © 2018 able-elec. All rights reserved.
 //
 
-#import "WTCommonNavigationBar.h"
+#import "LXommonNavigationBar.h"
 
-@interface WTCommonNavigationBar()
+@interface LXommonNavigationBar()
 @property (nonatomic, strong) NSArray * buttonClass;
 @property (nonatomic, strong) UIView * leftView;
 @property (nonatomic, strong) UIView * rightView;
@@ -16,7 +16,7 @@
 @property (nonatomic, assign) NSInteger  currentTag;
 @end
 
-@implementation WTCommonNavigationBar
+@implementation LXommonNavigationBar
 
 - (instancetype)init
 {
@@ -44,7 +44,7 @@
     }
 }
 
-- (void)setDelegate:(id<WTCommonNavigationBarDelegate>)delegate{
+- (void)setDelegate:(id<LXommonNavigationBarDelegate>)delegate{
     if (!delegate) return;
     _delegate = delegate;
     if ([_delegate respondsToSelector:@selector(buttonClasses)]) {

@@ -18,7 +18,7 @@ LXCATEGORY_CHAIN_PROPERTY LXTableViewCellChainModel * (^ editing) (BOOL editing)
 LXCATEGORY_CHAIN_PROPERTY LXTableViewCellChainModel * (^ editingWithAnimated) (BOOL editing, BOOL animated);
 LXCATEGORY_CHAIN_PROPERTY LXTableViewCellChainModel * (^ focusStyle)(UITableViewCellFocusStyle focusStyle);
 LXCATEGORY_CHAIN_PROPERTY LXTableViewCellChainModel * (^ userInteractionEnabledWhileDragging)(BOOL userInteractionEnabledWhileDragging);
-
+LXCATEGORY_CHAIN_PROPERTY LXTableViewCellChainModel * (^ reloadData)(void);
 @end
 LXCreate(UITableViewCell)
 static inline UITableViewCell * UITableViewCellCreateWithStyleAndIndentify(UITableViewCellStyle style, NSString *identifier){

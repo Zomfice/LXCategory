@@ -28,6 +28,8 @@ LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel *(^ registerViewClass)(Clas
 LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel *(^ registerViewNib)(UINib * viewNib, NSString *identifier, NSString *kind);
 
 LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel * (^ adJustedContentIOS11)(void);
+
+LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel * (^ reloadData)(void);
 @end
 LXCreate(UICollectionView)
 static inline UICollectionView *UICollectionViewCreateWithLayout(UICollectionViewFlowLayout *layout){

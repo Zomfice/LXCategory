@@ -9,24 +9,12 @@
 #import "ViewController.h"
 #import "YYModel.h"
 
-@interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol>
+
+
+@interface ViewController ()<LXommonTableViewProtocol, LXommonNavigationProtocol>
 
 @end
-static Byte AES_KEY[32] = {
-    0xa1, 0xb1, 0xc1, 0xd1, 0xe1, 0xf1,
-    0xf2, 0xa2, 0xb2, 0xc2, 0xd2, 0xe2,
-    0xe3, 0xf3, 0xa3, 0xb3, 0xc3, 0xd3,
-    0xd4, 0xe4, 0xf4, 0xa4, 0xb4, 0xc4,
-    0xc5, 0xd5, 0xe5, 0xf5, 0xa5, 0xb5,
-    0xb6, 0xc6
-};
 
-static Byte AES_IV[16] = {
-    0x1a, 0x2b, 0x3c, 0x4d,
-    0x5e, 0x6f, 0x7a, 0x8b,
-    0x9c, 0x1d, 0x2e, 0x3f,
-    0x4a, 0x5b, 0x6c, 0x7d
-};
 @implementation ViewController
 @synthesize tableView = _tableView, navigationBar = _navigationBar;
 
@@ -42,7 +30,7 @@ static Byte AES_IV[16] = {
     self.tableView.makeChain
     .registerCellClass([UITableViewCell class], @"cell");
     
-    [self.navigationBar setupTag:0 WithBlock:^(WTCommonNavigationBar * _Nonnull bar) {
+    [self.navigationBar setupTag:0 WithBlock:^(LXommonNavigationBar * _Nonnull bar) {
         [UIView animateWithDuration:0.15 animations:^{
             bar.line.hidden = YES;
             bar.backgroundColor = [UIColor redColor];
@@ -50,7 +38,7 @@ static Byte AES_IV[16] = {
         }];
     }];
     
-    [self.navigationBar setupTag:1 WithBlock:^(WTCommonNavigationBar * _Nonnull bar) {
+    [self.navigationBar setupTag:1 WithBlock:^(LXommonNavigationBar * _Nonnull bar) {
         [UIView animateWithDuration:0.15 animations:^{
             bar.line.hidden = NO;
             bar.backgroundColor = [UIColor whiteColor];
@@ -58,8 +46,9 @@ static Byte AES_IV[16] = {
         }];
         
     }];
+    
     [self.navigationBar setTag:0];
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
