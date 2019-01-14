@@ -6,4 +6,5 @@ target 'LXCategory' do
    pod 'YYModel'
    pod 'AFNetworking'
    pod 'YYCache'
+   
 end

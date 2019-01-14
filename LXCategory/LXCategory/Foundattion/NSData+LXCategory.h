@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#include <CommonCrypto/CommonCrypto.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (LXCategory)
@@ -86,14 +86,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (Code)
 
-- (nullable NSData *)aes256EncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv;
-
-- (nullable NSData *)aes256DecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv;
-
-- (nullable NSData *)aes256EncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv;
-
-- (nullable NSData *)aes256DecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv;
-
 - (NSString *)utf8String;
 
 - (nullable NSString *)hexString;
@@ -131,6 +123,53 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSData *)zlibDeflate;
 
+@end
+
+
+@interface NSData (Encryption)
+
+- (nullable NSData *)encryptDataWithCCALg:(CCAlgorithm)alg key:(NSData *)key iv:(nullable NSData *)iv;
+
+- (nullable NSData *)decryptDataWithCCALg:(CCAlgorithm)alg key:(NSData *)key iv:(nullable NSData *)iv;
+
+- (nullable NSData *)encryptStringWithCCALg:(CCAlgorithm)alg key:(NSString *)key iv:(nullable NSString *)iv keySize:(size_t)keySize;
+
+- (nullable NSData *)decryptStringWithCCALg:(CCAlgorithm)alg key:(NSString *)key iv:(nullable NSString *)iv keySize:(size_t)keySize;
+
+@end
+@interface NSData (AES)
+
+- (nullable NSData *)aes256EncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv;
+
+- (nullable NSData *)aes256DecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv;
+
+
+- (nullable NSData *)aesEncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv keySize:(size_t)size;
+
+- (nullable NSData *)aesDecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv keySize:(size_t)size;
+
+@end
+
+@interface NSData (DES)
+- (nullable NSData *)desEncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv;
+
+- (nullable NSData *)desDecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv;
+
+
+- (nullable NSData *)desEncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv;
+
+- (nullable NSData *)desDecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv;
+@end
+
+@interface NSData (DES3)
+- (nullable NSData *)des3EncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv;
+
+- (nullable NSData *)des3DecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv;
+
+
+- (nullable NSData *)des3EncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv;
+
+- (nullable NSData *)des3DecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv;
 @end
 
 NS_ASSUME_NONNULL_END

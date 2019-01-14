@@ -8,7 +8,6 @@
 
 #import "NSData+LXCategory.h"
 #import "NSString+LXCategory.h"
-#include <CommonCrypto/CommonCrypto.h>
 #include <zlib.h>
 @implementation NSData (LXCategory)
 + (NSData *)dataNamed:(NSString *)name {
@@ -187,122 +186,7 @@ return data;
 @end
 @implementation NSData (Code)
 
-- (nullable NSData *)aes256EncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv{
-    return [self aes256EncryptOriWithKey:(void *)key.bytes size:key.length iv:(void *)iv.bytes size:iv.length];
-}
 
-- (nullable NSData *)aes256DecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv{
-    return [self aes256DecryptOriWithkey:(void *)key.bytes size:key.length iv:(void *)iv.bytes size:iv.length];
-}
-
-- (nullable NSData *)aes256EncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv{
-    if (key.length == 0)return nil;
-    char keyData[kCCKeySizeAES128 + 1];
-    size_t keySize = sizeof(keyData);
-    memset(keyData, 0, keySize);
-    [key getCString:keyData maxLength:keySize encoding:NSUTF8StringEncoding];
-    keySize --;
-    size_t ivSize = 0;
-    void * ivVoid = NULL;
-    if (iv.length > 0) {
-        char ivData[kCCBlockSizeAES128 + 1];
-        ivSize = sizeof(ivData);
-        memset(ivData, 0, ivSize);
-        [key getCString:ivData maxLength:ivSize encoding:NSUTF8StringEncoding];
-        ivSize --;
-        ivVoid = ivData;
-    }
-    return [self aes256EncryptOriWithKey:keyData size:keySize iv:ivVoid size:ivSize];
-}
-
-- (nullable NSData *)aes256DecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv{
-    if (key.length == 0)return nil;
-    char keyData[kCCKeySizeAES128 + 1];
-    size_t keySize = sizeof(keyData);
-    memset(keyData, 0, keySize);
-    [key getCString:keyData maxLength:keySize encoding:NSUTF8StringEncoding];
-    keySize --;
-    size_t ivSize = 0;
-    void * ivVoid = NULL;
-    if (iv.length > 0) {
-        char ivData[kCCBlockSizeAES128 + 1];
-        ivSize = sizeof(ivData);
-        memset(ivData, 0, ivSize);
-        [key getCString:ivData maxLength:ivSize encoding:NSUTF8StringEncoding];
-        ivSize --;
-        ivVoid = ivData;
-    }
-    return [self aes256DecryptOriWithkey:keyData size:keySize iv:ivVoid size:ivSize];
-}
-
-
-- (nullable NSData *)aes256EncryptOriWithKey:(void *)key size:(size_t)keySize iv:( void *)iv size:(size_t)ivSize{
-    if (keySize != 16 && keySize != 24 && keySize != 32) {
-        return nil;
-    }
-    if (ivSize != 16 && ivSize != 0) {
-        return nil;
-    }
-    
-    NSData *result = nil;
-    size_t bufferSize = self.length + kCCBlockSizeAES128;
-    void *buffer = malloc(bufferSize);
-    if (!buffer) return nil;
-    size_t encryptedSize = 0;
-    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
-                                          kCCAlgorithmAES128,
-                                          kCCOptionPKCS7Padding,
-                                          key,
-                                          keySize,
-                                          iv,
-                                          self.bytes,
-                                          self.length,
-                                          buffer,
-                                          bufferSize,
-                                          &encryptedSize);
-    if (cryptStatus == kCCSuccess) {
-        result = [[NSData alloc]initWithBytes:buffer length:encryptedSize];
-        free(buffer);
-        return result;
-    } else {
-        free(buffer);
-        return nil;
-    }
-}
-
-- (nullable NSData *)aes256DecryptOriWithkey:(void *)key size:(size_t)keySize iv:( void *)iv size:(size_t)ivSize{
-    if (keySize != 16 && keySize != 24 && keySize != 32) {
-        return nil;
-    }
-    if (ivSize != 16 && ivSize != 0) {
-        return nil;
-    }
-    
-    NSData *result = nil;
-    size_t bufferSize = self.length + kCCBlockSizeAES128;
-    void *buffer = malloc(bufferSize);
-    if (!buffer) return nil;
-    size_t encryptedSize = 0;
-    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
-                                          kCCAlgorithmAES128,
-                                          kCCOptionPKCS7Padding,
-                                          key,
-                                          keySize,
-                                          iv,
-                                          self.bytes,
-                                          self.length,
-                                          buffer,
-                                          bufferSize,
-                                          &encryptedSize);
-    if (cryptStatus == kCCSuccess) {
-        result = [[NSData alloc]initWithBytes:buffer length:encryptedSize];
-        free(buffer);
-        return result;
-    } else {
-        free(buffer);
-        return nil;
-    }
-}
 
 - (NSString *)utf8String{
     if (self.length > 0) {
@@ -619,4 +503,209 @@ static const short base64DecodingTable[256] = {
 }
 
 
+@end
+
+/**
+ 判断s数据是否有效
+
+ @param alg 加密模式
+ @param keySize key的大小
+ @param ivSize vi大小
+ */
+static inline void encryptBlockSize(CCAlgorithm alg, size_t keySize,size_t ivSize, size_t *blockSize,BOOL *isValid){
+    switch (alg) {
+        case kCCAlgorithmAES:{
+            *isValid = YES;
+            *blockSize = kCCBlockSizeAES128;
+        }
+            break;
+        case kCCAlgorithmDES:{
+            *isValid = keySize == 8;
+            *blockSize = kCCBlockSizeDES;
+        }
+            break;
+        case kCCAlgorithmCAST:{
+            *isValid = keySize == 5 || keySize == 16;
+            *blockSize = kCCBlockSizeCAST;
+        }
+            break;
+        case kCCAlgorithm3DES:{
+            *isValid = keySize == 24;
+            *blockSize = kCCBlockSize3DES;
+        }
+            break;
+        case kCCAlgorithmRC4:{
+            *isValid = keySize == 512;
+            *blockSize = 0;
+        }
+            break;
+        default:
+            *isValid = YES;
+            *blockSize = 0;
+            break;
+    }
+    if (*isValid) {
+        *isValid = *blockSize == ivSize || ivSize == 0;
+    }
+}
+@implementation NSData (Encryption)
+
+- (nullable NSData *)encryptOriWithCCALg:(CCAlgorithm)alg key:(void *)key size:(size_t)keySize iv:( void *)iv size:(size_t)ivSize isEncyrpt:(BOOL)isEncyrpt size:(size_t)blockSize{
+    NSData *result = nil;
+    size_t bufferSize = self.length + blockSize;
+    void *buffer = malloc(bufferSize);
+    if (!buffer) return nil;
+    size_t encryptedSize = 0;
+    NSLog(@"%s   %s",key,iv);
+    CCOperation op = isEncyrpt?kCCEncrypt:kCCDecrypt;
+    CCCryptorStatus cryptStatus = CCCrypt(op,
+                                          alg,
+                                          ivSize == 0?kCCOptionPKCS7Padding | kCCOptionECBMode:kCCOptionPKCS7Padding,
+                                          key,
+                                          keySize,
+                                          iv,
+                                          self.bytes,
+                                          self.length,
+                                          buffer,
+                                          bufferSize,
+                                          &encryptedSize);
+    if (cryptStatus == kCCSuccess) {
+        result = [[NSData alloc]initWithBytes:buffer length:encryptedSize];
+        free(buffer);
+        return result;
+    } else {
+        free(buffer);
+        return nil;
+    }
+}
+
+- (nullable NSData *)encryptDataWithCCALg:(CCAlgorithm)alg key:(NSData *)key iv:(nullable NSData *)iv{
+    BOOL isValid = NO;
+    size_t blockSize = 0;
+    encryptBlockSize(alg, key.length, iv.length, &blockSize, &isValid);
+    if (!isValid) return nil;
+    return [self encryptOriWithCCALg:alg key:(void *)key.bytes size:key.length iv:(void *)iv.bytes size:iv.length isEncyrpt:YES size:blockSize];
+}
+
+- (nullable NSData *)decryptDataWithCCALg:(CCAlgorithm)alg key:(NSData *)key iv:(nullable NSData *)iv{
+    BOOL isValid = NO;
+    size_t blockSize = 0;
+    encryptBlockSize(alg, key.length, iv.length, &blockSize, &isValid);
+    if (!isValid) return nil;
+    return [self encryptOriWithCCALg:alg key:(void *)key.bytes size:key.length iv:(void *)iv.bytes size:iv.length isEncyrpt:NO size:blockSize];
+}
+
+- (nullable NSData *)encryptStringWithCCALg:(CCAlgorithm)alg key:(NSString *)key iv:(nullable NSString *)iv keySize:(size_t)keySi{
+    if (key.length == 0)return nil;
+
+    char keyData[keySi + 1];
+    size_t keySize = sizeof(keyData);
+    bzero(keyData, keySize);
+    
+    [key getCString:keyData maxLength:sizeof(keyData) encoding:NSUTF8StringEncoding];
+    size_t ivSize = 0;
+    keySize --;
+    BOOL isValid = NO;
+    size_t blockSize = 0;
+    encryptBlockSize(alg, keySize, 0, &blockSize, &isValid);
+    ivSize = blockSize + 1;
+    char ivData[ivSize];
+    if (iv.length > 0) {
+        ivSize = sizeof(ivData);
+        bzero(ivData, ivSize);
+        [iv getCString:ivData maxLength:sizeof(ivData) encoding:NSUTF8StringEncoding];
+        ivSize --;
+    }else{
+        ivSize = 0;
+    }
+    if (!isValid) return nil;
+    return [self encryptOriWithCCALg:alg key:keyData size:keySize iv:ivData size:ivSize isEncyrpt:YES size:blockSize];
+}
+
+- (nullable NSData *)decryptStringWithCCALg:(CCAlgorithm)alg key:(NSString *)key iv:(nullable NSString *)iv keySize:(size_t)keySi{
+    if (key.length == 0)return nil;
+    
+    char keyData[keySi + 1];
+    size_t keySize = sizeof(keyData);
+    memset(keyData, 0, keySize);
+    
+    [key getCString:keyData maxLength:keySize encoding:NSUTF8StringEncoding];
+    size_t ivSize = 0;
+    void * ivVoid = NULL;
+    keySize --;
+    BOOL isValid = NO;
+    size_t blockSize = 0;
+    encryptBlockSize(alg, keySize, 0, &blockSize, &isValid);
+    
+    if (iv.length > 0) {
+        ivSize = blockSize + 1;
+        char ivData[ivSize];
+        ivSize = sizeof(ivData);
+        memset(ivData, 0, ivSize);
+        [key getCString:ivData maxLength:ivSize encoding:NSUTF8StringEncoding];
+        ivSize --;
+        ivVoid = ivData;
+    }
+    if (!isValid) return nil;
+    return [self encryptOriWithCCALg:alg key:keyData size:keySize iv:ivVoid size:ivSize isEncyrpt:NO size:blockSize];
+}
+
+@end
+@implementation NSData (AES)
+
+- (nullable NSData *)aes256EncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv{
+    return [self encryptDataWithCCALg:kCCAlgorithmAES key:key iv:iv];
+}
+
+- (nullable NSData *)aes256DecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv{
+    return [self decryptDataWithCCALg:kCCAlgorithmAES key:key iv:iv];
+}
+
+- (nullable NSData *)aesEncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv keySize:(size_t)size{
+    return [self encryptStringWithCCALg:kCCAlgorithmAES key:key iv:iv keySize:size];
+}
+
+- (nullable NSData *)aesDecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv keySize:(size_t)size{
+    return [self decryptStringWithCCALg:kCCAlgorithmAES key:key iv:iv keySize:size];
+}
+
+@end
+
+@implementation NSData (DES)
+
+- (nullable NSData *)desEncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv{
+    return [self encryptDataWithCCALg:kCCAlgorithmDES key:key iv:iv];
+}
+
+- (nullable NSData *)desDecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv{
+     return [self decryptDataWithCCALg:kCCAlgorithmDES key:key iv:iv];
+}
+
+
+- (nullable NSData *)desEncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv{
+    return [self encryptStringWithCCALg:kCCAlgorithmDES key:key iv:iv keySize:kCCKeySizeDES];
+}
+
+- (nullable NSData *)desDecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv{
+    return [self decryptStringWithCCALg:kCCAlgorithmDES key:key iv:iv keySize:kCCKeySizeDES];
+}
+@end
+
+@implementation NSData (DES3)
+- (nullable NSData *)des3EncryptDataWithKey:(NSData *)key iv:(nullable NSData *)iv{
+    return [self encryptDataWithCCALg:kCCAlgorithm3DES key:key iv:iv];
+}
+
+- (nullable NSData *)des3DecryptDataWithkey:(NSData *)key iv:(nullable NSData *)iv{
+     return [self decryptDataWithCCALg:kCCAlgorithm3DES key:key iv:iv];
+}
+
+
+- (nullable NSData *)des3EncryptStringWithKey:(NSString *)key iv:(nullable NSString *)iv{
+    return [self encryptStringWithCCALg:kCCAlgorithm3DES key:key iv:iv keySize:kCCKeySize3DES];
+}
+
+- (nullable NSData *)des3DecryptStringWithkey:(NSString *)key iv:(nullable NSString *)iv{
+    return [self decryptStringWithCCALg:kCCAlgorithm3DES key:key iv:iv keySize:kCCKeySize3DES];
+}
 @end
