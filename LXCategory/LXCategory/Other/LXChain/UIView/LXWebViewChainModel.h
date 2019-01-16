@@ -6,11 +6,11 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "LXScrollViewChainModel.h"
+#import "LXBaseScrollViewChainModel.h"
 @import WebKit;
 NS_ASSUME_NONNULL_BEGIN
 @class LXWebViewChainModel;
-@interface LXWebViewChainModel : LXScrollViewChainModel<LXWebViewChainModel *>
+@interface LXWebViewChainModel : LXBaseScrollViewChainModel<LXWebViewChainModel *>
 LXCATEGORY_CHAIN_PROPERTY LXWebViewChainModel * (^ UIDelegate) (id <WKUIDelegate> UIDelegate);
 LXCATEGORY_CHAIN_PROPERTY LXWebViewChainModel * (^ navigationDelegate) (id <WKNavigationDelegate> navigationDelegate);
 LXCATEGORY_CHAIN_PROPERTY LXWebViewChainModel * (^ loadRequest) (NSURLRequest * loadRequest);

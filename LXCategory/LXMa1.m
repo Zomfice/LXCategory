@@ -23,8 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *filePath1 = [[NSBundle mainBundle] pathForResource:@"11" ofType:@"gif"];
-    NSData*  data=[NSData dataWithContentsOfFile:filePath1];
+//    NSString *filePath1 = [[NSBundle mainBundle] pathForResource:@"11" ofType:@"gif"];
+//    NSData*  data=[NSData dataWithContentsOfFile:filePath1];
     UIActivityIndicatorViewCreate().makeChain
     .addToSuperView(self.view)
     .center(self.view.center)

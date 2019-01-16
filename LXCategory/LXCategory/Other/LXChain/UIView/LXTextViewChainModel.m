@@ -26,6 +26,19 @@ LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(clearsOnInsertion, BOOL);
 LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(textContainerInset, UIEdgeInsets);
 LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(linkTextAttributes, NSDictionary *);
 
+#pragma mark - UITextInputTraits -
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(autocapitalizationType, UITextAutocapitalizationType);
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(autocorrectionType, UITextAutocorrectionType)
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(spellCheckingType, UITextSpellCheckingType)
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(smartQuotesType, UITextSmartQuotesType)
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(smartInsertDeleteType, UITextSmartInsertDeleteType)
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(smartDashesType, UITextSmartDashesType);
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(keyboardAppearance, UIKeyboardAppearance);
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(returnKeyType, UIReturnKeyType);
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(enablesReturnKeyAutomatically, BOOL);
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(secureTextEntry, BOOL);
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(textContentType, UITextContentType);
+LXCATEGORY_CHAIN_TEXT_IMPLEMENTATION(passwordRules, UITextInputPasswordRules *);
 @end
 LXCATEGORY_VIEW_IMPLEMENTATION(UITextView, LXTextViewChainModel)
 

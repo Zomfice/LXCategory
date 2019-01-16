@@ -6,12 +6,12 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "LXControlChainModel.h"
+#import "LXBaseControllChainModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXSwitchChainModel;
-@interface LXSwitchChainModel : LXControlChainModel<LXSwitchChainModel *>
+@interface LXSwitchChainModel : LXBaseControllChainModel<LXSwitchChainModel *>
 
 LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ on)(BOOL on);
 LXCATEGORY_CHAIN_PROPERTY LXSwitchChainModel *(^ onTintColor)(UIColor *onTintColor);

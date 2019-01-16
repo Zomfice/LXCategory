@@ -6,11 +6,11 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "LXScrollViewChainModel.h"
+#import "LXBaseScrollViewChainModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class LXTableViewChainModel;
-@interface LXTableViewChainModel : LXScrollViewChainModel<LXTableViewChainModel *>
+@interface LXTableViewChainModel : LXBaseScrollViewChainModel<LXTableViewChainModel *>
 
 LXCATEGORY_CHAIN_PROPERTY LXTableViewChainModel * (^ delegate) (id <UITableViewDelegate> delegate);
 LXCATEGORY_CHAIN_PROPERTY LXTableViewChainModel * (^ dataSource) (id <UITableViewDataSource> dataSource);

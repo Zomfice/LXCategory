@@ -8,9 +8,7 @@
 
 #import "LXommonViewController.h"
 
-@interface ss : NSObject
 
-@end
 @interface ViewController : LXommonViewController
 
 

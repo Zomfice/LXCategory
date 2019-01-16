@@ -16,6 +16,7 @@
     return [[modelType alloc] initWithTag:self.tag andView:self];\
 }\
 @end
+
 NS_ASSUME_NONNULL_BEGIN
 @class MASConstraintMaker;
 @interface LXBaseViewChainModel <__covariant  ObjectType> : NSObject

@@ -6,11 +6,11 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "LXScrollViewChainModel.h"
+#import "LXBaseScrollViewChainModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class LXCollectionViewChainModel;
-@interface LXCollectionViewChainModel : LXScrollViewChainModel<LXCollectionViewChainModel *>
+@interface LXCollectionViewChainModel : LXBaseScrollViewChainModel<LXCollectionViewChainModel *>
 
 LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel *(^ collectionViewLayout)(UICollectionViewLayout *collectionViewLayout);
 LXCATEGORY_CHAIN_PROPERTY LXCollectionViewChainModel *(^ delegate)(id<UICollectionViewDelegate> delegate);

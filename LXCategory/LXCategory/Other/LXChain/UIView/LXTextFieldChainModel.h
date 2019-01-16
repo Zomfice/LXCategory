@@ -6,11 +6,11 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "LXControlChainModel.h"
+#import "LXBaseControllChainModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXTextFieldChainModel;
-@interface LXTextFieldChainModel : LXControlChainModel<LXTextFieldChainModel*>
+@interface LXTextFieldChainModel : LXBaseControllChainModel<LXTextFieldChainModel*>
 
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ text)(NSString *text);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ attributedText)(NSAttributedString *attributedText);
@@ -25,8 +25,6 @@ LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ defaultTextAttributes)(NSDic
 
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ placeholder)(NSString *placeholder);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ attributedPlaceholder)(NSAttributedString *attributedPlaceholder);
-
-LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ keyboardType)(UIKeyboardType keyboardType);
 
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ clearsOnBeginEditing)(BOOL clearsOnBeginEditing);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ adjustsFontSizeToFitWidth)(BOOL adjustsFontSizeToFitWidth);
@@ -54,6 +52,21 @@ LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ inputAccessoryView)(UIView *
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ placeholderFont)(UIFont *font);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ placeholderColor)(UIColor *color);
 
+
+#pragma mark - UITextInputTraits - 
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ autocapitalizationType)(UITextAutocapitalizationType autocapitalizationType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ autocorrectionType)(UITextAutocorrectionType autocorrectionType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ spellCheckingType)(UITextSpellCheckingType spellCheckingType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ smartQuotesType)(UITextSmartQuotesType smartQuotesType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ smartDashesType)(UITextSmartDashesType smartDashesType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ smartInsertDeleteType)(UITextSmartInsertDeleteType smartInsertDeleteType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ keyboardType)(UIKeyboardType keyboardType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ keyboardAppearance)(UIKeyboardAppearance keyboardAppearance);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ returnKeyType)(UIReturnKeyType returnKeyType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ enablesReturnKeyAutomatically)(BOOL enablesReturnKeyAutomatically);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ secureTextEntry)(BOOL secureTextEntry);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ textContentType)(UITextContentType textContentType);
+LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ passwordRules)(UITextInputPasswordRules* passwordRules);
 @end
 LXCreate(UITextField)
 LXCATEGORY_EXINTERFACE(UITextField, LXTextFieldChainModel)
