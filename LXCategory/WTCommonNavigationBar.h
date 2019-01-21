@@ -1,5 +1,5 @@
 //
-//  LXommonNavigationBar.h
+//  WTCommonNavigationBar.h
 //  WisdomTree
 //
 //  Created by 麻小亮 on 2018/12/20.
@@ -11,7 +11,8 @@
 #import "UIView+LXChain.h"
 #import "Masonry.h"
 NS_ASSUME_NONNULL_BEGIN
-@protocol LXommonNavigationBarDelegate <NSObject>
+
+@protocol WTCommonNavigationBarDelegate <NSObject>
 
 @optional
 /**
@@ -46,13 +47,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@class LXommonNavigationBar;
+@class WTCommonNavigationBar;
 
-typedef void(^nav_Block)(LXommonNavigationBar *bar);
+typedef void(^nav_Block)(WTCommonNavigationBar *bar);
 
-@interface LXommonNavigationBar : UIView
+@interface WTCommonNavigationBar : UIView
 
-@property (nonatomic, weak) id <LXommonNavigationBarDelegate> delegate;
+@property (nonatomic, weak) id <WTCommonNavigationBarDelegate> delegate;
 
 @property (nonatomic, strong, readonly) UIView * leftView;
 

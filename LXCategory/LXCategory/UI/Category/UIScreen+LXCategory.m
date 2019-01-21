@@ -45,7 +45,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         CGSize size = [UIScreen size];
-        width = size.height > size.width?size.height:size.width;
+        width = size.height > size.width?size.width:size.height;
     });
     return width;
 }

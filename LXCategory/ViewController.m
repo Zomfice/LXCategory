@@ -8,46 +8,25 @@
 
 #import "ViewController.h"
 #import "YYModel.h"
-#import "EXTConcreteProtocol.h"
 
 
-@protocol MyProtocol <NSObject>
 
-@concrete
-- (UILabel *)myView;
-- (id <MyProtocol>)masf;
-@end
-
-@concreteprotocol(MyProtocol)
-
-- (id<MyProtocol>)masf{
-    self.myView.text = @"1111";
-    return nil;
-}
-
-@end
-
-@protocol MyProtocol1 <MyProtocol>
-@concrete
-+ (NSUInteger)meaningfulNumber;
-- (NSString *)getSomeString;
-@end
-
-@concreteprotocol(MyProtocol1)
-
-@end
-
-@interface ViewController ()<LXommonTableViewProtocol, LXommonNavigationProtocol>
+@interface ViewController ()<WTCommonTableViewProtocol, WTCommonNavigationProtocol>
 @property (nonatomic, strong) UILabel * label;
 @end
 
 @implementation ViewController
 @synthesize tableView = _tableView, navigationBar = _navigationBar;
 
+- (UILabel *)myView{
+    return self.label;
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+//    NSString *str =  [[@"123456".utf8Data aesEncryptStringWithKey:@"swqrfchh" iv:@"uqwrjvds$vfvw5pd" keySize:kCCKeySizeAES128] base64EncodedString];
+   
     self.navigationController.navigationBar.hidden = YES;
     self.navigationBar.middleButton.makeChain
     .text(@"海贼王", UIControlStateNormal)
@@ -55,8 +34,8 @@
     
     self.tableView.makeChain
     .registerCellClass([UITableViewCell class], @"cell");
-    
-    [self.navigationBar setupTag:0 WithBlock:^(LXommonNavigationBar * _Nonnull bar) {
+ 
+    [self.navigationBar setupTag:0 WithBlock:^(WTCommonNavigationBar * _Nonnull bar) {
         [UIView animateWithDuration:0.15 animations:^{
             bar.line.hidden = YES;
             bar.backgroundColor = [UIColor redColor];
@@ -64,7 +43,7 @@
         }];
     }];
     
-    [self.navigationBar setupTag:1 WithBlock:^(LXommonNavigationBar * _Nonnull bar) {
+    [self.navigationBar setupTag:1 WithBlock:^(WTCommonNavigationBar * _Nonnull bar) {
         [UIView animateWithDuration:0.15 animations:^{
             bar.line.hidden = NO;
             bar.backgroundColor = [UIColor whiteColor];
@@ -91,9 +70,6 @@
     [self.navigationBar setTag:0];
 }
 
-- (UILabel *)myView{
-    return self.label;
-}
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

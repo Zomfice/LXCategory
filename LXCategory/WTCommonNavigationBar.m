@@ -1,14 +1,14 @@
 //
-//  LXommonNavigationBar.m
+//  WTCommonNavigationBar.m
 //  WisdomTree
 //
 //  Created by 麻小亮 on 2018/12/20.
 //  Copyright © 2018 able-elec. All rights reserved.
 //
 
-#import "LXommonNavigationBar.h"
+#import "WTCommonNavigationBar.h"
 
-@interface LXommonNavigationBar()
+@interface WTCommonNavigationBar()
 @property (nonatomic, strong) NSArray * buttonClass;
 @property (nonatomic, strong) UIView * leftView;
 @property (nonatomic, strong) UIView * rightView;
@@ -16,7 +16,7 @@
 @property (nonatomic, assign) NSInteger  currentTag;
 @end
 
-@implementation LXommonNavigationBar
+@implementation WTCommonNavigationBar
 
 - (instancetype)init
 {
@@ -44,7 +44,7 @@
     }
 }
 
-- (void)setDelegate:(id<LXommonNavigationBarDelegate>)delegate{
+- (void)setDelegate:(id<WTCommonNavigationBarDelegate>)delegate{
     if (!delegate) return;
     _delegate = delegate;
     if ([_delegate respondsToSelector:@selector(buttonClasses)]) {
@@ -64,9 +64,10 @@
         .addToSuperView(self.leftView)
         .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
             make.left.mas_offset(10);
-            make.top.bottom.mas_offset(0);
+            make.centerY.equalTo(self.leftView);
             make.right.mas_offset(-20);
         });
+        [_leftButton setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
     }
     return _leftButton;
 }
@@ -79,10 +80,11 @@
         .addGesture([[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(leftViewTap)])
         .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
             make.left.mas_offset(0);
-            make.bottom.equalTo(self.line.mas_top);
-            make.top.mas_offset(StatusBarHeight);
+            make.bottom.equalTo(self.mas_bottom).offset(0.5);
+            make.top.mas_offset(20);
             make.width.lessThanOrEqualTo(@(100));
         });
+     
     }
     return _leftView;
 }
@@ -98,16 +100,17 @@
         _middleButton = [[self getButtonClassIndex:1] buttonWithType:UIButtonTypeCustom];
         _middleButton.makeChain
         .font([UIFont systemFontOfSize:17])
-        .textColor([UIColor colorWithHexString:@"474747"], UIControlStateNormal)
+        .textColor([UIColor colorWithHexString:@"1a1d1e"], UIControlStateNormal)
         .addToSuperView(self)
         .addTarget(self, @selector(middleButtonTap), UIControlEventTouchUpInside)
+        .lineBreakMode(NSLineBreakByWordWrapping)
+        .numberOfLines(1)
         .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
             make.centerX.equalTo(self);
-            make.width.lessThanOrEqualTo(@([UIScreen mainScreen].bounds.size.width - 140));
-            make.top.mas_offset(StatusBarHeight);
+            make.width.lessThanOrEqualTo(@([UIScreen mainScreen].bounds.size.width - 200 *UTILS_SCALE));
+            make.top.mas_offset(20);
             make.bottom.equalTo(self.line.mas_top);
         });
-        _middleButton.titleLabel.numberOfLines = 1;
     }
     return _middleButton;
 }
@@ -127,10 +130,11 @@
         .userInteractionEnabled(NO)
         .addToSuperView(self.rightView)
         .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
-            make.left.mas_offset(10);
-            make.top.bottom.mas_offset(0);
-            make.right.mas_offset(-20);
+            make.left.mas_offset(20);
+            make.centerY.equalTo(self.leftView);
+            make.right.mas_offset(-10);
         });
+        [_rightButton setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
     }
     return _rightButton;
 }
@@ -143,10 +147,11 @@
         .addGesture([[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rightViewTap)])
         .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
             make.right.mas_offset(0);
-            make.bottom.equalTo(self.line.mas_top);
-            make.top.mas_offset(StatusBarHeight);
+            make.bottom.equalTo(self.mas_bottom).offset(0.5);
+            make.top.mas_offset(20);
             make.width.lessThanOrEqualTo(@(100 *UTILS_SCALE));
         });
+        
     }
     return _rightView;
 }

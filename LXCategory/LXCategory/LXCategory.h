@@ -35,4 +35,10 @@
 #import "NSTimer+LXCategory.h"
 #import "NSFileManager+LXCategory.h"
 #import "LXDefine.h"
+
+#if __has_include(<Masonry.h>)
+#import <Masonry.h>
+#elif __has_include("Masonry.h")
+#import "Masonry.h"
+#endif
 #endif /* LXCategory_h */
