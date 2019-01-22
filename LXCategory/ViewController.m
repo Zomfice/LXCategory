@@ -50,22 +50,8 @@
             bar.middleButton.makeChain.textColor([UIColor blackColor], UIControlStateNormal);
         }];
     }];
-    UILabelCreate().makeChain
-    .addToSuperView(self.view)
-    .center(self.view.center)
-    .userInteractionEnabled(YES)
-    .addGesture(UITapGestureRecognizerCreate().makeChain.addTargetBlock(^(id  _Nonnull gesture) {
-        NSLog(@"1");
-    }).gesture)
-    .textColor([UIColor blackColor])
-    .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view).offset(-100);
-    })
-    //    .image([UIImage imageWithSmallGIFData:data scale:1])
-    .assignTo(^(id  _Nonnull view) {
-        self.label = view;
-    });
+   
+    [[NSFileManager defaultManager] addPreNameAtPath:@"/Users/maxiaoliang/Desktop/1/ma" preName:@"aidteach_changeterm_"];
     
     [self.navigationBar setTag:0];
 }

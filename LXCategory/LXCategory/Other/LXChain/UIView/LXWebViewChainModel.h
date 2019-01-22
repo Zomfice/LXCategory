@@ -7,7 +7,11 @@
 //
 
 #import "LXBaseScrollViewChainModel.h"
+#if __has_include(<WebKit/WebKit.h>)
+#import <WebKit/WebKit.h>
+#else
 @import WebKit;
+#endif
 NS_ASSUME_NONNULL_BEGIN
 @class LXWebViewChainModel;
 @interface LXWebViewChainModel : LXBaseScrollViewChainModel<LXWebViewChainModel *>

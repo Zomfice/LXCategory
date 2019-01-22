@@ -21,6 +21,7 @@
 		730A1EA521E44CEB003D9A1F /* NSNumber+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 730A1EA421E44CEB003D9A1F /* NSNumber+LXCategory.m */; };
 		730E33FA21F563CB00C2863F /* WTCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730E33F621F563CA00C2863F /* WTCommonViewController.m */; };
 		730E33FB21F563CB00C2863F /* WTCommonNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 730E33F821F563CB00C2863F /* WTCommonNavigationBar.m */; };
+		730E376321F5A7CE00C2863F /* UIViewController+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 730E376221F5A7CE00C2863F /* UIViewController+LXCategory.m */; };
 		7311819C21DDD3F900077485 /* LXBaseLayerChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7311819B21DDD3F900077485 /* LXBaseLayerChainModel.m */; };
 		731181A021DDF6F900077485 /* Bitmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7311819F21DDF6F900077485 /* Bitmap@2x.png */; };
 		731181A621DE26FC00077485 /* NSString+LXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 731181A521DE26FC00077485 /* NSString+LXCategory.m */; };
@@ -66,7 +67,7 @@
 		735C569F21E8973400030E22 /* LXSliderViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C569E21E8973400030E22 /* LXSliderViewChainModel.m */; };
 		735C56A221E8975600030E22 /* LXSegmentedControlChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C56A121E8975600030E22 /* LXSegmentedControlChainModel.m */; };
 		735DDF8521EDC1E400109787 /* LXBaseScrollViewChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735DDF8421EDC1E300109787 /* LXBaseScrollViewChainModel.m */; };
-		735DDF8821EDC2D900109787 /* LXBaseControllChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735DDF8721EDC2D900109787 /* LXBaseControllChainModel.m */; };
+		735DDF8821EDC2D900109787 /* LXBaseControlChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 735DDF8721EDC2D900109787 /* LXBaseControlChainModel.m */; };
 		7362523421DCD4130049F5E2 /* LXPinchGestureChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362520621DCD4130049F5E2 /* LXPinchGestureChainModel.m */; };
 		7362523521DCD4130049F5E2 /* LXPanGestureChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362520A21DCD4130049F5E2 /* LXPanGestureChainModel.m */; };
 		7362523621DCD4130049F5E2 /* LXLongPressGestureChainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7362520B21DCD4130049F5E2 /* LXLongPressGestureChainModel.m */; };
@@ -121,6 +122,8 @@
 		730E33F721F563CB00C2863F /* WTCommonNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCommonNavigationBar.h; sourceTree = "<group>"; };
 		730E33F821F563CB00C2863F /* WTCommonNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCommonNavigationBar.m; sourceTree = "<group>"; };
 		730E33F921F563CB00C2863F /* WTCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCommonViewController.h; sourceTree = "<group>"; };
+		730E376121F5A7CE00C2863F /* UIViewController+LXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LXCategory.h"; sourceTree = "<group>"; };
+		730E376221F5A7CE00C2863F /* UIViewController+LXCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LXCategory.m"; sourceTree = "<group>"; };
 		7311819A21DDD3F900077485 /* LXBaseLayerChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXBaseLayerChainModel.h; sourceTree = "<group>"; };
 		7311819B21DDD3F900077485 /* LXBaseLayerChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXBaseLayerChainModel.m; sourceTree = "<group>"; };
 		7311819F21DDF6F900077485 /* Bitmap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bitmap@2x.png"; sourceTree = "<group>"; };
@@ -210,8 +213,8 @@
 		735C56A121E8975600030E22 /* LXSegmentedControlChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSegmentedControlChainModel.m; sourceTree = "<group>"; };
 		735DDF8321EDC1E300109787 /* LXBaseScrollViewChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXBaseScrollViewChainModel.h; sourceTree = "<group>"; };
 		735DDF8421EDC1E300109787 /* LXBaseScrollViewChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXBaseScrollViewChainModel.m; sourceTree = "<group>"; };
-		735DDF8621EDC2D900109787 /* LXBaseControllChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXBaseControllChainModel.h; sourceTree = "<group>"; };
-		735DDF8721EDC2D900109787 /* LXBaseControllChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXBaseControllChainModel.m; sourceTree = "<group>"; };
+		735DDF8621EDC2D900109787 /* LXBaseControlChainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXBaseControlChainModel.h; sourceTree = "<group>"; };
+		735DDF8721EDC2D900109787 /* LXBaseControlChainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXBaseControlChainModel.m; sourceTree = "<group>"; };
 		7362520621DCD4130049F5E2 /* LXPinchGestureChainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXPinchGestureChainModel.m; sourceTree = "<group>"; };
 		7362520721DCD4130049F5E2 /* LXBaseGestureChainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXBaseGestureChainModel.h; sourceTree = "<group>"; };
 		7362520821DCD4130049F5E2 /* LXTapGestureChainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXTapGestureChainModel.h; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 				7307CFA821D646DE0005C962 /* UITextField+LXCategory.m */,
 				7307E05B21DC6484000752F6 /* UIAlertController+LXCategory.h */,
 				7307E05C21DC6484000752F6 /* UIAlertController+LXCategory.m */,
+				730E376121F5A7CE00C2863F /* UIViewController+LXCategory.h */,
+				730E376221F5A7CE00C2863F /* UIViewController+LXCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -515,8 +520,8 @@
 				7362521C21DCD4130049F5E2 /* UIView+LXChain.m */,
 				7362522E21DCD4130049F5E2 /* LXSwitchChainModel.h */,
 				7362521D21DCD4130049F5E2 /* LXSwitchChainModel.m */,
-				735DDF8621EDC2D900109787 /* LXBaseControllChainModel.h */,
-				735DDF8721EDC2D900109787 /* LXBaseControllChainModel.m */,
+				735DDF8621EDC2D900109787 /* LXBaseControlChainModel.h */,
+				735DDF8721EDC2D900109787 /* LXBaseControlChainModel.m */,
 				7362522C21DCD4130049F5E2 /* LXControlChainModel.h */,
 				7362521F21DCD4130049F5E2 /* LXControlChainModel.m */,
 				7362522A21DCD4130049F5E2 /* LXLabelChainModel.h */,
@@ -715,7 +720,7 @@
 				731181AC21DE2D5C00077485 /* NSAttributedString+LXCategory.m in Sources */,
 				735C569321E8958D00030E22 /* LXDatePickerViewChainModel.m in Sources */,
 				735C569621E8962A00030E22 /* LXPickerViewChainModel.m in Sources */,
-				735DDF8821EDC2D900109787 /* LXBaseControllChainModel.m in Sources */,
+				735DDF8821EDC2D900109787 /* LXBaseControlChainModel.m in Sources */,
 				73337B1E21E5AB5300200EB3 /* NSObject+LXCategory.m in Sources */,
 				7362524921DCD4130049F5E2 /* LXImageViewChainModel.m in Sources */,
 				7307CF9121D646240005C962 /* UIGestureRecognizer+LXCategory.m in Sources */,
@@ -725,6 +730,7 @@
 				7307CFA021D6469C0005C962 /* UIImage+LXCategory.m in Sources */,
 				735C56A221E8975600030E22 /* LXSegmentedControlChainModel.m in Sources */,
 				7319C6E421DF00B600156813 /* LXLayerChainModel.m in Sources */,
+				730E376321F5A7CE00C2863F /* UIViewController+LXCategory.m in Sources */,
 				730A1EA521E44CEB003D9A1F /* NSNumber+LXCategory.m in Sources */,
 				7362523821DCD4130049F5E2 /* LXTapGestureChainModel.m in Sources */,
 				731487E421D4EC6700480F08 /* UIColor+LXCategory.m in Sources */,

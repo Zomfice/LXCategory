@@ -6,14 +6,14 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "LXBaseControllChainModel.h"
+#import "LXBaseControlChainModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 
 @class LXControlChainModel;
-@interface LXControlChainModel : LXBaseControllChainModel<LXControlChainModel *>
+@interface LXControlChainModel : LXBaseControlChainModel<LXControlChainModel *>
 
 
 @end

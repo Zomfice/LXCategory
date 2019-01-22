@@ -6,12 +6,12 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "LXBaseControllChainModel.h"
+#import "LXBaseControlChainModel.h"
 #import "UIButton+LXCategory.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXButtonChainModel;
-@interface LXButtonChainModel : LXBaseControllChainModel<LXButtonChainModel *>
+@interface LXButtonChainModel : LXBaseControlChainModel<LXButtonChainModel *>
 
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ contentEdgeInsets)(UIEdgeInsets contentEdgeInsets);
 

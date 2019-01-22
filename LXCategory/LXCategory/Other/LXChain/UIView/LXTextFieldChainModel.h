@@ -6,11 +6,11 @@
 //  Copyright © 2018 xllpp. All rights reserved.
 //
 
-#import "LXBaseControllChainModel.h"
+#import "LXBaseControlChainModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXTextFieldChainModel;
-@interface LXTextFieldChainModel : LXBaseControllChainModel<LXTextFieldChainModel*>
+@interface LXTextFieldChainModel : LXBaseControlChainModel<LXTextFieldChainModel*>
 
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ text)(NSString *text);
 LXCATEGORY_CHAIN_PROPERTY LXTextFieldChainModel *(^ attributedText)(NSAttributedString *attributedText);

@@ -112,7 +112,8 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addGesture) (UIGestureRecognizer *gestur
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ removeGesture) (UIGestureRecognizer *gesture);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addGestureWithTag) (UIGestureRecognizer *gesture, NSString *tag);
-
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ transform) (CGAffineTransform transform);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ layerTransform)(CATransform3D transform);
 @property (nonatomic, strong, readonly) UIGestureRecognizer * (^ getGestureByTag) (NSString * tag);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ removeGestureByTag) (NSString *tag);
@@ -168,10 +169,8 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shadowOffset)(CGSize shadowOffset);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shadowRadius)(CGFloat shadowRadius);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ transform)(CATransform3D transform);
-
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shadowPath) (CGPathRef shadowPath);
-
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ makeTag) (NSInteger tag);
 #pragma mark - method -
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ makeMasonry)( void (^constraints)(MASConstraintMaker *make) );

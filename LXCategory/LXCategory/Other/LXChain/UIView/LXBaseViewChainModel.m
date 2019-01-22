@@ -46,6 +46,10 @@
         return self;    \
     };\
 }
+
+@interface LXBaseViewChainModel ()
+@property (nonatomic, assign) NSInteger  tag;
+@end
 @implementation LXBaseViewChainModel
 
 - (instancetype)initWithTag:(NSInteger)tag andView:(UIView *)view{
@@ -89,7 +93,7 @@ LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(left, CGFloat)
 LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(right, CGFloat)
 
 LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(autoresizingMask, UIViewAutoresizing)
-
+LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(transform, CGAffineTransform)
 LXCATEGORY_CHAIN_VIEW_IMPLEMENTATION(autoresizesSubviews, BOOL)
 
 - (UIView * _Nonnull (^)(NSInteger))viewWithTag{
@@ -356,7 +360,6 @@ LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shadowColor, CGColorRef);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shadowOpacity, CGFloat);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shadowOffset, CGSize);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(shadowRadius, CGFloat);
-LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(transform, CATransform3D);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(borderWidth, CGFloat);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(borderColor, CGColorRef);
 LXCATEGORY_CHAIN_LAYER_IMPLEMENTATION(zPosition, CGFloat);
@@ -376,7 +379,12 @@ LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(masonry, mas_makeConstraints);
 LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(updateMasonry, mas_updateConstraints);
 LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(remakeMasonry, mas_remakeConstraints);
 #endif
-
+- (id  _Nonnull (^)(CATransform3D))layerTransform{
+    return ^ (CATransform3D ta){
+        self.view.layer.transform = ta;
+        return self;
+    };
+}
 - (id  _Nonnull (^)(void (^ _Nonnull)(id _Nonnull)))assignTo{
     return ^ (void (^assignTo)(id view)){
         if (assignTo) {
@@ -432,7 +440,13 @@ LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(remakeMasonry, mas_remakeConstraint
         return self;
     };
 }
-
+- (id  _Nonnull (^)(NSInteger))makeTag{
+    return ^ (NSInteger tag){
+        self.view.tag = tag;
+        self.tag = tag;
+        return self;
+    };
+}
 @end
 #undef LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION
 #undef LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL

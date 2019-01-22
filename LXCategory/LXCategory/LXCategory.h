@@ -35,6 +35,7 @@
 #import "NSTimer+LXCategory.h"
 #import "NSFileManager+LXCategory.h"
 #import "LXDefine.h"
+#import "UIViewController+LXCategory.h"
 
 #if __has_include(<Masonry.h>)
 #import <Masonry.h>

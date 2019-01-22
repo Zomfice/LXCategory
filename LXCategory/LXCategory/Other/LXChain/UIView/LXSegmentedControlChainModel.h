@@ -6,11 +6,11 @@
 //  Copyright © 2019 xllpp. All rights reserved.
 //
 
-#import "LXBaseControllChainModel.h"
+#import "LXBaseControlChainModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class LXSegmentedControlChainModel;
-@interface LXSegmentedControlChainModel : LXBaseControllChainModel<LXSegmentedControlChainModel *>
+@interface LXSegmentedControlChainModel : LXBaseControlChainModel<LXSegmentedControlChainModel *>
 LXCATEGORY_CHAIN_PROPERTY LXSegmentedControlChainModel* (^ momentary) (BOOL momentary);
 LXCATEGORY_CHAIN_PROPERTY LXSegmentedControlChainModel* (^ apportionsSegmentWidthsByContent) (BOOL apportionsSegmentWidthsByContent);
 LXCATEGORY_CHAIN_PROPERTY LXSegmentedControlChainModel* (^ removeAllSegments) (void);

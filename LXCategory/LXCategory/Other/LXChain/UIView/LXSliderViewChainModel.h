@@ -6,11 +6,11 @@
 //  Copyright © 2019 xllpp. All rights reserved.
 //
 
-#import "LXBaseControllChainModel.h"
+#import "LXBaseControlChainModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class LXSliderViewChainModel;
-@interface LXSliderViewChainModel : LXBaseControllChainModel<LXSliderViewChainModel *>
+@interface LXSliderViewChainModel : LXBaseControlChainModel<LXSliderViewChainModel *>
 LXCATEGORY_CHAIN_PROPERTY LXSliderViewChainModel * (^ value) (float value);
 LXCATEGORY_CHAIN_PROPERTY LXSliderViewChainModel * (^ minimumValue) (float minimumValue);
 LXCATEGORY_CHAIN_PROPERTY LXSliderViewChainModel * (^ maximumValue) (float maximumValue);

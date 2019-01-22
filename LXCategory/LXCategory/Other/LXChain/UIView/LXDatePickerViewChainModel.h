@@ -6,11 +6,11 @@
 //  Copyright © 2019 xllpp. All rights reserved.
 //
 
-#import "LXBaseControllChainModel.h"
+#import "LXBaseControlChainModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class LXDatePickerViewChainModel;
-@interface LXDatePickerViewChainModel : LXBaseControllChainModel<LXDatePickerViewChainModel *>
+@interface LXDatePickerViewChainModel : LXBaseControlChainModel<LXDatePickerViewChainModel *>
 LXCATEGORY_CHAIN_PROPERTY LXDatePickerViewChainModel * (^ datePickerMode) (UIDatePickerMode datePickerMode);
 LXCATEGORY_CHAIN_PROPERTY LXDatePickerViewChainModel * (^ locale) (NSLocale* locale);
 LXCATEGORY_CHAIN_PROPERTY LXDatePickerViewChainModel * (^ calendar) (NSCalendar* calendar);

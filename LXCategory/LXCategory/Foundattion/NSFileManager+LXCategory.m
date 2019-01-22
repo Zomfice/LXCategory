@@ -7,7 +7,7 @@
 //
 
 #import "NSFileManager+LXCategory.h"
-
+#import "NSString+LXCategory.h"
 @implementation NSFileManager (LXCategory)
 
 - (NSURL *)documentsURL {
@@ -79,7 +79,7 @@
         NSString *la = path.lastPathComponent;
         if (![la hasPrefix:preName]) {
             NSString *dir = [path substringToIndex:path.length - la.length];
-            NSString *newPath = [dir stringByAppendingPathComponent:[preName stringByAppendingString:la]];
+            NSString *newPath = [dir stringByAppendingPathComponent:[preName stringByAppendingString:[la transformToPinyin]]];
             [self moveItemAtPath:path toPath:newPath error:nil];
         }
         return;
@@ -92,7 +92,7 @@
             if (!isDir) {
                 NSString *la = a.lastPathComponent;
                 NSString *dir = [p substringToIndex:p.length - la.length];
-                NSString *newPath = [dir stringByAppendingPathComponent:[preName stringByAppendingString:la]];
+                NSString *newPath = [dir stringByAppendingPathComponent:[preName stringByAppendingString:[la transformToPinyin]]];
                 NSError *error = nil;
                 [self moveItemAtPath:p toPath:newPath error:&error];
             }

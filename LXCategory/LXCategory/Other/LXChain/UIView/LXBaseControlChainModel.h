@@ -1,5 +1,5 @@
 //
-//  LXBaseControllChainModel.h
+//  LXBaseControlChainModel.h
 //  LXCategory
 //
 //  Created by 麻小亮 on 2019/1/15.
@@ -10,7 +10,7 @@
 #import "UIControl+LXCategory.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXBaseControllChainModel <__covariant ObjectType>: LXBaseViewChainModel<ObjectType>
+@interface LXBaseControlChainModel <__covariant ObjectType>: LXBaseViewChainModel<ObjectType>
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ enabled)(BOOL enabled);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ selected)(BOOL selected);

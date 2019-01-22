@@ -1,15 +1,15 @@
 //
-//  LXBaseControllChainModel.m
+//  LXBaseControlChainModel.m
 //  LXCategory
 //
 //  Created by 麻小亮 on 2019/1/15.
 //  Copyright © 2019 xllpp. All rights reserved.
 //
 
-#import "LXBaseControllChainModel.h"
+#import "LXBaseControlChainModel.h"
 #define LXCATEGORY_CHAIN_CONTROL_IMPLEMENTATION(LXMethod,LXParaType) LXCATEGORY_CHAIN_VIEWCLASS_IMPLEMENTATION(LXMethod,LXParaType, id ,UIControl)
 
-@implementation LXBaseControllChainModel
+@implementation LXBaseControlChainModel
 LXCATEGORY_CHAIN_CONTROL_IMPLEMENTATION(enabled, BOOL)
 LXCATEGORY_CHAIN_CONTROL_IMPLEMENTATION(selected, BOOL)
 LXCATEGORY_CHAIN_CONTROL_IMPLEMENTATION(highlighted, BOOL)
