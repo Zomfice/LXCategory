@@ -18,7 +18,7 @@
 @end
 NS_ASSUME_NONNULL_BEGIN
 
-
+typedef void(^LXAssignLayerLoad)(__kindof CALayer *layer);
 @interface LXBaseLayerChainModel <__covariant  ObjectType> : NSObject
 
 - (instancetype)initWithLayer:(CALayer *)layer;
@@ -86,7 +86,7 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ name) (NSString * name);
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ delegate) (id <CALayerDelegate> delegate);
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ style) (NSDictionary * style);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ assignTo) (void (^assignTo)(id layer));
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ assignTo) (LXAssignLayerLoad assignTo);
 @end
 
 NS_ASSUME_NONNULL_END

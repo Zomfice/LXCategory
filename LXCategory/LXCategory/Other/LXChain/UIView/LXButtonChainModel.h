@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXButtonChainModel;
+
+typedef void(^LXButtonImageTitleBlock)(UIImageView *imageView, UILabel *title);
+
 @interface LXButtonChainModel : LXBaseControlChainModel<LXButtonChainModel *>
 
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ contentEdgeInsets)(UIEdgeInsets contentEdgeInsets);
@@ -47,6 +50,9 @@ LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ numberOfLines)(NSInteger number
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ lineBreakMode)(NSLineBreakMode lineBreakMode);
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ adjustsFontSizeToFitWidth)(BOOL adjustsFontSizeToFitWidth);
 LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ baselineAdjustment)(UIBaselineAdjustment baselineAdjustment);
+
+LXCATEGORY_CHAIN_PROPERTY LXButtonChainModel *(^ imageAndTitle)(LXButtonImageTitleBlock block);
+
 @end
 LXCreate(UIButton)
 static inline UIButton *UIButtonCreateWithType(UIButtonType buttonType){

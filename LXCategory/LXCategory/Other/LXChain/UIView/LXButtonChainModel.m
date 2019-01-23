@@ -98,6 +98,16 @@ LXCATEGORY_CHAIN_BUTTONLABEL_IMPLEMENTATION(baselineAdjustment, UIBaselineAdjust
     };
 }
 
+- (LXButtonChainModel * _Nonnull (^)(LXButtonImageTitleBlock _Nonnull))imageAndTitle{
+    return ^ (LXButtonImageTitleBlock block){
+        if (block) {
+            UIButton *button = self.view;
+            block(button.imageView,button.titleLabel);
+        }
+        return self;
+    };
+}
+
 @end
 LXCATEGORY_VIEW_IMPLEMENTATION(UIButton, LXButtonChainModel)
 #undef LXCATEGORY_CHAIN_BUTTON_IMPLEMENTATION

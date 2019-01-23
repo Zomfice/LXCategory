@@ -9,7 +9,7 @@
 #import "LXBaseViewChainModel.h"
 #import "UIControl+LXCategory.h"
 NS_ASSUME_NONNULL_BEGIN
-
+typedef void(^LXTargetActionBlock)(__kindof UIControl *sender);
 @interface LXBaseControlChainModel <__covariant ObjectType>: LXBaseViewChainModel<ObjectType>
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ enabled)(BOOL enabled);
 
@@ -21,9 +21,9 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ contentVerticalAlignment)(UIControlConte
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ contentHorizontalAlignment)(UIControlContentHorizontalAlignment contentHorizontalAlignment);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTargetBlock)(void (^addTargetBlock)(id sender), UIControlEvents controlEvents);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTargetBlock)(LXTargetActionBlock addTargetBlock, UIControlEvents controlEvents);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ setTargetBlock)(void (^addTargetBlock)(id sender), UIControlEvents controlEvents);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ setTargetBlock)(LXTargetActionBlock addTargetBlock, UIControlEvents controlEvents);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTarget)(id target, SEL action, UIControlEvents controlEvents);
 

@@ -28,16 +28,19 @@
     UIActivityIndicatorViewCreate().makeChain
     .addToSuperView(self.view)
     .center(self.view.center)
+    .transform(CGAffineTransformMakeScale(1.5, 1.5))
     .userInteractionEnabled(YES)
-    .activityIndicatorViewStyle(UIActivityIndicatorViewStyleGray)
+    .activityIndicatorViewStyle(UIActivityIndicatorViewStyleWhiteLarge)
+    .backgroundColor([UIColor blackColor])
     .addGesture(UITapGestureRecognizerCreate().makeChain.addTargetBlock(^(id  _Nonnull gesture) {
         NSLog(@"1");
     }).gesture)
-    .color([UIColor blackColor])
+//    .color([UIColor blackColor])
     .startAnimating()
     .makeMasonry(^(MASConstraintMaker * _Nonnull make) {
         make.centerX.equalTo(self.view);
         make.centerY.equalTo(self.view).offset(-100);
+        make.width.height.mas_equalTo(100);
     })
 //    .image([UIImage imageWithSmallGIFData:data scale:1])
     .assignTo(^(id  _Nonnull view) {

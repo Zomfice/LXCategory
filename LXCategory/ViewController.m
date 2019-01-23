@@ -50,10 +50,11 @@
             bar.middleButton.makeChain.textColor([UIColor blackColor], UIControlStateNormal);
         }];
     }];
-   
+    
     [[NSFileManager defaultManager] addPreNameAtPath:@"/Users/maxiaoliang/Desktop/1/ma" preName:@"aidteach_changeterm_"];
     
     [self.navigationBar setTag:0];
+    
 }
 
 

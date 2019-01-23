@@ -385,7 +385,7 @@ LXCATEGORY_CHAIN_MASONRY_IMPLEMENTATION_NULL(remakeMasonry, mas_remakeConstraint
         return self;
     };
 }
-- (id  _Nonnull (^)(void (^ _Nonnull)(id _Nonnull)))assignTo{
+- (id  _Nonnull (^)(LXAssignViewLoad _Nonnull))assignTo{
     return ^ (void (^assignTo)(id view)){
         if (assignTo) {
             assignTo(self.view);

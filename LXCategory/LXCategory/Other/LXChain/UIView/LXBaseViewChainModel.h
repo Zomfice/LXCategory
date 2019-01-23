@@ -17,15 +17,19 @@
 }\
 @end
 
+
 NS_ASSUME_NONNULL_BEGIN
 @class MASConstraintMaker;
+typedef void(^LXMasonryLoad)(MASConstraintMaker *make);
+typedef void(^LXAssignViewLoad)(__kindof UIView *view);
+
 @interface LXBaseViewChainModel <__covariant  ObjectType> : NSObject
 
 - (instancetype)initWithTag:(NSInteger)tag andView:(UIView *)view;
 
 @property (nonatomic, assign, readonly) NSInteger tag;
 
-@property (nonatomic, strong, readonly) UIView *view;
+@property (nonatomic, strong, readonly) __kindof UIView *view;
 
 @property (nonatomic, assign, readonly) Class viewClass;
 
@@ -173,13 +177,13 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ shadowPath) (CGPathRef shadowPath);
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ makeTag) (NSInteger tag);
 #pragma mark - method -
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ makeMasonry)( void (^constraints)(MASConstraintMaker *make) );
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ makeMasonry)(LXMasonryLoad constraints);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ updateMasonry)( void (^constraints)(MASConstraintMaker *make) );
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ updateMasonry)(LXMasonryLoad constraints);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ remakeMasonry)( void (^constraints)(MASConstraintMaker *make) );
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ remakeMasonry)(LXMasonryLoad constraints);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ assignTo)(void (^assignTo)(id view));
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ assignTo)(LXAssignViewLoad assignTo);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ sizeToFit) (void);
 LXCATEGORY_CHAIN_PROPERTY CGSize (^ sizeToFitSize) (CGSize size);

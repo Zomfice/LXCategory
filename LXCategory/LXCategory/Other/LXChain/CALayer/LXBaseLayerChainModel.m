@@ -149,7 +149,7 @@ LXCATEGORY_CHAIN_BASELAYER_IMPLEMENTATION(style, NSDictionary *)
     };
 }
 
-- (id  _Nonnull (^)(void (^ _Nonnull)(id _Nonnull)))assignTo{
+- (id  _Nonnull (^)(LXAssignLayerLoad _Nonnull))assignTo{
     return ^ (void (^assignTo)(id layer)){
         if (assignTo) {
             assignTo(self);

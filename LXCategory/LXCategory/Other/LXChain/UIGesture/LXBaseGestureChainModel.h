@@ -19,7 +19,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-
+typedef void(^LXGestureActionBlock)(__kindof UIGestureRecognizer *gesture);
 @interface LXBaseGestureChainModel <__covariant  ObjectType> : NSObject
 
 - (instancetype)initWithGesture:(UIGestureRecognizer *)gesture;
@@ -52,9 +52,9 @@ LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTarget) (id target, SEL action);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ removeTarget) (id target, SEL action);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTargetBlock) (void (^) (id gesture));
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTargetBlock) (LXGestureActionBlock gesture);
 
-LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTargetBlockWithTag) (void (^) (id gesture), NSString *tag);
+LXCATEGORY_CHAIN_PROPERTY ObjectType (^ addTargetBlockWithTag) (LXGestureActionBlock gesture , NSString *tag);
 
 LXCATEGORY_CHAIN_PROPERTY ObjectType (^ removeTargetBlockWithTag) (NSString *tag);
 

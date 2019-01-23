@@ -28,13 +28,13 @@ LXCATEGORY_CHAIN_CONTROL_IMPLEMENTATION(contentHorizontalAlignment, UIControlCon
         return self;
     };
 }
-- ( id  _Nonnull (^)(void (^ _Nonnull)(id _Nonnull), UIControlEvents))addTargetBlock{
+- (id  _Nonnull (^)(LXTargetActionBlock _Nonnull, UIControlEvents))addTargetBlock{
     return ^ (controlTargeAction block, UIControlEvents events){
         [(UIControl *)(self.view) addEventBlock:block forEvents:events];
         return self;
     };
 }
-- ( id  _Nonnull (^)(void (^ _Nonnull)(id _Nonnull), UIControlEvents))setTargetBlock{
+- (id  _Nonnull (^)(LXTargetActionBlock _Nonnull, UIControlEvents))setTargetBlock{
     return ^ (controlTargeAction block, UIControlEvents events){
         [(UIControl *)(self.view) setEventBlock:block forEvents:events];
         return self;
