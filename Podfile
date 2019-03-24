@@ -3,4 +3,8 @@ platform :ios, '8.0'
 
 target 'LXCategory' do
    pod 'Masonry'
+   pod 'YYModel'
+   pod 'AFNetworking'
+   pod 'YYCache'
+   
 end
